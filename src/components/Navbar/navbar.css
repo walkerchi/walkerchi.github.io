@@ -1,0 +1,68 @@
+.navbar-container{
+    z-index:100;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    background-color: #333;
+    top:0px;
+    left:0px;
+    height:40px;
+}
+.navbar-head{
+    flex:4;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.navbar-head-logo{
+    height:32px;
+    width:32px;
+    background-image: url('../../images/icons/taichi.white.svg');
+    background-repeat: no-repeat;
+    background-size:contain; 
+    background-position: right;
+    transition:.5s;
+    transform-origin:center center;
+}
+.navbar-head-logo:hover{
+    transform: rotate(360deg);
+}
+.navbar-head-text{
+    margin-left:10px;
+    width:25%;
+    color:#eee;
+    overflow: hidden;
+    text-align: center;
+}
+.navbar-head-text a{
+    text-decoration: none;
+    color:inherit;
+}
+.navbar-head-text:hover{
+    color:#222;
+    background-color: #ddd;
+}
+
+.navbar-router{
+    flex:8;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-around;
+    align-items:center;
+}
+.navbar-router a{
+    text-align: center;
+    text-decoration: none;
+    color:#eee;
+    width:25%;
+    height:100%;
+    transition: .3s;
+}
+.navbar-router a:hover{
+    background-color: #ddd;
+    color:#222;
+}   

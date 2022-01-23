@@ -1,0 +1,35 @@
+.banner-container{
+    width:100%;
+    height:800px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+.banner-glass{
+    background: inherit;
+    left:10%;
+    top:175px;
+    width:80%;
+    height:500px;
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.banner-glass:before{
+    content:"";
+    position: absolute;
+    background: inherit;
+    left:-25px;
+    right:0;
+    top:-25px;
+    bottom:0;
+    box-shadow: inset 0 0 0 400px rgb(255,255,255,0.3);
+    filter:blur(10px);
+}
+.banner-glass div{
+    z-index: 10;
+}
