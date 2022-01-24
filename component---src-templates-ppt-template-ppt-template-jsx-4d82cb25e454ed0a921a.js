@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgatsby_starter_hello_world=self.webpackChunkgatsby_starter_hello_world||[]).push([[666],{77083:function(e,t,r){r.r(t),r.d(t,{default:function(){return s}});var a=r(67294),n=r(92048),l=r(84918);function s(e){var t=e.data;return a.createElement("div",{className:"ppttemplate-container"},a.createElement(n.Z,null),a.createElement(l.Z,{source:t.markdownRemark.rawMarkdownBody,isPPT:!0}))}}}]);
+//# sourceMappingURL=component---src-templates-ppt-template-ppt-template-jsx-4d82cb25e454ed0a921a.js.map
