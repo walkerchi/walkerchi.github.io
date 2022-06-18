@@ -1,0 +1,28 @@
+div.math-display{
+    margin:10px 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.hljs{
+    font-family: 'hack';
+}
+.hljs::after{
+    position: absolute;
+    font-size:12px;
+    line-height: 12px;
+    right:0px;
+    top:0px;
+    background-color: rgb(34,39,46);
+    padding:5px 5px 2px 5px;
+    border-radius: 5px 5px 0px 0px;
+}
+.language-bash::after{
+    content:'bash';
+    color:chartreuse;
+}
+.language-c::after{
+    content:'C';
+    color:cornflowerblue;
+}

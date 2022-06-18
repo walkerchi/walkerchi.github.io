@@ -1,0 +1,67 @@
+.function{
+    color:#fdfdfd;
+    width:100%;
+    min-height: 100vh;
+}
+.container{
+    position: relative;
+    top:var(--navbar-height);
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns:1fr 1fr 1fr;
+}
+.block{
+    place-self: center center;
+    width:300px;
+    height:300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border:1px solid #fdfdfd;
+    border-radius: 25px;
+    transition:  all .3s ease;
+    background-color: transparent;
+}
+.block:hover{
+    cursor: pointer;
+    border:2px solid #fdfdfd;
+    background-color: rgba(0,0,0,0.5);
+}
+.image{
+    position: relative;
+    width:50%;
+    height:50%;
+    transition: all .4s ease .1s;
+}
+.block:hover .image{
+    width:60%;
+    height:60%;
+}
+.text{
+    width:90%;
+    height:15%;
+    font-size:18px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all .2s ease  .3s;
+}
+.text div::first-letter{
+    color:hsla(290,85%,85%,0.8);
+    font-size:20px;
+    font-weight: 700;
+    font-style: italic;
+    /* font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+}
+.block:hover .text{
+    font-size:20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+.block:hover .text div::first-letter{
+    font-size:24px;
+    font-weight: 800;
+}

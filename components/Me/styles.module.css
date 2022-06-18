@@ -1,0 +1,83 @@
+.me{
+    --color:#fdfdfd;
+    height:100vh;
+    width:100%;
+    position: relative;
+}
+.video{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    object-position: center center;
+    position:relative;
+    z-index:1;
+}
+.video::after{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height:100%;
+    opacity: 0.35;
+    z-index: 10;
+    background-color: #345;
+    transition: all .4s;
+}
+.video:hover::after{
+    opacity: 0.14;
+}
+.title{
+    position: absolute;
+    letter-spacing: 4px;
+    word-spacing: 8px;
+    z-index:20;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    color:var(--color);
+    text-transform: uppercase;
+    font-size:4rem;
+}
+
+
+.timeline{
+    position: relative;
+    width: 100%;
+    height:auto;
+}
+.item-icon{
+    --size:48px;
+    --color:#fdfdfd;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    width:var(--size);
+    height:var(--size);
+    color: var(--color);
+    background-size:cover;
+    background-position: center center;
+}
+.item-image{
+    width:80%;
+    height:auto;
+}
+.item-date-dark,
+.item-date-light{
+    color:#fdfdfd;
+}
+
+@media screen and (max-width:768px){
+    .title{
+        font-size:2rem;
+        letter-spacing: 2px;
+        word-spacing: 4px;
+    }
+    .item-icon{
+        --size:36px !important;
+    }
+    .item-date-light{
+        color:#345 !important;
+    }
+}

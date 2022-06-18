@@ -1,0 +1,108 @@
+.tree-menu-wrapper{
+    --width:240px;
+    --height:calc(100% - var(--navbar-height));
+    --margin:20px;
+    --bg-color:rgba(0,0,0,0.5);
+    width:var(--width);
+    height:var(--height);
+    position: fixed;
+    z-index:10;
+    top:var(--navbar-height);
+    left:0px;
+    /* overflow:hidden; */
+    transition: all .3s ease;
+    background-color:var(--bg-color);
+    color:#fdfdfd;
+}
+.tree-menu-wrapper-close{
+    width:0px;
+}
+.tree-menu{
+    position: absolute;
+    right:0px;
+    top:0px;
+    width:var(--width);
+    height:100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.node-wrapper{
+    width:100%;
+    margin-left:var(--margin);
+    display: flex;
+    flex-direction: column;
+}
+.node-text{
+    position: relative;
+    width:calc(100% - var(--margin));
+    height:24px;
+    font-size:16px;
+    line-height:24px;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+}
+.node-text:hover{
+    cursor: pointer;
+    background-color: gray;
+}
+.node-text:hover::after{
+    height:100%;
+    width:200%;
+    position:absolute;
+    top:0px;
+    left:0px;
+    content:'';
+    background-color: gray;
+    transform: translateX(-100%);
+}
+.node-children{
+    width:calc(100% - var(--margin));
+    height:auto;
+    max-height: 1000px;
+    transform-origin: top;
+    transition: all .3s ease;
+}
+.node-children-close{
+    height:0px;
+    max-height:0px;
+    transform: scaleY(0);
+}
+.icon{
+    --size:48px;
+    --radius:calc(var(--size) / 2);
+    position: absolute;
+    z-index:10;
+    right:calc(-1 * var(--size));
+    bottom: 0px;
+    width:var(--size);
+    height:var(--size);
+    border-top-right-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
+    transition: all .4s ease ;
+    background-color: var(--bg-color);
+}
+.icon:hover{
+    cursor: pointer;
+    background-color: gray;
+}
+.icon::after{
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:100%;
+    height: 100%;
+    z-index:100;
+    content:'';
+    background-image:url('../../../../public/icons/arrow.svg');
+    background-size: contain;
+    background-position: center center;
+    transform:rotateY(180deg);
+    transition: inherit;
+}
+.tree-menu-wrapper-close .icon{
+    border-radius: var(--radius);
+    transform: translate(50%,-50%);
+}
+.tree-menu-wrapper-close .icon::after{
+    transform: rotateY(0deg);
+}

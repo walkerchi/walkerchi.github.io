@@ -1,0 +1,61 @@
+.year{
+    --hue:40;
+    --color:#fdfdfd;
+    --block-size:calc(100vh /  12);
+    color:var(--color);
+    height:100vh;
+    width:100%;
+    position: relative;
+}
+.year:nth-child(6n){
+    background: linear-gradient(hsl(var(--hue),50%,20%),hsl(calc(var(--hue) + 60),50%,20%));
+}
+.year:nth-child(6n+1){
+    background: linear-gradient(hsl(calc(var(--hue) + 60),50%,20%),hsl(calc(var(--hue) + 120),50%,20%));
+}
+.year:nth-child(6n+2){
+    background: linear-gradient(hsl(calc(var(--hue) + 120),50%,20%),hsl(calc(var(--hue) +  180),50%,20%));
+}
+.year:nth-child(6n+3){
+    background: linear-gradient(hsl(calc(var(--hue) + 180),50%,20%),hsl(calc(var(--hue) +  240),50%,20%));
+}
+.year:nth-child(6n+4){
+    background: linear-gradient(hsl(calc(var(--hue) + 240),50%,20%),hsl(calc(var(--hue) +  300),50%,20%));
+}
+.year:nth-child(6n+5){
+    background: linear-gradient(hsl(calc(var(--hue) + 300),50%,20%),hsl(var(--hue),50%,20%));
+}
+
+.title{
+    position: absolute;
+    font-size: 72px;
+    font-weight: 800;
+    left:150px;
+    top:50%;
+    transform: translateY(-50%);
+}
+.months-wrapper{
+    position: absolute;
+    left:50vw;
+    height: 100%;
+    width:200px;
+    
+}
+.months{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+    width: auto;
+}
+.month{
+    width:var(--block-size);
+    height:var(--block-size);
+    text-align: center;
+    line-height: var(--block-size);
+    background-color: rgba(0,0,0,0.3);
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+    font-size: 18px;
+    font-weight: 700;
+    list-style-type: none
+}

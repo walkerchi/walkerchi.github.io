@@ -1,0 +1,56 @@
+import arrowIcon from '../../public/icons/arrow.svg'
+import searchIcon from '../../public/icons/search.svg'
+export const data ={
+    root:'content',
+    algolia:{
+        index:'chi-s-page-1'
+    },
+    image:'https://s2.loli.net/2022/05/19/g2SAsaDlBmyiZQU.jpg',
+    svg:{
+        H:2000,
+        W:2000,
+        margin:200,
+        circle:{
+            r:{
+                dir:30,
+                ipy:30,
+                md:30,
+                __selected__:150
+            }
+        },
+        text:{
+            x:{
+                dir:-20,
+                ipy:-20,
+                md:-20,
+                __selected__:10
+            },
+            y:{
+                dir:-10,
+                ipy:-10,
+                md:-10,
+                __selected__:0
+            },
+            scale:{
+                __selected__:1.5
+            },
+            anchor:{
+                dir:'end',
+                ipy:'start',
+                md:'start',
+                __selected__:'middle'
+            }
+        }
+    },
+    search:{
+        icon:searchIcon
+    },
+    menu:{
+        arrow:arrowIcon
+    },
+    items:{
+        image:{
+            url:'https://s2.loli.net/2022/01/10/ohAz19NgHxL7nTQ.jpg'
+        }
+    }
+}

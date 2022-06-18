@@ -1,0 +1,50 @@
+.ipynb-render{
+    --bg-color:#333;
+    --banner-offset:800px;
+    --content-offset:600px;
+    --cell-width:90%;
+    --font-size:14px;
+    font-size:var(--font-size);
+    width:100%;
+    height:auto;
+    
+}
+.banner{
+    width:100%;
+    height:var(--banner-offset);
+    position: fixed;
+    z-index: -10;
+}
+.banner::after{
+    position: absolute;
+    top:0px;
+    left:0px;
+    z-index:-9;
+    width:100%;
+    height:100%;
+    color:rgba(0,0,0,0.5);
+}
+.content{
+    position: relative;
+    top:var(--content-offset);
+    width:100%;
+    margin:0px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color);
+}
+.cell{
+    width:var(--cell-width);
+    margin:10px 0px;
+}
+
+@media screen and (max-width:768px){
+    .ipynb-render{
+        --banner-offset:500px;
+        --content-offset:300px;
+        --cell-width:80%;
+        --font-size:12px;
+    }
+}

@@ -1,0 +1,217 @@
+---
+title: "[华科]数据库实验3"
+description: "华中科技大学 数据库实验3"
+date: 2021-05-10
+image: https://s2.loli.net/2022/05/21/xBCITtd3PXU2gih.jpg
+---
+
+
+
+# Lab3
+
+## 0 for test
+
+```sql
+create table S(Sno int, Sname char(10), )
+```
+
+
+
+
+
+## 1
+
+查询累计人流量大于30的地点名称和累计人流量，请用visitors作累积人流量的标题名称。查询结果按照人流量从高到低排序,人流量相同时，依地点名称的字典顺序排序。
+
+```sql
+select location_name, count(*) as visitors from itinerary,location where itinerary.loc_id=location.id  group by location_name having count(*) > 30 order by count(*) DESC, location_name ASC;
+```
+
+
+
+## 2
+
+查询每个隔离地及该地正在进行隔离的人数，以number为隔离人数的标题.查询结果依隔离人数由多到少排序，隔离人数相同时，再依隔离点名称字典顺序排序。
+
+```sql
+select location_name, count(*) as number from isolation_location inner join isolation_record where isol_loc_id=isolation_location.id and state=1 group by location_name order by count(*) DESC, location_name ASC;
+```
+
+
+
+### 3
+
+直接用一条SQL语句实现以下查询：
+查询人员编号大于30的接续行程，输出信息包括：
+人员编号,姓名,重合时间,起始地点id,起始地点,结束地点id,结束地点。
+查询结果依人员编号排序。
+
+```sql
+select P.id as id, fullname, telephone, e_time as reclosing_time, loc_id_e as loc1, location_name_e as address1, loc_id_s as loc2, location_name_s as address2 from person as P, (select itinerary.p_id as p_id_e, location.id as loc_id_e, location_name as location_name_e, e_time from location,itinerary where location.id=itinerary.loc_id) as T1, (select itinerary.p_id as p_id_s, location.id as loc_id_s, location_name as location_name_s, s_time from location,itinerary where location.id=itinerary.loc_id) as T2 where P.id=p_id_e and P.id=p_id_s and P.id>30 and e_time=s_time order by P.id, e_time;
+```
+
+
+
+## 4
+
+直接用一条语句写出能实现任务要求的SQL语句： 查询充珉瑶和贾涵山的行程情况。查询结果包括：姓名、电话、到过什么地方（地名），何时到达，何时离开 。 列名原样列出即可，不必用别名。查询结果依人员编号降序排序。同一人员行程依行程开始时间面序排列。
+
+没有任何出行记录的，在出行有关的栏目内均填写NULL即可。
+
+```sql
+select fullname, telephone, location_name, s_time, e_time from (select id, fullname, telephone from person where fullname in ("充珉瑶","贾涵山")) as P left join (select p_id, location_name, s_time, e_time from location as L, itinerary as I where I.loc_id=L.id) as I on id=p_id order by id DESC, s_time ASC;
+
+```
+
+
+
+
+
+## 5
+
+ 查询地名中带有‘店’字的地点编号和名称。查询结果按地点编号排序。
+
+```sql
+select id, location_name from location where location_name like "%店%" sort by id;
+```
+
+
+
+## 6
+
+新发现一位确诊者，已知他在2021.2.2日20:05:40到21:25:40之间在“活动中心”逗留，凡在此间在同一地点逗留过的，视为接触者，请查询接触者的姓名和电话。查询结果按姓名排序。
+
+```sql
+select fullname,telephone from person as P, location as L, itinerary as I where I.p_id=P.id and loc_id=L.id and !(s_time>"2021-02-02 21:25:40" or e_time<"2021-02-02 20:05:40" ) and location_name="活动中心" order by fullname;
+```
+
+
+
+## 7
+
+查询仍在使用的隔离点名称。注意，隔离记录里如果只有隔离结束或确诊转院的记录，表明该隔离点已暂时停用，只要还有一个人在此处隔离，表明该隔离点仍在使用。查询结果按隔离点编号排序。
+
+```sql
+select location_name from isolation_location as IL, (select isol_loc_id, state, if(state=1,1,NULL) as used from isolation_record) as IR where IL.id=isol_loc_id group by location_name,IL.id,isol_loc_id having count(used)>0 order by IL.id;
+```
+
+
+
+## 8
+
+用一条带exists关键字的SQL语句完成查询任务： 查询前30位有出行记录的人员姓名和电话。查询结果按照人员编号排序。
+
+```sql
+select fullname, telephone from person as P where exists(select * from itinerary as I where I.p_id=P.id) order by P.id limit 30;
+```
+
+
+
+## 9
+
+写一条带NOT EXISTS 子查询的SQL语句实现下述查询要求： 查询人员表中没有去过地点“Today便利店”的人数。请给统计出的人数命名为number。
+
+两层嵌套子查询，你只需要用一次not exists就可以了，另一个不作要求(怎么简单怎么写)。
+
+````sql
+select count(fullname) as number from person as P where not exists(select * from itinerary as I, location as L where I.p_id=P.id and I.loc_id=L.id and location_name="Today便利店") ;
+````
+
+
+
+
+
+## 10
+
+直接用一条语句写出能实现任务要求的SQL语句： 查询人员表去过所有地点的人员姓名。查询结果依人员姓名的字典顺序排序。
+
+你至少需要用一个not exists子查询才能完成该查询。至于第二层嵌套子查询，你应该有多种选择，你可以选择更简单的写法。我们不限定你怎么实现，只要求用一条语句。
+
+```sql
+select fullname from person where not exists (select * from location where not exists(select * from itinerary where p_id=person.id and loc_id=location.id)) order by fullname;
+```
+
+
+
+
+
+## 11
+
+写一条SQL语句创建能反映所有隔离点现状的视图：isolation_location_status的创建，列名包括：
+
+视图名称：isolation_location_status，内容包括： 隔离地点编号，隔离地点名，房间容量，已占用量。 请保持原列名不变，已占用量由统计函数计算得出，该计算列命名为occupied。只有正在该隔离点隔离的人才占用隔离点的位置。隔离结束或已转院的人表明已经腾出了原有位置，不再占用资源。
+
+有的隔离点（如人员已腾空的隔离点，或新增的隔离点）没有隔离人员，占用量应当填0。
+
+```sql
+create view isolation_location_status as select IL.id as id, location_name, capacity, count(isol_loc_id) as occupied from isolation_location as IL left join (select isol_loc_id from isolation_record where state=1) as IR on isol_loc_id=IL.id group by location_name, IL.id, capacity;
+```
+
+
+
+## 12
+
+写一条SQL语句实现任务要求： 从视图isolation_location_status中查询各隔离点的剩余空房间的数目。需要列出的数据项为：隔离点名称，剩余房间数。其中剩余房间数为计算得出，请给该列命名为available_rooms。查询结果依隔离点编号排序。
+
+```sql
+select location_name, capacity-occupied as available_rooms from isolation_location_status order by id;
+```
+
+
+
+
+
+## 13
+
+直接用一条语句写出能实现任务要求的SQL语句： 查询靳宛儿接触者的姓名和电话。与靳宛儿在同一地点逗留时间有交集的均为其接触者。查询结果按照人员姓名排序。
+
+```sql
+select fullname, telephone from  person as P, itinerary as I, (select loc_id, s_time, e_time from person, itinerary where person.id=itinerary.p_id and person.fullname="靳宛儿") as S where I.p_id=P.id and S.loc_id=I.loc_id and !(I.s_time>S.e_time or I.e_time<S.s_time ) and fullname!="靳宛儿" order by fullname;
+```
+
+
+
+## 14
+
+用一条SQL语句实现本询要求： 依据密切接触表的内容查询每个地点的密切接触者的数量，列出内容包括：地点名称，密接者人数。人数由统计获得，列名命名为close_contact_number.查询结果依密接者人数降序排列。密接者人数相同时，依地点名称排序。请用一条SQL语句实现该查询：
+
+```sql
+select location_name, count(I1.p_id) as close_contact_number from location L, itinerary I1, itinerary as I2 where I1.loc_id=L.id and I1.loc_id=I2.loc_id and !(I1.s_time>I2.e_time or I1.e_time<I2.s_time) group by location_name order by close_contact_number DESC, location_name ASC;
+
+
+select location_name, count(*) as close_contact_number from location as L, close_contact as CC where CC.loc_id=L.id group by location_name order by close_contact_number DESC, location_name ASC;
+```
+
+
+
+
+
+## 15
+
+用一条SQL语句实现查询任务： 查询感染人数最多的人员编号，姓名，和被其感染的人数。感染人数由统计所得，命名为infected_number. 请用一条SQL语句实现该查询。
+
+```sql
+select case_p_id as id,fullname,count(*) as infected_number from person as P, close_contact as CC where case_p_id=P.id group by case_p_id order by infected_number DESC  limit 1;
+```
+
+
+
+## 16
+
+用一条SQL语句实现查询任务： 查询2021-02-02 10:00:00到14:00:00期间，行程记录最频繁的三个人的姓名及行程记录条数。记录条数命名为record_number。如果出现记录数并列情况，再按姓名排序。请用一条SQL语句实现该查询。
+
+````sql
+select fullname, count(*) as record_number from person as P, itinerary as I where I.p_id=P.id and !(s_time>"2021-02-02 14:00:00" or e_time<"2021-02-02 10:00:00") group by fullname order by record_number DESC, fullname ASC limit 3;
+````
+
+
+
+## 17
+
+用一条SQL语句实现查询任务： 从隔离点中，查询房间数(capacity)居第二多的隔离点名称及其房间数。 注意：如果房间数从多到少依次有100,100,80,80,70,…，那么，两个80都是第2多。而两个100都是第1多。第1高和第2高查询其实都很简单。 更一般的查询是n高查询，这类问题经常出现在BAT的面试题中。同学们可以认真考虑一下哦。
+
+```sql
+select location_name, capacity from isolation_location where capacity=(select capacity from isolation_location order by capacity DESC limit 2,1);
+
+```
+

@@ -1,0 +1,80 @@
+.pdf-gallery{
+    --shelf-selected-color:hsla(270,75%,50%,0.75);
+    width:100%;
+    height:100vh;
+}
+.shelfs{
+    position: relative;
+    height:20%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+.shelf{
+    margin:0px 20px;
+    padding:10px 20px;
+    font-size:28px;
+    color:#fdfdfd;
+    border-radius: 5px;
+    background-color: rgba(0,0,0,0.2);
+    transition: all .4s ease ;
+}
+.shelf:hover{
+    cursor: pointer;
+    background-color: hsla(200,75%,50%,0.2);
+}
+.shelf-selected{
+    background-color: var(--shelf-selected-color);
+}
+.collections{
+    width:100%;
+    height:80%;
+}
+.collection{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.books{
+    width:100%;
+    height:90%;
+}
+.collection-name{
+    width:auto;
+    height:24px;
+    color:#fdfdfd;
+    font-size:24px;
+}
+.book{
+    width:400px;
+    height:90%;
+    position:relative;  
+}
+.book-cover{
+    position: absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+}
+.book-cover::after{
+    position: absolute;
+    content:'';
+    top:0px;
+    left:0px;
+    width: 100%;
+    height:100%;
+    background-color: rgba(0,0,0,0.5);
+}
+.book-abstract{
+    position: relative;
+    color:#fdfdfd;
+    width:100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

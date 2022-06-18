@@ -1,0 +1,58 @@
+.image-gallery{
+    width:100%;
+}
+.card{
+    width: 100%;
+    min-height: 100px;
+    transition:all .4s ease;
+}
+.card:hover{
+    cursor: pointer;
+    position: relative;
+    transform: scale(1.2);
+    z-index:10;
+}
+.zoom{
+    position: fixed;
+    width:100vw;
+    height:100vh;
+    z-index: 11;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.zoom>div{
+    position: relative;
+    width:100%;
+    height:100%;
+    z-index:2;
+}
+.zoom::after{
+    content:'';
+    position: absolute;
+    left:0px;
+    top:0px;
+    width:100%;
+    height:100%;
+    z-index:1;
+    background-color: black;
+    opacity: 0.5;
+    pointer-events: none;
+}
+.zoom-show{
+    display: flex;
+}
+.zoom-show>div:hover{
+    cursor: pointer;
+}
+.zoom-hide{
+    display: none;
+}
+
+@media screen and (max-width:768px){
+    .card{
+        min-height: 100px;
+    }
+
+}

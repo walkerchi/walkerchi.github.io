@@ -1,0 +1,21 @@
+export const data = {
+    logo:'walkerchi',
+    menu:[
+        {
+            name:'me.name',
+            to:'/me'
+        },
+        {
+            name:'content.name',
+            to:'/content'
+        },
+        {
+            name:'function.name',
+            to:'/function'
+        },
+        {
+            name:'gallery.name',
+            to:'/gallery'
+        }
+    ]
+}

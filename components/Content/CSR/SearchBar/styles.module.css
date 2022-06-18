@@ -1,0 +1,31 @@
+.searchbar{
+    position: relative;
+    width:75%;
+    height:var(--searchbar-height);
+}
+.searchbar>input{
+    padding:0px 15px;
+    letter-spacing: 2px;
+    border:2px solid transparent;
+    color:gray;
+    outline-style: none;
+    height:100%;
+    width:100%;
+    background-color:#fdfdfd;
+    opacity: 0.1;
+    border-radius: 15px;
+    transition:  all .3s ease;
+}
+.searchbar>input:focus{
+    opacity: 0.6;
+    border:2px solid white;
+}
+.searchbar::after{
+    position: absolute;
+    right:10px;
+    height:75%;
+    margin:auto 5px;
+    background-image: url('../../../../public/icons/search.svg');
+    background-size:cover;
+    background-position: center center;
+}

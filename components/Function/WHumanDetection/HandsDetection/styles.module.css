@@ -1,0 +1,33 @@
+.container{
+    position: relative;
+    z-index:1;
+    width:100%;
+    min-height:100vh;
+}
+.input-video{
+    display: none;
+}
+.output-canvas{
+    width:100%;
+    position: relative;
+}
+.control-panel{
+    position: fixed;
+    z-index:10;
+    bottom:0px;
+    left:0px;
+    font-size:32px;
+    color:#fdfdfd;
+}
+.control-panel>div>div:last-child,
+.control-panel>div>div:first-child>canvas,
+.control-panel>div>div:first-child>div:nth-child(3),
+.control-panel>div>div:first-child>div:nth-child(4){
+    display: none;
+}
+.control-panel>div>div:first-child>div:nth-child(2){
+    min-width:100px;
+    text-align: center;
+    border-top-right-radius: 5px;
+    background-color:rgba(0,0,0,0.5)
+}

@@ -1,0 +1,33 @@
+.md-render{
+    --banner-offset:800px;
+    --content-offset:600px;
+    width:100%;
+}
+.banner{
+    width:100%;
+    height:var(--banner-offset);
+    position: fixed;
+    z-index: -10;
+}
+.banner::after{
+    position: absolute;
+    top:0px;
+    left:0px;
+    z-index:-9;
+    width:100%;
+    height:100%;
+    color:rgba(0,0,0,0.5);
+}
+.content{
+    position: relative;
+    top:var(--content-offset);
+    width:100%;
+}
+
+@media screen and (max-width:768px){
+    .md-render{
+        --banner-offset:500px;
+        --content-offset:300px;
+    }
+}
+  

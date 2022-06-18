@@ -1,0 +1,181 @@
+.wpython{
+    width:100%;
+    min-height:100vh;
+}
+.controller{
+    position: fixed;
+    z-index:10;
+    left:0px;
+    top:50%;
+    transform: translateY(-50%);
+    width:64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border:1px #fdfdfd solid;
+    border-left: none;
+    border-top-right-radius: 19px;
+    border-bottom-right-radius: 10px;
+}
+.icon{
+    --size:48px;
+    margin:10px 0px;
+    z-index:10;
+    position: relative;
+    width:var(--size);
+    height:var(--size);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s ease;
+    border-radius: 5px;
+}
+.icon:hover{
+    cursor: pointer;
+    background-color:rgba(0,0,0,0.5);
+}
+.icon::after{
+    --inner-size:calc(var(--size) - 12px);
+    content:'';
+    width:var(--inner-size);
+    height:var(--inner-size);
+    background-size:cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.append-python::after,
+.change-to-python::after{
+    background-image:url('../../../public/icons/python.svg');
+}
+.append-markdown::after,
+.change-to-markdown::after{
+    background-color: gray;
+    mask-image: url('../../../public/icons/markdown.svg');
+    mask-size: contain;
+    mask-repeat: no-repeat;
+}
+.restart::after{
+    background-image: url('../../../public/icons/restart.svg');
+}
+.run-all::after,
+.run-cell::after{
+    background-image: url('../../../public/icons/play.svg');
+}
+.markdown-render::after{
+    background-image:url('../../../public/icons/correct.svg');
+}
+.markdown-edit::after{
+    background-image: url('../../../public/icons/edit.svg');
+}
+.delete::after{
+    background-image:url('../../../public/icons/delete.svg');
+}
+.append-python::before,
+.append-markdown::before{
+    content:'+';
+    position: absolute;
+    left:0px;
+    bottom: 0px;
+    width: 20px;
+    height:20px;
+    color:#fdfdfd;
+    font-size:20px;
+    line-height: 20px;
+    font-weight: 800;
+}
+.change-to-python::before,
+.change-to-markdown::before{
+    --size:16px;
+    content:'';
+    position: absolute;
+    z-index:10;
+    left:0px;
+    bottom: 0px;
+    width:var(--size);
+    height:var(--size);
+    background-size:cover;
+    background-image: url('../../../public/icons/switch.svg');
+}
+.run-cell,
+.change-to-markdown,
+.change-to-python,
+.markdown-edit,
+.markdown-render,
+.delete{
+    --size:30px;
+    position: absolute;
+    margin:0px;
+  
+}
+.run-cell,
+.markdown-edit,
+.markdown-render{
+    left:calc(-1 * var(--size));
+    top:0px;
+}
+
+.change-to-python{
+    left:calc(-1 * var(--size));
+    bottom: 0px;
+}
+.change-to-markdown{
+    left:calc(-1 * var(--size));
+    top:calc(300px - var(--size));
+}
+.delete{
+    right:calc(-1 * var(--size));
+    top:0px;
+}
+.cells{
+    position: relative;
+    z-index:5;
+    top:var(--navbar-height);
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.cell{
+    position:relative;
+    color:#fdfdfd;
+    z-index:5;
+    width:80%;
+    margin:15px 0px;
+}
+.markdown-output{
+    width:100%;
+    min-height:100px;
+}
+.code{
+    position:relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.code::after{
+    position: absolute;
+    font-size:12px;
+    bottom: 5px;
+    right: 0px;
+    padding:3px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.python-code::after{
+    content:'python';
+    background-color:hsla(201,75%,50%,0.5);
+}
+.markdown-code::after{
+    content:'markdown';
+    background-color:rgba(0,0,0,0.5);
+}
+.python-output{
+    margin-top: 5px;
+    padding:10px;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 10px;
+}
+.selected{
+    border: 1px solid hsla(201,80%,50%,0.8);
+}

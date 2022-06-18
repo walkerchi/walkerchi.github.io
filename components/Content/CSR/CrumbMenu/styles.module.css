@@ -1,0 +1,39 @@
+.crumb-menu{
+    position: relative;
+    color:#fdfdfd;
+    width:100%;
+    height:var(--crumbmenu-height);
+    display: flex;
+    flex-direction: column;
+}
+.current-path,
+.next-path{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.current-path-node::before{
+    content:'/'
+}
+.current-path-node,
+.next-path-node{
+    font-size:12px;
+    line-height:40px;
+    padding:0px 5px;
+    background:radial-gradient(rgba(0,0,0,0.5),transparent);
+    border-radius: 5px;
+    transition: all .3s ease;
+}
+.current-path-node:hover,
+.next-path-node:hover{
+    cursor: pointer;
+}
+.current-path-node:hover{
+    background-color: hsla(200,75%,50%,0.8);
+}
+.next-path-node:hover{
+    background-color:hsla(40,75%,50%,0.8);
+}

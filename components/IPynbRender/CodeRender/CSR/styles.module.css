@@ -1,0 +1,60 @@
+.code-render{
+
+    --control-size:16px;
+    --control-thick:1px;
+    --control-color:white;
+    font-family: 'hack';
+    position: relative;
+}
+.code {
+    position: relative;
+    transform-origin: top;
+    transition:  all .4s ease;
+    height:302x;
+    border-radius: 2px;
+    border:2px solid transparent;
+}
+.code:hover{
+    border:2px solid hsl(201,75%,50%);
+}
+.close .code{
+    height:0px;
+    transform: scaleY(0);
+}
+.close .code::after{
+    content:'';
+    position: absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:4px;
+    background-color: #777;
+}
+.control{
+    position: absolute;
+    left:calc(calc(-1 * var(--control-size)) - 4px);
+    top:0px;
+    width:var(--control-size);
+    height:var(--control-size);
+}
+.control:hover{
+    cursor: pointer;
+    --control-color:hsl(201,80%,70%);
+}
+.control::before,
+.control::after{
+    content:'';
+    position: absolute;
+    top:calc(calc(var(--control-size) / 2) - var(--control-thick));
+    left:0px;
+    width:100%;
+    height:0px;
+    border-top:var(--control-thick) solid var(--control-color);
+    border-bottom: var(--control-thick) solid var(--control-color);
+    transform-origin: center center;
+    transition: all .4s
+}
+
+.close .control::after{
+    transform: rotate(90deg);
+}

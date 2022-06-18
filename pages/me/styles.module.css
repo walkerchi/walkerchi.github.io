@@ -1,0 +1,31 @@
+.me{
+    width:100%;
+}
+.banner{
+    height:100vh;
+    width:100%;
+    position: relative;
+}
+.video{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    object-position: center center;
+    position:relative;
+    z-index:1;
+}
+.banner::after{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height:100%;
+    opacity: 0.35;
+    z-index: 10;
+    background-color: #345;
+    transition: all .4s;
+}
+.banner:hover::after{
+    opacity: 0.14;
+}

@@ -1,0 +1,126 @@
+.router{
+    --hue:20;
+    --decro-color:#ddd;
+    --color:#fdfdfd;
+    height:100vh;
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}   
+.item{
+    overflow: hidden;
+    text-decoration: none;
+    cursor: pointer;
+    height:50vh;
+    position: relative;
+}
+.item:active{
+    text-decoration: none;
+}
+.tilt{
+    height:100%;
+    width:100%;
+}
+.tilt::before,
+.tilt::after{
+    position:absolute;
+    content:'';
+    width:40px;
+    height:40px;
+    transition: all .8s ease .2s;
+}
+.tilt::before{
+    top:20px;
+    left:20px;
+    border-left:solid var(--decro-color) 2px;
+    border-top:solid var(--decro-color) 2px;
+}
+.tilt::after{
+    right:20px;
+    bottom:20px;
+    border-right:solid var(--decro-color) 2px;
+    border-bottom:solid var(--decro-color) 2px;
+}
+.tilt:hover::before,
+.tilt:hover::after{
+    width:calc(100% - 40px);
+    height:calc(100% - 40px);
+}
+.item:nth-child(4n),
+.item:nth-child(4n+1){
+    width:53% ;
+}
+.item:nth-child(4n+2),
+.item:nth-child(4n+3){
+    width:47%;
+}
+.item:nth-child(4n){
+    background-color: hsl(var(--hue),75%,40%);
+}
+.item:nth-child(4n+1){
+    background-color: hsl(calc(var(--hue) + 90),75%,40%);
+}
+.item:nth-child(4n+2){
+    background-color: hsl(calc(var(--hue) + 180),75%,40%);
+}
+.item:nth-child(4n+3){
+    background-color: hsl(calc(var(--hue) + 270),75%,40%);
+}
+.image{
+    position: absolute;
+    z-index:1;
+    opacity: 0.8;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    transition: all .6s ease .4s;
+}
+.item:hover .image{
+    opacity: 0.2;
+}
+.content{
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height:100%;
+    color:var(--color);
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+}
+.title{
+    color:var(--color);
+    transition: all .2s ease;
+}
+.item:hover .title{
+    transform: scale(1.15);
+}
+.bar{
+    width:100px;
+    height:2px;
+    border:solid 1px var(--color);
+    border-radius: 1px;
+    transform: scaleX(0);
+    transition: all .4s ease .2s;
+}
+.item:hover .bar{
+    transform: scaleX(1);
+}
+.description{
+    opacity: 0;
+    overflow: hidden;
+    transition: all .4s ease .4s;
+}
+.item:hover .description{
+    opacity: 1;
+}
+
+
+@media screen and (max-width:768px){
+    .item{
+        width:50% !important;
+    }
+}
