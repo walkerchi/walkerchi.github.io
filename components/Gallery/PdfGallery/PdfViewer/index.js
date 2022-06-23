@@ -67,7 +67,7 @@ export default function PdfViewer({url,data}) {
         </div>
         <Swiper 
         className={styles.pages}
-        effect={"fade"}
+        // effect={"fade"}
         keyboard={{
           enabled: true,
         }}
@@ -76,7 +76,9 @@ export default function PdfViewer({url,data}) {
           type: "fraction",
         }}
         onSwiper={setSwiper}
-        modules={[Keyboard,Controller,EffectFade,Mousewheel,Pagination]}
+        modules={[Keyboard,Controller,
+          // EffectFade,
+          Mousewheel,Pagination]}
         >
           {
             numPages
@@ -91,6 +93,10 @@ export default function PdfViewer({url,data}) {
             :<Page pageNumber={1} />
           }
         </Swiper>
+          {/* <ScalePage 
+            pageNumber = {i+1}
+            className  = {styles.page}
+            /> */}
       </Document>
       </>
   )

@@ -54,7 +54,13 @@ export const data = {
             "computer-science":{
                 name:"计算机科学",
                 hust:{
-                    name:"华中科技大学"
+                    name:"华中科技大学",
+                    database:{
+                        name:"数据库"
+                    },
+                    "functional-programming":{
+                        name:"函数式编程"
+                    }
                 },
                 rwth:{
                     name:"亚琛工业大学"

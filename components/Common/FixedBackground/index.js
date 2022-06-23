@@ -27,7 +27,10 @@ export default function MouseMoveBackground({imageProps,scale,anim}){
         <div className={`${styles.container} ${init?'':styles['before-init']}`}>
             <div className={styles.background}
             style={{transform:`scale(${1+Math.abs(scale)*2}) translate(${x}px,${y}px)`}}>
-                <Image {...imageProps} placeholder='blur' layout='fill' objectFit='cover' alt=''/>
+                <Image 
+                src={imageProps.src}
+                blurDataURL={imageProps.blurDataURL}
+                placeholder='blur' layout='fill' objectFit='cover' alt=''/>
             </div>
         </div>
     )

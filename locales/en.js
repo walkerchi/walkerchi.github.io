@@ -53,7 +53,13 @@ export const data = {
             "computer-science":{
                 name:"Computer Science",
                 hust:{
-                    name:"HUST"
+                    name:"HUST",
+                    database:{
+                        name:"Database"
+                    },
+                    "functional-programming":{
+                        name:"FunctionalProgramming"
+                    }
                 },
                 rwth:{
                     name:"RWTH"
