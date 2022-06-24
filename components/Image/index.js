@@ -3,6 +3,7 @@ import React from 'react'
 import Image from 'next/image'
 
 export default function ImageComponent(props){
+    console.log(props)
     return <Image {...props}/>
 }
 

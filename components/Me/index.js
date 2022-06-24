@@ -5,18 +5,19 @@ import styles from './styles.module.css'
 import {data,LIGHT_PALETTE,DARK_PALETTE} from './data'
 import { Parallax } from 'rc-scroll-anim';
 import { useTranslations } from 'next-intl';
-
+// import imageSrc from '/image/first_frame.jpg'
 
 export default function Me({timelineImageProps}) {
     const t=useTranslations('me')
     let [isLoaded,setIsLoaded] = React.useState(false)
+    // console.log(imageSrc)
   return (
     <div className={styles.me}>
         <video className={styles.video} autoPlay loop playsInline muted poster='/image/first_frame.jpg' onLoad={()=>{setIsLoaded(true)}}>
             <source src={require('../../public/video/spaceship.mp4')} type="video/mp4"/>
         </video>
         {
-            isLoaded?null:<Image src={require('../../public/image/first_frame.jpg')} placeholder='blur' objectFit='cover' className={styles.placeholder}/>
+            isLoaded?null:<Image src={'../../public/image/first_frame.jpg'} placeholder='blur' objectFit='cover' className={styles.placeholder} alt=""/>
         }
         <Parallax
         className={styles.title}
