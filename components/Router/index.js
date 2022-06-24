@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from '../image';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import Link from 'next/link'
 import Tilt from 'react-parallax-tilt';
