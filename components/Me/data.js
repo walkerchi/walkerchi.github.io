@@ -61,7 +61,7 @@ export const data = {
             subtitle:'hust.subtitle',
             content:'hust.content',
             startTime:'2018-09',
-            endYear:'2022-06',
+            endTime:'2022-06',
             palette:'light'
         }
     ],

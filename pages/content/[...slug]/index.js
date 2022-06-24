@@ -25,7 +25,7 @@ export default function ContentPage(props) {
 export const getStaticPaths = ({ params }) => {
   return{
     paths:genPathForSlug(),
-    fallback: false,
+    fallback: 'blocking',
   }
 }
 

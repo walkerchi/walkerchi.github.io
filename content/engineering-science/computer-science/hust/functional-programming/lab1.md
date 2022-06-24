@@ -32,7 +32,7 @@ Pairs with both components being non-empty lists
 
 分析下述程序段（左边括号内为标注的行号）
 
-```sml
+```
 val x : int = 3
  		val temp : int = x + 1
  		fun assemble (x : int, y : real) : int =

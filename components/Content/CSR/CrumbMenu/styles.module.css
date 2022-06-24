@@ -8,8 +8,9 @@
 }
 .current-path,
 .next-path{
-    width: 100%;
+    width: 100vw;
     height: 50%;
+    overflow-x: scroll;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -20,6 +21,9 @@
 }
 .current-path-node,
 .next-path-node{
+    height:40px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     font-size:12px;
     line-height:40px;
     padding:0px 5px;

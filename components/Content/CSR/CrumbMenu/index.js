@@ -30,7 +30,7 @@ export default function CrumbMenu({tree,focusID,setFocusID}) {
             onClick={()=>{setFocusID(node.id)}}
             key={i}
           >
-            {node.isLeaf?node.title:t(node.name)}
+            {node.isLeaf?node.title:t(node.localePath)}
           </div>))
         }
       </div>
@@ -43,7 +43,7 @@ export default function CrumbMenu({tree,focusID,setFocusID}) {
               onClick={()=>{setFocusID(node.id)}}
               key={i}
             >
-              {node.isLeaf?node.title:t(node.name)}
+              {node.isLeaf?node.title:t(node.localePath)}
             </div>
           ))
         }

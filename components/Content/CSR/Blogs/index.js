@@ -33,7 +33,11 @@ export default function Blogs({visibleLeaf}) {
             <SwiperSlide className={styles.card} key={i}  onClick={()=>{router.push(node.url)}}>
               <div className={styles['card-container']}>
                 <div className={styles.background}>
-                  <Image {...node.imageProps} placeholder='blur' layout='fill' alt='' objectFit='cover'/>
+                  <Image 
+                  src = {node.imageProps.src}
+                  blurDataURL = {node.imageProps.blurDataURL}
+                  // {...node.imageProps}
+                   placeholder='blur' layout='fill' alt='' objectFit='cover'/>
                 </div>
                 <div className={styles.text}>
                   <div className={styles.title}>
