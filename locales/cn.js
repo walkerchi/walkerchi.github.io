@@ -1,5 +1,6 @@
 export const data = {
     index:{
+        loading:"加载中...",
         me:{
             name:"吾",
             description:"我的人生"

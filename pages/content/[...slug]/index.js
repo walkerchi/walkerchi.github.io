@@ -1,4 +1,7 @@
 import React from 'react'
+import {useTranslations} from 'next-intl'
+import {useRouter} from 'next/router'
+import ReactLoading from "react-loading";
 import IPynbRender from '../../../components/IPynbRender'
 import MarkdownRender from '../../../components/MarkdownRender'
 import MarkdownSSGRender from '../../../components/MarkdownRender/SSG'
@@ -7,17 +10,24 @@ import {data as MdConfig} from '../../../components/MarkdownRender/data'
 import {data as IpyConfig} from '../../../components/IPynbRender/data'
 import genPathForSlug from '../../../components/Content/SSG/genPathForSlug'
 import { SlugToFilepath,getImageProps } from '../../../components/Content/SSG/utils'
-
-// SM_MS_TOKEN = "W1JYfxzHHQoGd08NWGg4eimJQXvyUjHE"
-
+import styles from './styles.module.css'
 
 export default function ContentPage(props) {
+  const router = useRouter()
+  const t = useTranslations('index')
   const {renderType} = props
-  return renderType == 'ipy'?<IPynbRender {...props}/>
-          :renderType == 'md'?<MarkdownRender {...props}/>
-          :(<div>
-            Unsupport renderType:{renderType}
-          </div>)
+  if (router.isFallback) {
+    return <div className={styles.loading}>
+      <ReactLoading type={"balls"} color="#fff" />
+      <div>{t('loading')}</div>
+    </div>
+  }else{
+    return renderType == 'ipy'?<IPynbRender {...props}/>
+    :renderType == 'md'?<MarkdownRender {...props}/>
+    :(<div>
+      Unsupport renderType:{renderType}
+    </div>)
+  }
 }
 
 
@@ -25,7 +35,7 @@ export default function ContentPage(props) {
 export const getStaticPaths = ({ params }) => {
   return{
     paths:genPathForSlug(),
-    fallback: 'blocking',
+    fallback:true,
   }
 }
 

@@ -11,7 +11,7 @@ export default function Me({timelineImageProps}) {
     const t=useTranslations('me')
   return (
     <div className={styles.me}>
-        <video className={styles.video} autoPlay loop playsInline muted>
+        <video className={styles.video} autoPlay loop playsInline muted poster='/image/first_frame.jpg'>
             <source src={require('../../public/video/spaceship.mp4')} type="video/mp4"/>
         </video>
         <Parallax

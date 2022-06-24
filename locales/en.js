@@ -1,5 +1,6 @@
 export const data = {
     index:{
+        loading:"Loading...",
         me:{
             name:"Me",
             description:"about me"
