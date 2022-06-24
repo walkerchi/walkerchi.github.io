@@ -6,7 +6,6 @@ import { useSwipeable } from 'react-swipeable';
 import ProgressCircle from '../../../Common/ProgressCircle';
 import FixedBackground from '../../../Common/FixedBackground'
 import styles from './styles.module.css'
-import next from 'next';
 
 
 
