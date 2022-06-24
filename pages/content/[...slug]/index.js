@@ -32,7 +32,8 @@ export default function ContentPage(props) {
 
 
 
-export const getStaticPaths = ({ params }) => {
+export async function getStaticPaths(){
+  console.log(genPathForSlug())
   return{
     paths:genPathForSlug(),
     fallback:false,
@@ -42,7 +43,7 @@ export const getStaticPaths = ({ params }) => {
 export async function getStaticProps({params:{slug},locale,locales,defaultLocale}) {
   const fs = require('fs')
   const matter = require('gray-matter')
-  
+
 
   let content = fs.readFileSync(SlugToFilepath({slug,locale}),'utf-8')
   let renderType,frontmatter,imageUrl

@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 import { Swiper, SwiperSlide } from "swiper/react"
@@ -30,32 +31,41 @@ export default function Blogs({visibleLeaf}) {
       >
         {
           visibleLeaf.map((node,i)=>(
-            <SwiperSlide className={styles.card} key={i}  onClick={()=>{router.push(node.url)}}>
-              <div className={styles['card-container']}>
-                <div className={styles.background}>
-                  <Image 
-                  src = {node.imageProps.src}
-                  blurDataURL = {node.imageProps.blurDataURL}
-                  // {...node.imageProps}
-                   placeholder='blur' layout='fill' alt='' objectFit='cover'/>
-                </div>
-                <div className={styles.text}>
-                  <div className={styles.title}>
-                    <div
-                    dangerouslySetInnerHTML={{__html:node._highlightResult?.title?.value||node.title}}
-                    />
+            <SwiperSlide className={styles.card} key={i}  
+            // onClick={()=>{router.push(
+            //   '/content/[...slug]',
+            //   node.url
+            //   )}}
+              >
+              <Link href='/content/[...slug]' as={node.url}>
+                <a style={{width:'100%',height:'100%',display:'flex',alignItems:'center',justifyContent:'center'}}>
+                <div className={styles['card-container']}>
+                  <div className={styles.background}>
+                    <Image 
+                    src = {node.imageProps.src}
+                    blurDataURL = {node.imageProps.blurDataURL}
+                    // {...node.imageProps}
+                    placeholder='blur' layout='fill' alt='' objectFit='cover'/>
                   </div>
-                  <div className={styles.description}>
-                    <div
-                     dangerouslySetInnerHTML={{__html:node._highlightResult?.description?.value||node.description}}
-                    />
+                  <div className={styles.text}>
+                    <div className={styles.title}>
+                      <div
+                      dangerouslySetInnerHTML={{__html:node._highlightResult?.title?.value||node.title}}
+                      />
+                    </div>
+                    <div className={styles.description}>
+                      <div
+                      dangerouslySetInnerHTML={{__html:node._highlightResult?.description?.value||node.description}}
+                      />
+                    </div>
+                    
                   </div>
-                  
+                  <div className={styles.date} 
+                  dangerouslySetInnerHTML={{__html:node._highlightResult?.date?.value||node.date}}
+                  />
                 </div>
-                <div className={styles.date} 
-                dangerouslySetInnerHTML={{__html:node._highlightResult?.date?.value||node.date}}
-                />
-              </div>
+              </a>
+              </Link>
             </SwiperSlide>
           ))
         }
