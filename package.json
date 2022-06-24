@@ -9,9 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@codemirror/lang-json": "^6.0.0",
-    "@codemirror/lang-markdown": "^6.0.0",
-    "@codemirror/lang-python": "^0.20.0",
+    "@codemirror/highlight": "^0.19.8",
+    "@codemirror/lang-python": "^6.0.0",
     "@codemirror/language-data": "^6.0.0",
     "@jsdevtools/rehype-toc": "^3.0.2",
     "@mediapipe/control_utils": "^0.6.1629159505",
