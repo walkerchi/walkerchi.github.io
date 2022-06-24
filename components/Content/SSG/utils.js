@@ -221,12 +221,14 @@ export function uploadToAgolia(tree){
 
 export function SlugToFilepath({slug,locale}){
     // console.log('__dirname',__dirname)
+    
     let dirpath    = slug.slice(0,slug.length-1).join(path.sep)
     let namelist   = slug[slug.length-1].split('-')
     let filename   = `${namelist.slice(0,-1).join('-')}.${locale}.${namelist[namelist.length-1]}`
     let defaultName= `${namelist.slice(0,-1).join('-')}.${namelist[namelist.length-1]}`
     let filepath   = path.join(BASE_PATH,dirpath,filename)
     let defaultFilePath=path.join(BASE_PATH,dirpath,defaultName)
+    // console.log('abspath',path.resolve(filepath))
     return fs.existsSync(filepath)?filepath:defaultFilePath
 }
 
