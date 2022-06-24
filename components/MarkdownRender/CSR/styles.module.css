@@ -110,7 +110,7 @@
     border-radius: 0px var(--half-size) var(--half-size) 0px;
     transition: all .4s ease;
 }
-.md .arrow>img{
+.md .arrow>div{
     height: 100%;
     width: 100%;
     object-fit: contain;

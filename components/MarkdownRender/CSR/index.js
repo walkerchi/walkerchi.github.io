@@ -38,9 +38,13 @@ function NextLink({ children, href }) {
 function NextImage(imageProps){
   let {src,height,width,blurdataurl} =  imageProps
     return( 
-    <span>
-      <Image src={src} blurDataURL={blurdataurl} layout='fill' placeholder='blur' alt="" objectFit='cover'/>
-    </span>
+    <span style={{display:"flex",flexDirection:'column',alignItems:"center",justifyContent:"center"}}>
+      <Image src={src} blurDataURL={blurdataurl} 
+      // layout='fill' 
+      width={width}
+      height={height}
+      placeholder='blur' alt="" objectFit='cover'/>
+    </span> 
     )
 }
 function Toc({children}){

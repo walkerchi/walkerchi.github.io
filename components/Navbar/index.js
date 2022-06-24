@@ -26,7 +26,9 @@ export default function Navbar() {
   return (
     <header className={`__navbar ${styles.navbar} ${scrollY>50?styles.affix:''} ${status?styles.background:''}`}>
         <div className={styles.container}>
-            <Link href='/'><a className={styles.logo}>{data.logo}</a></Link>
+            <Link href='/'><a className={styles.logo}>
+                {/* {data.logo} */}
+                </a></Link>
             <div className={`${styles.menu} ${status?styles.show:''}`}>
                 <ul className={styles.links}>
                     {

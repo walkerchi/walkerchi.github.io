@@ -93,7 +93,8 @@ $外码：在R中的属性组，在S中是主码$
 
   $R\div S = \Pi_X(R) - \Pi_X(\Pi_X(R)\times \Pi_Y(S) - R)$
   
-  ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200824204535830.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2pvZXlfcm8=,size_16,color_FFFFFF,t_70#pic_center)
+  <!-- ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200824204535830.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2pvZXlfcm8=,size_16,color_FFFFFF,t_70#pic_center) -->
+  ![](https://s2.loli.net/2022/06/23/zdTcoM4j5Nb89lh.png)
 
 ## SQL
 

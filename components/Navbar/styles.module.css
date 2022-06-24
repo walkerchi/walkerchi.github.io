@@ -30,20 +30,25 @@
 /* logo */
 .navbar a.logo{
     float:left;
-    width:auto;
-    height:auto;
-    padding-left:var(--padding);
+    margin-left: 2rem;
+    width: 250px;
+    height:100%;
+    /* padding-left:var(--padding);
     text-decoration: none;
     color:var(--color);
     font-size:var(--font-size);
     letter-spacing: 2px;
-    text-transform: uppercase;
+    text-transform: uppercase; */
     transition: all .4s;
+    background-image: url('../../public/walkerchi.svg');
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 .navbar a.logo:hover{
     cursor: pointer;
-    letter-spacing: 3px;
-    color:var(--hover-color);
+    /* letter-spacing: 3px;
+    color:var(--hover-color); */
     transform: scale(1.05);
 }
 /* menu */
@@ -61,11 +66,14 @@
 }
 .navbar div.menu ul li{
     list-style-type:none;
-    width:10rem;
+    width:8rem;
     text-align: center;
     overflow: hidden;
     height:var(--height);
     position: relative;
+}
+.navbar div.menu ul li:last-child{
+    width:6rem;
 }
 .navbar div.menu ul li::after{
     content:'';
@@ -104,6 +112,18 @@
         margin:0
     }    
 } */
+
+@media screen and (min-width:768px) and (max-width:1024px) {
+    .navbar a.logo{
+        width:220px;
+    }
+    .navbar div.menu ul li{
+        width:6rem;
+    }
+    .navbar div.menu ul li:last-child{
+        width:4rem;
+    }
+}
 @media screen and (max-width:768px){
     .trigger{
         display: block;
@@ -140,7 +160,7 @@
         background-position: center top;
     }
     .navbar div.menu ul li{
-        width: 100%;
+        width: 100% !important;
         text-align: right;
         position:relative
     }
