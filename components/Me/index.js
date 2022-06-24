@@ -9,11 +9,15 @@ import { useTranslations } from 'next-intl';
 
 export default function Me({timelineImageProps}) {
     const t=useTranslations('me')
+    let [isLoaded,setIsLoaded] = React.useState(false)
   return (
     <div className={styles.me}>
-        <video className={styles.video} autoPlay loop playsInline muted poster='/image/first_frame.jpg'>
+        <video className={styles.video} autoPlay loop playsInline muted poster='/image/first_frame.jpg' onLoad={()=>{setIsLoaded(true)}}>
             <source src={require('../../public/video/spaceship.mp4')} type="video/mp4"/>
         </video>
+        {
+            isLoaded?null:<Image src={require('../../public/image/first_frame.jpg')} placeholder='blur' objectFit='cover' className={styles.placeholder}/>
+        }
         <Parallax
         className={styles.title}
         animation={{ blur: '5px' ,playScale: [0.6,1]}}

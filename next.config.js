@@ -17,14 +17,15 @@ const nextConfig = {
               's1.ax1x.com'],
 
   },
+  // optimizeFileTracing: false,
   reactStrictMode:false,
   i18n: {
     locales: ['en', 'cn'],
     defaultLocale: 'cn',
   },
-  experimental: { 
-    nftTracing: true 
-  },
+  // experimental: { 
+  //   nftTracing: true 
+  // },
   webpack5: true,
   webpack: (config) => {
     config.resolve.fallback = { 
