@@ -1,6 +1,8 @@
 export const data = {
     index:{
         loading:"Loading...",
+        email:"walker.chi.000@gmail.com",
+        "copy-success":"Copy Success",
         me:{
             name:"Me",
             description:"about me"

@@ -10,7 +10,7 @@
     position: relative;
     transform-origin: top;
     transition:  all .4s ease;
-    height:302x;
+    height:300px;
     border-radius: 2px;
     border:2px solid transparent;
 }

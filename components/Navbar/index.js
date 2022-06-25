@@ -33,7 +33,7 @@ export default function Navbar() {
                 <ul className={styles.links}>
                     {
                         data.menu.map((item,i)=>(
-                            <li key={i}>
+                            <li key={i}  onClick={()=>{setStatus(status=>!status)}}>
                                 <Link href={item.to}>
                                     <a>{t(item.name)}</a>
                                 </Link>
@@ -58,7 +58,7 @@ export default function Navbar() {
             </div>
             <span className={`${styles.trigger} ${status?styles.active:''}`}
                 onClick={()=>{
-                    setStatus(!status)
+                    setStatus(status=>!status)
                 }}
                 >
                 <i></i>

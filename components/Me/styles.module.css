@@ -75,6 +75,12 @@
     color:#fdfdfd;
 }
 
+@media screen and (min-width:768px) and (max-width:1024px) {
+    .item-icon{
+        --size:36px !important;
+    }
+}
+
 @media screen and (max-width:768px){
     .title{
         font-size:2rem;

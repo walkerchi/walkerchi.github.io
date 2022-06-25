@@ -85,6 +85,18 @@
     top:0px;
     left:0px;
 }
+.switch-camera{
+    position:absolute;
+    bottom: -64px;
+    left:calc(50% - 32px);
+    width:64px;
+    height:64px;
+    background-image:url('../../../public/icons/switch.svg');
+}
+.switch-camera:hover{
+    background-color:hsla(300,85%,80%,0.95);
+    cursor:pointer;
+}
 @media screen and (max-width:768px){
    .wqrcode{
     position: relative;

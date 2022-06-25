@@ -188,6 +188,7 @@ export default function WQrcode() {
             <div className={styles.qrcode}>
                 <canvas ref={cameraCanvas} style={{display:isUsingCamera?"block":"none"}}/>
                 <canvas ref={qrCanvas} onClick={download} style={{display:isUsingCamera?"none":"block"}}/>
+                <div className={styles['switch-camera']} style={{display:isUsingCamera?"none":"block"}}></div>
             </div>
         </div>
         <div className={styles.json}>

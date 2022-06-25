@@ -78,3 +78,10 @@
     align-items: center;
     justify-content: center;
 }
+
+@media screen and (max-width:768px){
+    .shelf{
+        font-size:16px;
+        padding:5px 10px;
+    }
+}

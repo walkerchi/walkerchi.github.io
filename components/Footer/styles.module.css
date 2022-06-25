@@ -1,0 +1,73 @@
+.footer{
+    width: 100vw;
+    height:50vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.qrcode{
+    position: relative;
+    width:45%;
+    height:90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.qrcode>div{
+    position: relative;
+    width:200px;
+    height:200px;
+}
+.qrcode>div:hover{
+    /* cursor: pointer; */
+}
+.qrcode::after{
+    content:"";
+    position: absolute;
+    height:70%;
+    width:4px;
+    top:15%;
+    right:0px;
+    background-color:#fdfdfd;
+    border-radius: 2px;
+}
+.icons{
+    width:55%;
+    height:90%;
+    padding:40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.icon{
+    margin:10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.icon>div:first-child{
+    width:48px;
+    height:48px;
+    background-color: #fdfdfd;
+    mask-size:contain;
+    transition: all .3s ease;
+}
+.icon>div:first-child:hover{
+    cursor: pointer;
+    background-color: hsla(280, 80%, 80%, 0.9);
+}
+.icon>div:last-child{
+    height:16px;
+    line-height:16px;
+    font-size:12px;
+    color:#fdfdfd;
+    opacity: 0;
+    transition: all .3s ease;
+}
+.icon>div:first-child:hover+div{
+    opacity: 1;
+}

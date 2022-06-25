@@ -72,7 +72,7 @@ export default function PdfGallery({data}) {
                     }}
                     > 
                     <div className={styles['book-cover']}>
-                      <Image src={book.imageProps.src} blurDataURL={book.imageProps.blurDataURL} layout='fill' placeholder='blur' object-fit='cover' alt=""/>
+                      <Image src={book.imageProps.src} blurDataURL={book.imageProps.blurDataURL} layout='fill' placeholder='blur' objectFit='cover' alt=""/>
                     </div>
                     <div className={styles['book-abstract']}>
                       <h1>{book.name}</h1>

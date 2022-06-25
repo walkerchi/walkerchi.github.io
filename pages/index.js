@@ -2,6 +2,7 @@ import React from 'react'
 
 import Banner from '../components/Banner'
 import Router from '../components/Router'
+import Footer from '../components/Footer'
 import styles from './styles.module.css'
 import { getPlaiceholder } from "plaiceholder";
 import { Parallax, ParallaxLayer, IParallax } from '@react-spring/parallax'
@@ -14,7 +15,7 @@ export default function HomePage({imageProps,routerImageProps}) {
   const parallax = React.useRef(null)
   return (
     <div className={styles.home}>
-        <Parallax ref={parallax} pages={2} >
+        <Parallax ref={parallax} pages={2.5} >
           <ParallaxLayer offset={0} speed={-0.5}>
             <Banner imageProps={imageProps}/>
           </ParallaxLayer>
@@ -23,7 +24,12 @@ export default function HomePage({imageProps,routerImageProps}) {
             </div> */}
             <Router routerImageProps={routerImageProps}></Router>
           </ParallaxLayer>
+          <ParallaxLayer offset={2} speed={0}>
+          <Footer/>
+          </ParallaxLayer>
+          
         </Parallax>
+        
     </div>
   )
 }

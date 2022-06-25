@@ -5,13 +5,20 @@
 }
 .container{
     position: relative;
+    width:100%;
     top:var(--navbar-height);
-    display: grid;
+    /* display: grid;
     grid-auto-flow: column;
-    grid-template-columns:1fr 1fr 1fr;
+    grid-template-columns:1fr 1fr 1fr; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 .block{
     place-self: center center;
+    margin:5px;
     width:300px;
     height:300px;
     display: flex;
@@ -64,4 +71,12 @@
 .block:hover .text div::first-letter{
     font-size:24px;
     font-weight: 800;
+}
+
+@media screen and (max-width:768px){
+    .block{
+        margin:40px;
+        width:200px;
+        height:200px;
+    }
 }
