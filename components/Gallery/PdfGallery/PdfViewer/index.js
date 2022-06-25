@@ -39,28 +39,33 @@ export default function PdfViewer({url,data}) {
     useHotkeys('left,top', lastPage)
     useHotkeys('right,down', nextPage)
     const handlers = useSwipeable({
-      onSwipedLeft:lastPage,
-      onSwipedRight:nextPage
+      onSwipedLeft:nextPage,
+      onSwipedRight:lastPage
     })
 
 
     function ScalePage(props){
       // let [width,setWidth] = React.useState(null)
       // let [height,setHeight] = React.useState(null)
-      let width = React.useRef(null)
-      let height =  React.useRef(null)
+      // let width = React.useRef(null)
+      // let height =  React.useRef(null)
+      // const [scale,setScale] = React.useState(1.)
+
       return(<Page
       {...props}
-      width={width}
-      height={height}
-      onLoadSuccess={(e)=>{
-        console.log(e)
-        let w = e.width 
-        let h = e.height 
-        let scale = W/w>H/h?H/h:W/w 
-        // setWidth(scale*w)
-        // setHeight(scale*h)
-      }}
+      height={document.body.offsetHeight-65}
+      // width={width}
+      // height={height}
+      // scale={scale}
+      // onLoadSuccess={(e)=>{
+      //   console.log(e)
+      //   let w = e.width 
+      //   let h = e.height 
+      //   let scale = W/w>H/h?H/h:W/w 
+      //   setScale(scale)
+      //   // setWidth(scale*w)
+      //   // setHeight(scale*h)
+      // }}
       />)
     }
 
@@ -99,10 +104,10 @@ export default function PdfViewer({url,data}) {
         <div className={styles.pages} {...handlers}>
         {/* <SwitchTransition mode="out-in">
             <CSSTransition classNames={styles['page-wrapper']}
-                timeout={500}
+                timeout={10}
                 key={pageInd}>
                 {
-                    <Page 
+                    <ScalePage 
                     pageNumber = {pageInd+1}
                     className  = {styles.page}
                     />
@@ -110,16 +115,17 @@ export default function PdfViewer({url,data}) {
             </CSSTransition>
           </SwitchTransition> */}
            {isLoading && renderedPageInd ? (
-              <Page 
+              <ScalePage 
                 key={renderedPageInd}
                 className={`${styles['prev-page']} ${styles.page}`} 
                 pageNumber={renderedPageInd+1} 
+                style={{opacity:renderedPageInd}}
               />
             ) : null}
-            <Page
+            <ScalePage
               key={pageInd}
               pageNumber={pageInd+1}
-              onRenderSuccess={() => setRenderedPageInd(pageInd)}
+              onRenderSuccess={() => {setRenderedPageInd(pageInd)}}
             />
           <div className={styles.bottom}>
             <div className={styles.prev} onClick={lastPage}></div>
