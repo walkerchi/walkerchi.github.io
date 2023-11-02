@@ -3,7 +3,8 @@ title: Computational Quantum Physics
 index_img: img/pep.png
 banner_img: img/banner-pain.jpg
 date: 2023-8-28 00:33:00
-tags: [ETH Zürich, Physics, Quantum Physics, Quantum Computing, Notes]
+category: "Note"
+tags: [ETH Zürich, Physics, Quantum Physics, Quantum Computing]
 ---
 
 <div align="center"><font color="#732BF5" size=8>CQP</font><font size=6> Computational Quantum Physics</font></div>

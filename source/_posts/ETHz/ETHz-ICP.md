@@ -3,7 +3,8 @@ title: Computational Physics
 index_img: https://s2.loli.net/2023/08/09/QPNmFrwLCi5kTKb.png
 banner_img: img/banner-china.jpg
 date: 2023-8-8 01:43:00
-tags: [ETH Zürich, Mathematic, Physics, Computational Physics, Julia, Distributed Computing, Notes]
+category: "Note"
+tags: [ETH Zürich, Mathematic, Physics, Computational Physics, Julia, Distributed Computing]
 ---
 
 # [ICP]Introduction to Computational Physics

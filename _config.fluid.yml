@@ -224,7 +224,7 @@ color:
 # 主题字体配置
 # Font
 font:
-  font_size: 16px
+  font_size: 18px
   font_family:
   letter_spacing: 0.02em
   code_font_size: 85%
@@ -322,7 +322,7 @@ iconfont: //at.alicdn.com/t/font_1736178_lbnruvf0jn.css
 navbar:
   # 导航栏左侧的标题，为空则按 hexo config 中 `title` 显示
   # The title on the left side of the navigation bar. If empty, it is based on `title` in hexo config
-  blog_title: "WalkerChi"
+  blog_title: "Walker Chi"
 
   # 导航栏毛玻璃特效，实验性功能，可能会造成页面滚动掉帧和抖动，部分浏览器不支持会自动不生效
   # Navigation bar frosted glass special animation. It is an experimental feature
@@ -346,6 +346,7 @@ navbar:
     - { key: "category", link: "/categories/", icon: "iconfont icon-category-fill" }
     - { key: "tag", link: "/tags/", icon: "iconfont icon-tags-fill" }
     - { key: "about", link: "/about/", icon: "iconfont icon-user-fill" }
+    - { key: "Publication", link: "/publication/", icon: "iconfont icon-books"}
     - { key: "tools", icon: "iconfont icon-tools-fill",
       submenu: [
         { key: 'math2pix', link: '/math2pix' },
@@ -423,8 +424,9 @@ footer:
   # 页脚第一行文字的 HTML，建议保留 Fluid 的链接，用于向更多人推广本主题
   # HTML of the first line of the footer, it is recommended to keep the Fluid link to promote this theme to more people
   content: '
-    <a href="https://walkerchi.github.io" class="iconfont icon-github-fill" ></a>
-    <a href="https://www.linkedin.com/in/walkerchi/" class="iconfont linkedin-box-fill"></a>
+    <a href="https://walkerchi.github.io" class="iconfont icon-github-fill" style="font-size:40px;padding:20px;"></a>
+    <a href="https://www.linkedin.com/in/walkerchi/" class="iconfont icon-linkedin-fill" style="font-size:40px;padding:20px;"></a>
+    <a href="walker.chi.000@gmail.com" class="iconfont icon-mail" style="font-size:40px;padding:20px;"></a>
   '
 
   # 展示网站的 PV、UV 统计数
@@ -530,7 +532,7 @@ index:
 # Post Page
 #---------------------------
 post:
-  banner_img: /img/banner-broken.jpg
+  banner_img: /img/banner-broken.png
   banner_img_height: 70
   banner_mask_alpha: 0.3
 
@@ -933,15 +935,15 @@ category:
 #---------------------------
 tag:
   enable: true
-  banner_img: /img/default.png
+  banner_img: /img/banner-broken.png
   banner_img_height: 80
   banner_mask_alpha: 0.3
   tagcloud:
     min_font: 15
     max_font: 30
     unit: px
-    start_color: "#BBBBEE"
-    end_color: "#337ab7"
+    start_color: "#732BF5"
+    end_color: "#68DE56"
 
 
 #---------------------------
@@ -950,7 +952,7 @@ tag:
 #---------------------------
 about:
   enable: true
-  banner_img: /img/default.png
+  banner_img: /img/spaceship.gif
   banner_img_height: 60
   banner_mask_alpha: 0.3
   avatar: /img/avatar.png

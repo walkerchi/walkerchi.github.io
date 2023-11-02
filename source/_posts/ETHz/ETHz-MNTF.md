@@ -3,7 +3,8 @@ title: Mathematics for New Technologies in Finance
 index_img: img/geometric_brownian_motion.png
 banner_img: img/banner-building.jpg
 date: 2023-8-30 00:10:00
-tags: [ETH Zürich, Mathematic, Finance, Deep Learning, Notes]
+category: "Note"
+tags: [ETH Zürich, Mathematic, Finance, Deep Learning]
 ---
 
 <div align="center">   <font size=8 color="#3282F6">MNTF</font>  <font size=6><strong>Mathematics for New Technologies in Finance</strong></font></div>

@@ -3,7 +3,8 @@ title: Quantum Information Processing:Concept
 index_img: img/surface_code.png
 banner_img: img/banner-bone.jpg
 date: 2023-08-25 16:04:00
-tags: [ETH Zürich, Physics, Quantum Physics, Quantum Computing, Notes]
+category: "Note"
+tags: [ETH Zürich, Physics, Quantum Physics, Quantum Computing]
 ---
 <div align="center"><font color="#7E84F7" size=8>QIP1</font><font size=6>Quantum Information Processing:Concept</font></div>
 

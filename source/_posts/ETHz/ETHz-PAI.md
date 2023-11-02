@@ -3,6 +3,7 @@ title: Probabilitisc Artificial Intelligence
 index_img: img/policy.gif
 banner_img: img/banner-whale.jpg
 date: 2023-02-02 23:21:00
+category: "Note"
 tags: [ETH Zürich, Deep Learning, Machine Learning, Reinforcement Learning, Probability]
 ---
 

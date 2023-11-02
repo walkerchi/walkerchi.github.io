@@ -3,7 +3,8 @@ title: "HoloScanner: In-Hand Scanning with HoloLens 2 for Irregular Geometries"
 index_img: img/mr.gif
 banner_img: img/banner-purple.png
 date: 2022-10-22 13:00:00
-tags: [ETH Zürich, Mixed Relatity, Hololens2, 3D Reconstruction, Project]
+category: "Project"
+tags: [ETH Zürich, Mixed Relatity, Hololens2, 3D Reconstruction]
 ---
 
 HoloScanner: In-Hand Scanning with HoloLens 2 for Irregular Geometries

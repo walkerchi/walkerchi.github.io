@@ -3,7 +3,8 @@ title: Numerical Method for Partial Differential Equation
 index_img: img/support.svg
 banner_img: img/banner-think.jpg
 date: 2023-8-10 18:45:00
-tags: [ETH Zürich, Mathematic, Partial Differential Equation, Notes]
+category: "Note"
+tags: [ETH Zürich, Mathematic, Partial Differential Equation]
 ---
 
 <div align="center" style="display:flex;flex-direction:column;line-height:1"><font color="orange" size=20>NumPDE</font><font size=16>Numerical Method for Partial Differential Equation</font></div>

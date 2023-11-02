@@ -4,7 +4,8 @@ title: Infinite Energy is closer than you think
 index_img: img/tokamak.png
 banner_img: img/banner-think.jpg
 date: 2023-04-26 23:21:00
-tags: [ETH Zürich,Physics,Energy, Nucler Fusion, Presentation]
+category: "Presentation"
+tags: [ETH Zürich,Physics,Energy, Nucler Fusion]
 ---
 
 
@@ -94,7 +95,9 @@ $$
 
 > https://www.zhihu.com/question/398163463/answer/2596028611
 
-## Device![img](fusion reactor.png)
+## Device
+
+![img](fusion reactor.png)
 
 ### Tokamak
 

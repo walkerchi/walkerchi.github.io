@@ -18,26 +18,27 @@
   
     <meta name="description" content="Optimizing the Social Force Model: Investigating Memory Layouts and Register Pressure Helbing and Molńar’s Social Force Model provides a quite realistic description of pedestrian dynamics. However, it">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HoloScanner: In-Hand Scanning with HoloLens 2 for Irregular Geometries">
+<meta property="og:title" content="Optimizing the Social Force Model: Investigating Memory Layouts and Register Pressure">
 <meta property="og:url" content="https://walkerchi.github.io/2023/06/23/ETHz/ETHz-ASL/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="Walker Chi&#39;s Home">
 <meta property="og:description" content="Optimizing the Social Force Model: Investigating Memory Layouts and Register Pressure Helbing and Molńar’s Social Force Model provides a quite realistic description of pedestrian dynamics. However, it">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://walkerchi.github.io/img/mr.gif">
+<meta property="og:image" content="https://walkerchi.github.io/img/shuffle.png">
 <meta property="article:published_time" content="2023-06-23T11:00:00.000Z">
-<meta property="article:modified_time" content="2023-11-02T15:34:54.848Z">
+<meta property="article:modified_time" content="2023-11-02T21:13:37.423Z">
 <meta property="article:author" content="walkerchi">
 <meta property="article:tag" content="ETH Zürich">
 <meta property="article:tag" content="Intel">
 <meta property="article:tag" content="Hardware">
 <meta property="article:tag" content="SIMD">
-<meta property="article:tag" content="Cache">
+<meta property="article:tag" content="CPU">
+<meta property="article:tag" content="N-body Problem">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://walkerchi.github.io/img/mr.gif">
+<meta name="twitter:image" content="https://walkerchi.github.io/img/shuffle.png">
   
   
   
-  <title>HoloScanner: In-Hand Scanning with HoloLens 2 for Irregular Geometries - Hexo</title>
+  <title>Optimizing the Social Force Model: Investigating Memory Layouts and Register Pressure - Walker Chi&#39;s Home</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -103,7 +104,7 @@
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>WalkerChi</strong>
+      <strong>Walker Chi</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -180,6 +181,18 @@
           
           
           
+            <li class="nav-item">
+              <a class="nav-link" href="/publication/">
+                <i class="iconfont icon-books"></i>
+                <span>Publication</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -223,13 +236,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/banner-purple.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/banner-bone.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="HoloScanner: In-Hand Scanning with HoloLens 2 for Irregular Geometries"></span>
+            <span id="subtitle" data-typed-text="Optimizing the Social Force Model: Investigating Memory Layouts and Register Pressure"></span>
           
         </div>
 
@@ -252,7 +265,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          8.8k words
+          25k words
         
       </span>
     
@@ -263,7 +276,7 @@
         
         
         
-          74 mins
+          207 mins
         
       </span>
     
@@ -300,7 +313,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">HoloScanner: In-Hand Scanning with HoloLens 2 for Irregular Geometries</h1>
+            <h1 id="seo-header">Optimizing the Social Force Model: Investigating Memory Layouts and Register Pressure</h1>
             
             
               <div class="markdown-body">
@@ -316,8 +329,7 @@
 <p>In this paper, we present a high-performance social force model implementation for Intel’s Skylake microachitecture.<br>
 To that end, we investigate different memory layouts and show that the structure of arrays and the array of structures of arrays layouts achieve better performance than the array of structs layout. We also show that compiler vectorization of these implementations for Intel’s Advanced Vector Extensions (AVX2) does not succeed and that a speedup by about <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3.3</mn><mo>×</mo></mrow><annotation encoding="application/x-tex">3.3\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">3.3</span><span class="mord">×</span></span></span></span> can be achieved by manual vectorization. Because this still leaves a large gap to our performance bound, we derive a tighter estimation of our achievable performance using new techniques. We improve our implementation based on these insights and by replacing our implementation of the exponentiation function, that turns out to consume a large fraction of the runtime, by a faster but less accurate approximation, to achieve a peak performance of 4.81 flops/cycle.</p>
 <h2 id="Related-work">Related work</h2>
-<p>The social force model has gained significant attention in response to population growth, primary aimed to understand pedestrian behavior. PedSim is a  library written in C that provides various functions \cite{Gloor}. Moreover, \cite{Fawwaz} is a C++ simulation that represents an enhanced version of \cite{helbing}'s algorithm where model parameters are derived from real-world experiments. Despite the utilization of Vector data structures, neither implementations have undergone further optimization. There exists an OpenCL (GPU) implementation of PedSim that is capable of simulating 20 thousand pedestrians with 8 model steps per second \cite{lauterbach2017}. Moreover, \cite{payet2016developing} is a Java-based simulation of the social force model that employs parallelization through multi-threading to distribute the quadratic workload across many threads. While these implementation resort to multi-threading and GPU utilization to increase performance, we focus on optimizing the algorithm for a one microarchitecture to better understand<br>
-how the algorithm’s inherit computational and memory requirements impact performance.</p>
+<p>The social force model has gained significant attention in response to population growth, primary aimed to understand pedestrian behavior. <a target="_blank" rel="noopener" href="https://github.com/chgloor/pedsim">PedSim</a> is a library written in C that provides various functions. Moreover, <a target="_blank" rel="noopener" href="https://github.com/fawwazbmn/SocialForceModel">SocialForceModel</a> is a C++ simulation that represents an enhanced version of <a target="_blank" rel="noopener" href="https://link.aps.org/doi/10.1103/PhysRevE.51.4282">Helbing and Molnár’s algorithm</a> where model parameters are derived from real-world experiments. Despite the utilization of Vector data structures, neither implementations have undergone further optimization. There exists an OpenCL (GPU) implementation of PedSim that is capable of simulating 20 thousand pedestrians with 8 model steps per second as noted by <a target="_blank" rel="noopener" href="https://doi.org/10.1007/978-3-642-55753-8_53">Lauterbach (2017)</a>. Moreover, <a target="_blank" rel="noopener" href="https://doi.org/10.1007/978-3-642-55753-8_53">Payet (2016)</a> has developed a Java-based simulation of the social force model that employs parallelization through multi-threading to distribute the quadratic workload across many threads. While these implementation resort to multi-threading and GPU utilization to increase performance, we focus on optimizing the algorithm for a one microarchitecture to better understand how the algorithm’s inherit computational and memory requirements impact performance.</p>
 <h2 id="The-Social-Force-Model">The Social Force Model</h2>
 <p>The social force model by <a target="_blank" rel="noopener" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2413177">Helbing and Molnár</a> considers a number of pedestrians moving on a 2D plane, surrounded by obstacles.</p>
 <p>In a condensed form, it defines three forces that determine a pedestrian $ \alpha $'s movement:</p>
@@ -676,13 +688,109 @@ h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">​</span
 -40.5-119-75.5s-58.3-74.8-73-119.5c-4.7-14-8.3-27.3-11-40-1.3-6.7-3.2-10.8-5.5
 -12.5-2.3-1.7-7.5-2.5-15.5-2.5-14 0-21 3.7-21 11 0 2 2 10.3 6 25 20.7 83.3 67
  151.7 139 205zm0 0v40h399900v-40z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span><span class="mord">.</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:3.0078em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
-
+<h2 id="Investigating-Memory-Layouts">Investigating Memory Layouts</h2>
+<p>The AoS, SoA and AoSoA memory layouts are the three most basic layouts for a set of compound data and represent three different ways of interleaving data fields. Assuming each data element (e.g. each pedestrian) can be represented as a structure composed of primitive types (e.g. <code>double</code>), the AoS layout stores the data as an <strong>Array of Structs</strong>, i.e. it stores a complete data record contiguously in the memory preceding the next data record. The SoA layout inverts this interleaving pattern, storing a <strong>Structure of Arrays</strong> instead: It stores contiguous arrays for each field of the data record. The benefit of the latter approach is that it allows contiguous memory loads of data with identical semantic meaning, allowing for easier application of SIMD operations: Whereas an aligned load of four doubles in the AoS layout would have yielded a mix of structure fields, an aligned load of four doubles in the SoA layout yields a vector of four values of the same field, but of different pedestrians.</p>
+<p>The AoSoA (Array of Structures of Arrays, or “tiled SoA”) layout combines and generalizes the AoS and SoA approaches: It combines a typically fixed number (the block size, $ K $) of data records into blocks stored in an SoA fashion and then stores the blocks themselves in a simple array (in an AoS fashion). This has two main advantages:</p>
+<ol>
+<li>it reduces to the AoS layout when $ K = 1 $ and to the SoA implementation when $ K = N $, where $ N $ is the number of data records. This allows for a generalized implementation, enabling the developer to choose the final layout based on performance benchmarks for varying $ K $; and</li>
+<li>for $ K $ being a multiple of the SIMD vector size, it allows for the same aligned, equal-meaning vector reads as the SoA layout while maintaining some degree of locality of data belonging to the same pedestrian (or group of pedestrians), which may yield better cache locality and better performance depending on the dataset.</li>
+</ol>
+<p>We considered the AoS layout as the straightforward way of implementing the simulation loop of section <a href="#background">Background</a> and we will thus refer to this implementation as our baseline. Performance measurements showed that we achieve about 0.3 flops/cycle with this approach, which leaves some gap to the $ \approx 1.65 $ flops/cycle from our performance bound of section <a href="#background">Background</a>. Implementing the SoA and AoSoA layouts together with the precomputations mentioned in section <a href="#background">Background</a> allowed us to push the performance to around 0.9 flop/cycle, and thus achieve about 54% of our derived maximum performance. We will further discuss these results in section <a href="#results">Results</a>.</p>
+<h2 id="Manual-Vectorization">Manual Vectorization</h2>
+<p>Next, we considered the question of how our implementation could be vectorized to further push its performance. Because the simulation loop involves computing the same function for every pedestrian, it should be completely vectorizable. However, since compiler vectorization did not provide a lot of improvement, as we will discuss in more detail in section <a href="#results">Results</a>, we need to vectorize it ourselves.<br>
+To that end, we implemented a hand-vectorized version of the AoSoA implementation using Intel Intrinsics, specifically AVX2. While this implementation is straightforward for most parts of the social force algorithm, some implementation details are nontrivial and highlighted in the following sections.</p>
+<h3 id="AoSoA-base-unit-and-Alignment">AoSoA base unit and Alignment</h3>
+<p>To simplify the intrinsics-based implementation, <code>__m256d</code> was chosen as the base unit of the AoSoA fields, instead of <code>double</code>, and all structs as well as memory allocations were aligned to 32-byte boundaries to ensure that all struct fields could always be loaded into registers using aligned loads.</p>
+<h3 id="Minimizing-Shuffles">Minimizing Shuffles</h3>
+<p>To determine the pedestrian repulsion for each pedestrian $ \alpha $, we have to perform some computation with every other pedestrian $ \beta $ in the simulation. As visualized in figure shuffle, this means that vector elements need to interact with elements at all positions and we need to shuffle either vector $ \overrightarrow a $ or $ \overrightarrow b $ to achieve this.<br>
+Because lane-crossing shuffles are expensive, we try to minimize them as shown in figure shuffle, where it is shown how we can produce four permuted vectors, using only one lane crossing, that enable all interactions we need.</p>
+<p>To minimize the number of shuffles in the nested pedestrian repulsion loop, we apply these permutations to the pedestrian vectors we iterate over in the outer loop and perform four pedestrian repulsions in the inner loop, one with each shuffled version of the outer loop vectors, using the same inner loop pedestrian vectors in all four computations. Lastly, we accumulate the computed forces in four permuted vectors that are shuffled back and summed up once the inner loop has finished.</p>
+<p><img src="shuffle.png" srcset="/img/loading.gif" lazyload alt="shuffle"></p>
+<h3 id="SIMD-Exponential-Implementation">SIMD Exponential Implementation</h3>
+<p>A major obstacle during vectorization is the exponential function.<br>
+AVX2 does not directly support computing a SIMD exponential operation, thus requiring the use of either an implementation written by us or the use of a library. Intel’s Short Vector Math Library (SVML) provides an exponential implementation, however, SVML is only available when using the Intel C++ Compiler or MSVC. To ensure portability of our implementation we opted to use the <a target="_blank" rel="noopener" href="https://sleef.org/">Sleef</a> vector math library, which performs identically to the SVML exponential implementation for 256-bit packed double vectors, according to Sleef’s published benchmarks <a target="_blank" rel="noopener" href="https://sleef.org/benchmark.xhtml">Sleef Benchmark Results</a>.</p>
+<p>We can now adapt our instruction mix bound from section <a href="#background">Background</a> to the vectorized setting by replacing the GNU exponential function we considered before with the Sleef one, which is much easier to analyze as it does not contain branches. Comparing the performance of our hand-vectorized implementation with that of the compiler vectorized one, we managed to achieve a speedup by a factor of about 3.3. However, we are still very far from our performance bound, achieving about 2.65 flops/cycle, with the vectorized performance bound being at around 6 flops/cycle (see section <a href="#results">Results</a> for more details).</p>
+<h2 id="Improved-Performance-Estimation">Improved Performance Estimation</h2>
+<p>\label{sec:improvement}</p>
+<p>For the rest of this paper, we address the question of where the discrepancy between our achieved performance and the maximum performance bound of section <a href="#sec:vectorization">Vectorization</a> comes from and how we might be able to close this gap.<br>
+For this section, let us first consider the performance bound.</p>
+<p>As described in section <a href="#sec:background">Background</a>, our performance bound is solely based on the instruction mix. The reason for that are the following two assumptions:</p>
+<ol>
+<li>We are compute-bound, since we have Θ(n^2+nm) operations to be performed on Θ(n+m) data, n being the number of pedestrians, m the number of obstacles.</li>
+<li>For our bottleneck, pedestrian repulsion, we have n independent loops whose iterations are commutative and associative, because they just accumulate (i.e. sum up) the repulsion from every other pedestrian. Thus, there should be always enough instructions ready to be executed to fill the pipeline.</li>
+</ol>
+<p>However, because of the shuffling, the variables that remain constant in the inner loop consist of (24 + constants) vectors, so there is no way we can keep all of them in registers. Indeed, an inspection of the generated assembly shows that about 40% of the instructions for pedestrian repulsion have a memory operand, a majority of these being part of the values that don’t change in the inner loop and thus, in principle, wouldn’t need to be loaded in every inner loop iteration. Therefore, to improve our performance bound, the first question becomes: Which values need to be loaded in each inner loop iteration to minimize loads into registers?</p>
+<p>To that end, we can take a look at the pedestrian repulsion dependency graph (see figure <a href="#fig:pedrepgraph">Pedestrian Repulsion Graph</a> in appendix <a href="#sec:interleaving">Interleaving</a>). Recall that we actually compute four pedestrian repulsions per inner loop iteration because of the shuffling.</p>
+<p>One pedestrian repulsion requires at least 11 registers. This leaves us with 5 registers in which we can keep 5 constants that we need in every inner loop iteration, to minimize loads. In return, we must consider all other vectors of the working set to be loaded for each pedestrian repulsion computation (meaning four times in the innermost loop).</p>
+<h3 id="Scheduling-μops">Scheduling μops</h3>
+<p>Now that we have decided which values need to be loaded, let’s take a closer look at the second assumption, namely that the n independent inner loops will always give us enough instructions that are ready to be executed to fully occupy ports 0 and 1.</p>
+<p>First of all, it is not correct to assume that the processor can only execute one pedestrian repulsion at a time only because they, as we just concluded, do not interleave and use the same registers. Skylake CPUs are capable of performing out-of-order execution and register renaming. Therefore, even if two instructions write to the same architectural register, they can be executed in any order, the results being temporarily stored in some of the 168 physical registers <a target="_blank" rel="noopener" href="https://en.wikichip.org/wiki/intel/microarchitectures/skylake_(server)">Skylake Insights</a> before the most recent of them is (or both are) written back to the architectural register.</p>
+<p>However, the amount of instruction reordering a Skylake processor is capable of is limited by size of the Reorder Buffer (ROB), which has a capacity of 224 μops <a target="_blank" rel="noopener" href="https://en.wikichip.org/wiki/intel/microarchitectures/skylake_(server)">Skylake Insights</a>. The ROB is a FIFO (first in, first out) queue that contains the sequence of instructions the processor is currently executing. Once the first μop in the FIFO (the head) has finished, it is removed and the next μop in program memory is attached to the end of the queue. Any μop in the ROB can be executed once all of its operands have been computed (i.e. have been written to the physical register file).</p>
+<p>On the other hand, this means that if the distance between two instructions in program memory is more than 224 μops, they cannot be reordered. Hence, because we assume the pedestrian repulsion computations not to interleave (in program memory) and each pedestrian repulsion contains 108 μops, it follows that no more than 4 pedestrian repulsions can be executed at the same time.</p>
+<p>To learn how this observation influences the achievable performance of our program, we tried to derive an optimal schedule for the inner pedestrian repulsion loop that includes the loads we have determined before and respects the ROB size. However, deriving this schedule by hand turned out to be somewhat infeasible and error prone.</p>
+<p>Therefore, we created an automatic scheduler that follows a few simple, reasonable rules when deciding on which μop to schedule next (described in more detail in appendix <a href="#sec:scheduler">Scheduler</a>). Instead of letting the automatic scheduler derive the complete schedule for all n-1 pedestrian repulsions of the inner loop, we used the observation that, because the scheduler is deterministic and stateless, the generated schedule will repeat, once enough pedestrian repulsions are scheduled. Thus, we equipped the scheduler with a mechanism to detect this repetition. From this periodic schedule we were then able to calculate in which cycle the number of finished μops is equal to the number of μops of the complete inner loop. We used this number as a runtime estimate to replace the pedestrian repulsion part in our previous instruction mix bound, yielding a performance estimate of</p>
+<p class="katex-block "><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>P</mi><mrow><mi>n</mi><mo separator="true">,</mo><mi>m</mi></mrow></msub><mo>≤</mo><mn>4.95</mn><mo separator="true">,</mo><mtext> flops/cycle for </mtext><mi>n</mi><mo>≥</mo><mn>150</mn><mo separator="true">,</mo><mi>m</mi><mo>=</mo><mn>4</mn><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">P_{n,m}\leq 4.95,\text{ flops/cycle for } n \geq 150, m = 4,
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight">m</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">4.95</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord text"><span class="mord"> flops/cycle for </span></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">150</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">m</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">4</span><span class="mpunct">,</span></span></span></span></span></p>
+<p>which is a reduction by ca. 1 flop/cycle compared to our previous performance bound.</p>
+<p>Note that we need to give the scheduler a topological sorting of the pedestrian repulsion dependency tree (for simplicity, we assume every pedestrian repulsion has the same topological sorting in the generated assembly) to know when the ROB contains which μops. Our implementation of the scheduler works with any topological sorting, thus we could in principle run it on every sorting and use the shortest runtime as our estimation, which would even give us a performance bound under the assumption that our scheduler is not worse than that of an Intel Skylake CPU. However, because the dependency graph contains 34 loads that can have any order in the topological sorting, there exist more than <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>34</mn><mo stretchy="false">!</mo><mo>&gt;</mo><msup><mn>2</mn><mn>127</mn></msup></mrow><annotation encoding="application/x-tex">34! &gt; 2^{127}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7335em;vertical-align:-0.0391em;"></span><span class="mord">34</span><span class="mclose">!</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">127</span></span></span></span></span></span></span></span></span></span></span></span> topological sortings of that graph. Because it is currently (2023) computationally infeasible to try them all, we restricted ourselves to trying out a few reasonable sortings to obtain the above performance estimate.</p>
+<h2 id="Register-and-Exponential-Optimization">Register and Exponential Optimization</h2>
+<p>As mentioned in the previous section, the compiler on its own does not succeed in minimizing the loads and stores we know are required, which might add significant latency to our implementation, compared to our new performance estimate. To address this problem, we renamed our variables to match the 16 architectural floating point registers YMM0 to YMM15 of our processor and tried to make loads and stores explicit by assigning the values we keep in other variables (i.e. those that might need to be loaded from memory) to and from these register variables.</p>
+<p>Even though the compiler does not translate this approach in an entirely correct manner, it helped to significantly reduce the number of instructions with implicit loads and stores.</p>
+<h3 id="Fast-Exponential-Computation">Fast Exponential Computation</h3>
+<p>As a final optimization effort, we identified the exponential computation as a potential bottleneck, as microbenchmarking showed that our implementation spends about 30% of its runtime within that function. Therefore, we replaced the Sleef exponential implementation with an approximation based on IEEE-754 floating point bit manipulation as described in <a target="_blank" rel="noopener" href="https://www.google.com/search?q=fast+exponential+computation+theory">fastexp_theory</a> and implemented in <a target="_blank" rel="noopener" href="https://www.google.com/search?q=fast+exponential+computation+implementation">fastexp_impl</a>. This approximation requires fewer flops than the Sleef implementation and significantly reduces the number of constants used in the calculation. The effects of these improvements we will now discuss in the following section, together with the results from the previous sections.</p>
+<h2 id="Results">Results</h2>
+<p>\label{sec:results}</p>
+<p><img src="compiler_vectorization.jpg" srcset="/img/loading.gif" lazyload alt="Compiler Vectorization"><br>
+<em>Figure 1: AoS, SoA, and AoSoA (with block sizes K = 4 and K = 16) implementations, compiled with GCC and Clang, FMAs enabled and disabled, with automatic vectorization enabled and disabled. All implementations use an inlined GNU libc <code>exp()</code>. With FMAs disabled, automatic vectorization provides a 2-4× speedup, however this speedup vanishes when FMAs are enabled. Enabling FMAs produces a similar speedup to enabling vectorization.</em></p>
+<p><img src="manual_vectorization.jpg" srcset="/img/loading.gif" lazyload alt="Manual Vectorization"><br>
+<em>Figure 2: Performance of the automatically and manually vectorized AoSoA implementation, with K = 16, fully automatic register assignment and semi-manual register assignment. Performance decreases for datasets exceeding the L1 cache size on Clang with automatic register assignment, indicating that Clang fails to perform loads and stores optimally, causing increased latencies.</em></p>
+<h3 id="Experimental-Setup">Experimental Setup</h3>
+<p>All benchmarks were performed on an Intel Core i7-7500U (Kaby Lake), clocked at 2.7 GHz (no Turbo Boost), using a single core. Kaby Lake is microarchitecturally almost identical to Skylake.<br>
+Our implementations were compiled using GCC 11.3.0 and Clang 14. The <code>-O3</code> flag was always passed to the compiler, FMAs (<code>-ffast-math</code>) are enabled where noted, automatic compiler vectorization was disabled (via <code>-fno-tree-vectorize</code> on GCC and <code>-fno-slp-vectorize</code> on Clang), where noted.</p>
+<h3 id="Compiler-Vectorization-and-FMAs">Compiler Vectorization and FMAs</h3>
+<p>To investigate the capabilities of automatic compiler vectorization and the effects of enabling FMAs, we implemented the social force model with the AoS, SoA and AoSoA memory layouts and compared the performance when compiler vectorization and FMAs are turned on and off. Fig. 1 shows that automatic vectorization slightly improves performance. However it does not yield a performance close to the expected performance bound for vectorized code based on the instruction mix: ≤6.05 flops/cycle for $</p>
+<p><img src="memory_layouts.jpg" srcset="/img/loading.gif" lazyload alt="memory_layout"><br>
+<img src="roofline.jpg" srcset="/img/loading.gif" lazyload alt="roofline"></p>
+<h3 id="Accuracy-Evolution">Accuracy Evolution</h3>
+<p>In the process of simulating a complex system with many variables and interactions, slight differences in input values can lead to significantly different outputs over time. This is particularly true in our case, where the force calculation of pedestrian repulsion is not contiguous and can deviate by a factor of 0.5 depending on whether a pedestrian is outside or inside another pedestrian’s angle of sight<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="For instance, the force calculation of pedestrian repulsion is not contiguous, as it deviates by a factor of 0.5 depending on whether a pedestrian is outside or inside another pedestrian's angle of sight.">[1]</span></a></sup>.</p>
+<p>To evaluate the impact of our optimizations on the accuracy of our simulation, we devised a validation system using Python. This system enables us to compare the differences in pedestrians’ positions and velocities between the C implementation and a straightforward Python implementation, both within a single simulation step and over the entire simulation span.</p>
+<p>The detailed analysis of this error evolution is further discussed in appendix . However, a notable observation is that the shift from the Sleef implementation to the fast exponentiation function, led to a four orders of magnitude increase in the absolute error incurred by a single simulation step, as illustrated in Figures AoSoA SIMD Sleef single step error and AoSoA SIMD fast exp single step error. Despite this increase, the error magnitude of <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>7</mn></mrow></msup></mrow><annotation encoding="application/x-tex">10^{-7}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">7</span></span></span></span></span></span></span></span></span></span></span></span> might still be deemed acceptable in some scenarios. Yet, as FiguresAoSoA SIMD Sleef accumlated error and AoSoA SIMD fast exp accumlated error demonstrate, the timeframe during which the accumulated error remains minimal shrinks from about 40 seconds to approximately 23 seconds. This implies that in certain applications, the trade-off between enhanced performance and the duration after which our simulation may diverge significantly from reality, may render the simulation less useful.</p>
+<p><img src="AoSoASIMDCompilerReg_Py1.png" srcset="/img/loading.gif" lazyload alt="AoSoA SIMD Sleef single step error"><br>
+<img src="AoSoASIMD_Py1.png" srcset="/img/loading.gif" lazyload alt="AoSoA SIMD fast exp single step error"><br>
+<img src="AoSoASIMDCompilerReg_Py2.png" srcset="/img/loading.gif" lazyload alt="AoSoA SIMD Sleef accumlated error"><br>
+<img src="AoSoASIMD_Py2.png" srcset="/img/loading.gif" lazyload alt="AoSoA SIMD fast exp accumlated error"></p>
+<h1>Conclusions</h1>
+<p>Our innovative implementation utilizing AoSoA and SoA memory layouts coupled with fast exponentiation and register-like variable renaming has significantly bolstered performance, achieving an 18.5x speed-up compared to the AoS baseline implementation. The meticulous manual vectorization and strategic restriction of variable usage within the pedestrian repulsion loop emerged as the chief contributors to this substantial performance elevation. Moreover, our refined performance estimation approach has markedly narrowed the performance gap.</p>
+<p>Looking ahead, exploring optimization avenues for multi-core and multi-threaded environments could yield further performance enhancements. Moreover, gaining deeper insights into the workings of the CPU internal scheduler, possibly through precise measurements, alongside devising strategies to minimize the number of topological sortings required for examination, could pave the way towards establishing our performance estimation delineated in section Improvement as a robust performance <em>bound</em>. Such a bound could potentially be extended to a broad spectrum of algorithms, opening new horizons for optimized computational performance.</p>
+<section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>For instance, the force calculation of pedestrian repulsion is not contiguous, as it deviates by a factor of 0.5 depending on whether a pedestrian is outside or inside another pedestrian’s angle of sight.
+<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
                 
               </div>
             
             <hr/>
             <div>
               <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Project/" class="category-chain-item">Project</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
   
   
     <div class="post-meta">
@@ -696,7 +804,9 @@ h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">​</span
       
         <a href="/tags/SIMD/" class="print-no-link">#SIMD</a>
       
-        <a href="/tags/Cache/" class="print-no-link">#Cache</a>
+        <a href="/tags/CPU/" class="print-no-link">#CPU</a>
+      
+        <a href="/tags/N-body-Problem/" class="print-no-link">#N-body Problem</a>
       
     </div>
   
@@ -708,7 +818,7 @@ h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">​</span
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>HoloScanner: In-Hand Scanning with HoloLens 2 for Irregular Geometries</div>
+      <div>Optimizing the Social Force Model: Investigating Memory Layouts and Register Pressure</div>
       <div>https://walkerchi.github.io/2023/06/23/ETHz/ETHz-ASL/</div>
     </div>
     <div class="license-meta">
@@ -753,9 +863,9 @@ h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">​</span
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/08/08/ETHz/ETHz-ICP/" title="Computational Physics">
+                      <a href="/2023/07/14/ETHz/ETHz-DLSC/" title="Neural Operators and Operator Networks vs Parametric Approach: A General Comparison">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Computational Physics</span>
+                        <span class="hidden-mobile">Neural Operators and Operator Networks vs Parametric Approach: A General Comparison</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -763,8 +873,8 @@ h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">​</span
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/04/26/ETHz/ETHz-CS-2023/" title="Infinite Energy is closer than you think">
-                        <span class="hidden-mobile">Infinite Energy is closer than you think</span>
+                      <a href="/2023/05/23/ETHz/ETHz-DL/" title="Model Cascades for Efficient Image Search">
+                        <span class="hidden-mobile">Model Cascades for Efficient Image Search</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -887,7 +997,7 @@ h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">​</span
     <div class="footer-inner">
   
     <div class="footer-content">
-       <a href="https://walkerchi.github.io" class="iconfont icon-github-fill" ></a> <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/walkerchi/" class="iconfont linkedin-box-fill"></a> 
+       <a href="https://walkerchi.github.io" class="iconfont icon-github-fill" style="font-size:40px;padding:20px;"></a> <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/walkerchi/" class="iconfont icon-linkedin-fill" style="font-size:40px;padding:20px;"></a> <a href="walker.chi.000@gmail.com" class="iconfont icon-mail" style="font-size:40px;padding:20px;"></a> 
     </div>
   
   

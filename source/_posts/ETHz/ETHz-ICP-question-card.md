@@ -3,7 +3,8 @@ title: Computational Physics Question Card
 index_img: https://s2.loli.net/2023/08/09/xgstqz1vNTyHwLF.gif
 banner_img: img/banner-china.jpg
 date: 2023-8-9 19:13:00
-tags: [ETH Zürich, Mathematic, Physics, Computational Physics, Julia, Distributed Computing, Question Card]
+category: "Question Card"
+tags: [ETH Zürich, Mathematic, Physics, Computational Physics, Julia, Distributed Computing]
 ---
 
 ## 1. RNG
