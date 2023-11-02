@@ -1,0 +1,855 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/web.png">
+  <link rel="icon" href="/img/idea.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="walkerchi">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="HoloScanner: In-Hand Scanning with HoloLens 2 for Irregular Geometries An end-to-end system for in-hand scanning and near-real-time reconstruction of irregular geometries based on Microsoft HoloLens 2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HoloScanner: In-Hand Scanning with HoloLens 2 for Irregular Geometries">
+<meta property="og:url" content="https://walkerchi.github.io/2022/10/22/ETHz/ETHz-MR/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="HoloScanner: In-Hand Scanning with HoloLens 2 for Irregular Geometries An end-to-end system for in-hand scanning and near-real-time reconstruction of irregular geometries based on Microsoft HoloLens 2">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://walkerchi.github.io/img/mr.gif">
+<meta property="article:published_time" content="2022-10-22T11:00:00.000Z">
+<meta property="article:modified_time" content="2023-11-02T15:12:30.609Z">
+<meta property="article:author" content="walkerchi">
+<meta property="article:tag" content="ETH Zürich">
+<meta property="article:tag" content="Mixed Relatity">
+<meta property="article:tag" content="Hololens2">
+<meta property="article:tag" content="3D Reconstruction">
+<meta property="article:tag" content="Project">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://walkerchi.github.io/img/mr.gif">
+  
+  
+  
+  <title>HoloScanner: In-Hand Scanning with HoloLens 2 for Irregular Geometries - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/KaTeX/0.16.2/katex.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"walkerchi.github.io","root":"/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>WalkerChi</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-tools-fill"></i>
+                <span>tools</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/math2pix">
+                    
+                    <span>math2pix</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/banner-purple.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="HoloScanner: In-Hand Scanning with HoloLens 2 for Irregular Geometries"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-10-22 13:00" pubdate>
+          October 22, 2022 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          7.9k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          66 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">HoloScanner: In-Hand Scanning with HoloLens 2 for Irregular Geometries</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1>HoloScanner: In-Hand Scanning with HoloLens 2 for Irregular Geometries</h1>
+<p>An end-to-end system for in-hand scanning and near-real-time reconstruction of irregular geometries based on Microsoft<br>
+HoloLens 2. Group project of ETHZ Mixed Reality HS2022 by:</p>
+<ul>
+<li>Zikai Liu (<a href="mailto:liuzik@student.ethz.ch">liuzik@student.ethz.ch</a>)</li>
+<li>Dumeni Manatschal (<a href="mailto:dumenim@student.ethz.ch">dumenim@student.ethz.ch</a>)</li>
+<li>Noureddine Gueddach (<a href="mailto:ngueddach@student.ethz.ch">ngueddach@student.ethz.ch</a>)</li>
+<li>Mingyuan Chi (<a href="mailto:minchi@student.ethz.ch">minchi@student.ethz.ch</a>)</li>
+</ul>
+<p>Supervised by Andrea Settimi (<a href="mailto:andrea.settimi@epfl.ch">andrea.settimi@epfl.ch</a>).</p>
+<p>This repo contains the Unity app running on HoloLens 2 and the server app running on PC. The Unity app and the HoloLens<br>
+Research Mode plugin is based<br>
+on <a target="_blank" rel="noopener" href="https://github.com/petergu684/HoloLens2-ResearchMode-Unity">HoloLens2-ResearchMode-Unity</a>.</p>
+<p><img src="Scanning.jpg" srcset="/img/loading.gif" lazyload alt="The scanning process"></p>
+<p>The post-processing program is a standalone program in another<br>
+repo: <a target="_blank" rel="noopener" href="https://github.com/Vellyxenya/mr_postprocess">mr_postprocess</a>.</p>
+<p><img src="Output.gif" srcset="/img/loading.gif" lazyload alt="Output of the egg box"></p>
+<p>The following prototyping repos can also be used as reference:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/walkerchi/ethz-mixed-reality-project">walkerchi/ethz-mixed-reality-project</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/Vellyxenya/mixed_reality_dev_cpp">Vellyxenya/mixed_reality_dev_cpp</a></li>
+</ul>
+<h2 id="System-Architecture">System Architecture</h2>
+<p><img src="System-Architecture.png" srcset="/img/loading.gif" lazyload alt="System architecture"></p>
+<h2 id="The-Unity-App-Running-on-HoloLens">The Unity App Running on HoloLens</h2>
+<p>Requirements:</p>
+<ul>
+<li>Unity 2019.4.22f1 on <strong>Windows</strong>.
+<ul>
+<li>Unity up to 2021.1 may also work, but 2021.2 or later does not due to the reason explained<br>
+in <a href="UnitySample/README.md">UnitySample/README.md</a>.</li>
+<li>UWP application is not available for Unity on macOS or Linux.</li>
+</ul>
+</li>
+<li>Visual Studio <strong>2019</strong> and required components based<br>
+on <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/windows/mixed-reality/develop/install-the-tools?tabs=unity">the HoloLens tutorial</a>.
+<ul>
+<li>Up to 2022.10.17, VS 2022 did not work (on Win 11 ARM), showing “missing C++ workload component” error.<br>
+This <a target="_blank" rel="noopener" href="https://github.com/microsoft/MixedRealityToolkit-Unity/issues/10647">issue</a> might be related.</li>
+</ul>
+</li>
+<li>HoloLens 2 with firmware <strong>21H2 - March 2022 (Build 20348.1450)</strong>.
+<ul>
+<li>Up to 2022.10.25, the latest firmware of HoloLens 2 had broken Research Mode API, causing the app to crash on<br>
+start. This <a target="_blank" rel="noopener" href="https://github.com/microsoft/HoloLens2ForCV/issues/133">issue</a> might be related. To downgrade the<br>
+firmware, follow<br>
+<a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/hololens/hololens-recovery#normal-flashing-procedure">this tutorial</a>,<br>
+using<br>
+the <a target="_blank" rel="noopener" href="https://apps.microsoft.com/store/detail/advanced-recovery-companion/9P74Z35SFRS8?hl=en-us&amp;gl=us">Advanced Recovery Companion</a>.<br>
+Remember to disable auto update in Settings after downgrading (you can disable update for up to 30 days, so<br>
+remember to do<br>
+this regularly).</li>
+</ul>
+</li>
+</ul>
+<p>Open the Unity project <a href="UnitySample">UnitySample</a> in the Unity editor. Follow the instruction<br>
+in <a href="UnitySample/README.md">UnitySample/README.md</a>.</p>
+<p>Based on the original project, we extend the app with the ability to stream data to the server and to visualize point<br>
+cloud streamed back. We also update the UI (eye tracking button to start/stop scanning, hand mesh, etc.)</p>
+<p>Note:</p>
+<ul>
+<li>Compiling and deploying the Unity project takes a while (5-10 min). Machines with better performance are desirable.<br>
+Code wrapped in <code>#if WINDOWS_UWP</code> and <code>#if ENABLE_WINMD_SUPPORT</code> does not compile when the editor loads the scripts (<br>
+necessary, or it does not compile in the editor). But when actually building the app, those code compiles, so only<br>
+until then you may get more errors. To save time, double-check the code (like missing semicolons) before compiling.</li>
+<li>Build + deploy with the device portal in Unity Build Settings is typically the fastest way. In Unity 2019.4.22f1, the<br>
+textbox of the device portal password behaves weirdly, especially after refreshing the scripts. If it shows the<br>
+error message of “not able to connect to the device”, try to re-type the password. The generated VS project can<br>
+also be opened and built, but VS debugging and Unity debugger do not work (see Known Issues below).</li>
+</ul>
+<h3 id="HoloLens-Research-Mode-Plugin">HoloLens Research Mode Plugin</h3>
+<p>The HoloLens Research Mode API is only available in C++. To use the API in Unity/C#, a Windows Runtime (WinRT)<br>
+Component (<a href="(https://github.com/walkerchi/ETHz-MR/blob/main/HL2UnityPlugin)">HL2UnityPlugin</a> is created. The plugin is compiled into a DLL as a plugin in Unity.</p>
+<p>A compiled plugin is already in the Unity project (dll and winmd<br>
+in <a target="_blank" rel="noopener" href="https://github.com/walkerchi/ETHz-MR/blob/main/UnitySample/Assets/Plugins/WSA/ARM64">UnitySample/Assets/Plugins/WSA/ARM64</a>).<br>
+If the plugin is modified, it needs to be recompiled and copied to the Plugin directory.<br>
+See <a target="_blank" rel="noopener" href="https://github.com/walkerchi/ETHz-MR/blob/main/HL2UnityPlugin/README.md">HL2UnityPlugin/README.md</a> for instructions.</p>
+<p>Based on the original project, we extend the plugin with another module HL2Interactions, which acquires the user<br>
+interaction data (hand tracking, head tracking, eye gaze, etc.). We also extend the HL2ResearchMode module to acquire<br>
+the AHAT extrinsic matrix and depth look-up table (LUT).</p>
+<p>Note:</p>
+<ul>
+<li>In the original project, <code>_XM_NO_INTRINSICS_</code> was used for DirectXMath. It is changed to <code>_XM_ARM_NEON_INTRINSICS_</code>.</li>
+</ul>
+<h2 id="The-Server-App-Running-on-PC">The Server App Running on PC</h2>
+<p>The repo contains Git submodules. To check out the submodules:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git submodule update --init<br></code></pre></td></tr></table></figure>
+<p>Build requirements:</p>
+<ul>
+<li>CMake</li>
+<li>Boost (1.80.0 or so)</li>
+<li>Open3D
+<ul>
+<li>For macOS and Windows, compile from<br>
+source: <a target="_blank" rel="noopener" href="http://www.open3d.org/docs/release/compilation.html">Build from source — Open3D 0.16.0 documentation</a></li>
+</ul>
+</li>
+<li>OpenGL &amp; libIGL</li>
+</ul>
+<p>The current branch is tested on macOS Apple Silicon with Clang. For Windows with MSVC, some more modifications might be<br>
+needed. For example:</p>
+<ul>
+<li><code>target_compile_options(DepthToPCD PRIVATE &quot;/MT$&lt;$&lt;CONFIG:Release&gt;:&gt;&quot;)</code> to correctly link the Open3D library.</li>
+<li>Directory to Boost and Open3D may need to be specified in order to be found.</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/walkerchi/ETHz-MR/blob/main/CPP/DirectXMath/Inc/sal.h">CPP/DirectXMath/Inc/sal.h</a> and <a href="CPP/DirectXMath/Inc/sal.h">unsal.h</a> (as well<br>
+as <code>#include &quot;unsal.h&quot;</code> at the end of <a target="_blank" rel="noopener" href="https://github.com/walkerchi/ETHz-MR/blob/main/CPP/DirectXMath/Inc/DirectXMath.h">DirectXMath.h</a>) needs to be removed<br>
+for Windows. According to <a target="_blank" rel="noopener" href="https://github.com/microsoft/DirectXMath">Microsoft/DirectXMath</a>, sal.h is needed for Linux<br>
+and macOS. However, for Ubuntu, macros defined inside pollutes the standard library. Therefore, we add an unsal.h to<br>
+undef them. For Windows, such changes should be undone.</li>
+</ul>
+<p>See the other branches for reference.</p>
+<p>To build the program:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">mkdir build<br>cd build<br>cmake -DCMAKE_BUILD_TYPE=Release ..<br>make DepthToPCD<br></code></pre></td></tr></table></figure>
+<p>Ninja also works.</p>
+<p>Optionally to specify a data directory to store scanning results other than the default “…/data”,<br>
+add <code>-DDATA_FOLDER=...</code> to CMake command line argument.</p>
+<h2 id="System-Usage">System Usage</h2>
+<p>=&gt; <a target="_blank" rel="noopener" href="https://polybox.ethz.ch/index.php/s/QPejCiHCGQGyyPG">Demo video</a></p>
+<ul>
+<li>Build and deploy the Unity App to HoloLens.</li>
+<li>Start the app (HL2ResearchMode with a Unity icon) once. It will request for permissions. Allow all and <strong>restart</strong><br>
+the app.</li>
+<li>The menu can be dragged and dropped.</li>
+<li>Use “Toggle Point Cloud” to switch between local per-frame point cloud and reconstruction results. Notice that<br>
+per-frame<br>
+point cloud is not equal to what being seen at scanning. For example, an object being too close or too far may have no<br>
+points received (see Known Issue below). The local point cloud is used to evaluate the environment noise (e.g.<br>
+<a target="_blank" rel="noopener" href="https://github.com/microsoft/HoloLens2ForCV/issues/12">“aliased depth”</a> of the AHAT sensor).</li>
+<li>Compile and start the server. The server must be in the same network as the client (type-C connection works as an<br>
+ethernet, or in the same WiFi) and has <strong>one of the fixed IPs</strong> in the <code>hostIPAddresses</code> of TCPClient of the Unity<br>
+app, which is set in the Unity Editor. The current accepted IPs (former ones take higher priority) are:
+<ul>
+<li>169.254.41.190</li>
+<li>192.168.1.108</li>
+<li>192.168.1.107</li>
+<li>192.168.155.61</li>
+</ul>
+</li>
+<li>Click “Connect to the Server”. The LED should turn green if succeeds.</li>
+<li>Hold the object with <strong>both hands</strong> in front of the HoloLens. Adjust the distance to the HoloLens as needed.</li>
+<li>Look at the Start button to start scanning (try not to turn your head too much).</li>
+<li>Wait for a while. Once the scanning starts, the reconstructed point cloud overlaps on the Object. Due to the algorithm<br>
+being used for registration, the scanning should have a good starting point. If that is not the case, restart the<br>
+scanning or even restart the server. If the server restarts, the client needs to disconnect and reconnect.</li>
+<li>If you see hands jumping in the HoloLens, that means HoloLens has problem tracking your hands and the frame gets<br>
+dropped. Do not proceed and adjust your hand gestures until they become stable. Not both hands need to hold on to the<br>
+object, but both must be visible to the HoloLens.</li>
+<li>If you see the point cloud turn orange, it means the registration fails. Do not proceed and realign the object with<br>
+the point cloud until it becomes white again.</li>
+<li>Once all faces are scanned. Stop scanning using the eye-tracking button. A folder named as the current timestamp is<br>
+created in the Data Folder and the final point cloud is stored.</li>
+</ul>
+<h2 id="Known-Issues">Known Issues</h2>
+<ul>
+<li>Depth filtering based on hand position does not work when the object is getting too close or too far from the<br>
+HoloLens, although the depth clipping range seems right.</li>
+<li>While doing the scanning, very fast movement of the object causes the registration to lose tracking. An orange point<br>
+cloud is sent to the HoloLens, but then the TCP connection seems corrupted and cannot be automatically recovered with<br>
+the state machine in UnitySample/Assets/Scipts/TCPClient.cs. This seems not to happen when the point cloud normally<br>
+loses tracking.</li>
+<li>The Unity application sometimes crashes. The issue is unknown yet. When debugging in VS, exceptions are thrown in GC<br>
+code but the root cause has not yet been located.</li>
+<li>Deployment build of Unity + VS Unity debugger does not work. Viewing from the log, the debugger seems not to start on<br>
+HoloLens. The issue is unknown yet.</li>
+<li>Eye tracking data streaming from HL2UnityPlugin/HL2Interactions to TCPDataSource is not tested yet.</li>
+<li>class FileSystemSource is out of maintenance.</li>
+<li>To limit the bandwidth usage of streaming raw data to the server, only every <code>rawDataDownSampleFactor</code><br>
+frames (<a target="_blank" rel="noopener" href="https://github.com/walkerchi/ETHz-MR/blob/main/UnitySample/Assets/Scipts/ResearchModeVideoStream.cs">esearchModeVideoStream.cs</a>) is sent. Currently, the<br>
+processing bandwidth is &lt; 10 frame per seconds, and exceeded frames are dropped at the server anyway. But if a higher<br>
+processing frame rate is achieved, this number should be decreased accordingly.</li>
+<li>Apple Silicon Mac seems to have problems scheduling the Open3D algorithms. Sometimes the CPU usage is far less than<br>
+100% (not even a single core) and the processing frame rate is extremely low. The cause is unknown yet. Running a VM<br>
+at the same time seems to solve the problem (reaching 500% CPU usage) but the solution is not confirmed yet. A<br>
+possible reason is the out-of-date OpenMP library being used when compiling Open3D (newer version is not supported).</li>
+</ul>
+<h2 id="License">License</h2>
+<p>The code is released under the MIT license.</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/ETH-Zurich/" class="print-no-link">#ETH Zürich</a>
+      
+        <a href="/tags/Mixed-Relatity/" class="print-no-link">#Mixed Relatity</a>
+      
+        <a href="/tags/Hololens2/" class="print-no-link">#Hololens2</a>
+      
+        <a href="/tags/3D-Reconstruction/" class="print-no-link">#3D Reconstruction</a>
+      
+        <a href="/tags/Project/" class="print-no-link">#Project</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>HoloScanner: In-Hand Scanning with HoloLens 2 for Irregular Geometries</div>
+      <div>https://walkerchi.github.io/2022/10/22/ETHz/ETHz-MR/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>walkerchi</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>October 22, 2022</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/12/01/ETHz/ETHz-CS-2022/" title="Space  Elevator is Closer than we think">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Space  Elevator is Closer than we think</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+  <script>
+  Fluid.utils.createScript('https://lib.baomitu.com/mermaid/8.14.0/mermaid.min.js', function() {
+    mermaid.initialize({"theme":"default"});
+
+    Fluid.utils.listenDOMLoaded(function() {
+      Fluid.events.registerRefreshCallback(function() {
+        if ('mermaid' in window) {
+          mermaid.init();
+        }
+      });
+    });
+  });
+</script>
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://walkerchi.github.io" class="iconfont icon-github-fill" ></a> <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/walkerchi/" class="iconfont linkedin-box-fill"></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
