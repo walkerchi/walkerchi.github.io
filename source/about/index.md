@@ -56,12 +56,10 @@ banner_img: /img/spaceship.gif
 </style>
 
   <div class="content">
-    <h1>Hello</h1>
-    <p>My name is Mingyuan Chi, but you can also call me Walker.
-    
-    I specialize as an interdisciplinary researcher and engineer, with a strong background in computer science, machine learning, computational physics, robotics, and finance. My technical skills include proficiency in Python, C++, and JavaScript, as well as fluency in Julia, Rust, and Matlab.
-
-    I am passionate about leveraging my diverse skill set and knowledge base to solve complex problems and make meaningful contributions to my field. I look forward to exploring new opportunities and collaborating with other professionals who share my interests and passion.</p>
+    <h1>Hello &#x1F917</h1>
+    <p>My name is Mingyuan Chi, but you can also call me Walker.</p>
+    <p>I specialize as an interdisciplinary researcher and engineer, with a strong background in computer science, machine learning, computational physics, robotics, and finance. My technical skills include proficiency in Python, C++, and JavaScript, as well as fluency in Julia, Rust, and Matlab.</p>
+    <p>I am passionate about leveraging my diverse skill set and knowledge base to solve complex problems and make meaningful contributions to my field. I look forward to exploring new opportunities and collaborating with other professionals who share my interests and passion.</p>
   </div>
   <div class="timeline">
     <div class="timeline-item" id="item1">
@@ -91,7 +89,7 @@ banner_img: /img/spaceship.gif
     <div class="timeline-item right" id="item3">
       <div class="date">May 2021 - August 2021</div>
       <div class="content">
-        <div class="where"><h2>University of Montreal</h2></div>
+        <div class="where"><h2>Université de Montréal</h2></div>
         <div class="role">Mitacs Program</div>
         <p>Due to the COVID-19 pandemic, the research program was conducted online. Nonetheless, I successfully developed a self-supervised clustering algorithm to analyze electrical signals from Oxford Nanopore Technology, with the aim of determining the source of complementary DNA (cDNA).</p>
       </div>
