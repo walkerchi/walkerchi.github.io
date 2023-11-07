@@ -349,7 +349,7 @@ navbar:
     - { key: "Publication", link: "/publication/", icon: "iconfont icon-books"}
     - { key: "tools", icon: "iconfont icon-tools-fill",
       submenu: [
-        { key: 'math2pix', link: '/math2pix' },
+        { key: 'math2pix', link: 'https://walkerchi.github.io/math2pix' },
       ]}
 
 # 搜索功能，基于 hexo-generator-search 插件，若已安装其他搜索插件请关闭此功能，以避免生成多余的索引文件

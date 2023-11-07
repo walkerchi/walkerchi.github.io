@@ -78,7 +78,7 @@ author: walkerchi
 
 ## Forms
 
-- *Minimization problem* : $u = \underset{v}{\text{argmin}}~J(v) =\underset{v}{\text{argmin}}~\frac{1}{2}\text{a}(v,v) - \ell(v) =\underset{v}{\text{argmin}}~\frac{1}{2}\Vert v\Vert_\text{a} - \ell(v) $
+- *Minimization problem* : $u = \underset{v}{\text{argmin}}~J(v) =\underset{v}{\text{argmin}}~\frac{1}{2}\text{a}(v,v) - \ell(v) =\underset{v}{\text{argmin}}~\frac{1}{2}\Vert v\Vert_\text{a} - \ell(v)$
 - **LVP** *(Generalized) Linear variational problem* : $\text{a}(u,v) = \ell(v) \quad  \begin{matrix}u\in \hat V_0 \\ \forall v\in V_0\end{matrix}$, $\hat V_0$ is the trial space, $V_0$ is the test space
   - example : 
 - **BVP** *Boundary value problem* 
@@ -114,27 +114,29 @@ $$
 
 - change of basis : $\tilde{\mathfrak{B}_h} = \textbf{S}\mathfrak{B}_h\to \tilde{\textbf{A}} = \textbf S\textbf A\textbf S^\top\quad \tilde{\vec\phi}=\textbf{S}\vec\phi\quad \tilde{\vec \mu} = S^{-T}\vec \mu$
 
-- support : $\text{supp}(f) = \{x\in\Omega,f(x)\neq 0\} $
+- support : $\text{supp}(f) = \{x\in\Omega,f(x)\neq 0\}$
 
-  <img src="support.svg" alt="img" style="zoom:67%;" />
+  <!-- <img src="support.svg" alt="img" style="zoom:67%;" /> -->
+  ![support](support.svg)
 
 >  **<font color="lightblue">Example 1</font>** : **Tent Function 1D**
 >
 > tent function : $b_h^j(x) = \begin{cases}(x-x_{j-1})/h_j&x_{j-1}\le x\le x_j\\(x_{j+1}-x)/h_{j+1}&x_j\le x\le x_{j+1}\\0&\text{otherwise}\end{cases}$
 >
-> <img src="tent_function.svg" alt="img" style="zoom:67%;" />
+<!-- > <img src="tent_function.svg" alt="img" style="zoom:67%;" /> -->
+> ![tent_function](tent_function.svg)
 
 
 
 > **<font color="lightblue"> Example 2</font>** : **Triangle Barycentric cooridnate**
 >
-> tent function : $b_h^i(x_j) = \begin{cases}1&i=j\\0&\text{else} \end{cases} \quad $
+> tent function : $b_h^i(x_j) = \begin{cases}1&i=j\\0&\text{else} \end{cases}$
 >
-> <img src="tent_function_2d.svg" alt="img" style="zoom:80%;" />
+> ![tent_function_2d](tent_function_2d.svg)
 >
 > **barycentric coordinate function** : $\lambda_i = \alpha_i +\boldsymbol  \beta^i \cdot  \boldsymbol x \quad \alpha\in\R,\boldsymbol \beta\in\R^3$
 >
-> ![img](\barycentric_triangle.png)
+> ![barycentric_triangle](barycentric_triangle.png)
 >
 > $a_i^j$ : the $i$th component of the $j$th point in the triangle element
 >
@@ -194,7 +196,8 @@ $$
 >
 > $K = \text{convex}\left\{\begin{bmatrix}0\\0\end{bmatrix},\begin{bmatrix}1\\0\end{bmatrix},\begin{bmatrix}0\\1\end{bmatrix}\right\}$ : triangle element
 >
-> <img src="triangle_quadrature.svg" alt="img" style="zoom:80%;" />
+<!-- > <img src="triangle_quadrature.svg" alt="img" style="zoom:80%;" /> -->
+> ![triangle_quadrature](triangle_quadrature.svg)
 >
 > - P1O2 : $\omega=\left\{1\right\}$， $\zeta = \left\{\begin{bmatrix}\frac{1}{3}\\\frac{1}{3}\end{bmatrix}\right\}$ 
 > - P3O3 : $\omega = \left\{\frac{1}{3},\frac{1}{3},\frac{1}{3}\right\}$, $\zeta = \left\{\begin{bmatrix}\frac{1}{2}\\0\end{bmatrix},\begin{bmatrix}0\\\frac{1}{2}\end{bmatrix},\begin{bmatrix}\frac{1}{2}\\\frac{1}{2}\end{bmatrix}\right\}$
@@ -205,7 +208,8 @@ $$
 [A_K]_{ij} = \text{a}(b_h^i,b_h^j)
 $$
 
-<img src="galerkin_assemble_all.svg" alt="img" style="zoom:90%;" />
+<!-- <img src="galerkin_assemble_all.svg" alt="img" style="zoom:90%;" /> -->
+![galerkin assemble all](galerkin_assemble_all.svg)
 
 > **<font color="lightblue">Example</font>** : Triangle Element Stiffness Matrix
 > $$
@@ -238,7 +242,8 @@ $$
 [\vec \phi]_j = \ell(b_h^j)
 $$
 
-<img src="rhs_assemble_all.svg" alt="img" style="zoom:90%;" />
+<!-- <img src="rhs_assemble_all.svg" alt="img" style="zoom:90%;" /> -->
+![right hand side function assemble all](rhs_assemble_all.svg)
 
 > **<font color="lightblue">Example</font>** :  Triangle Element Load Vector
 > $$
@@ -280,14 +285,17 @@ $$
   \text{a}\left( b_{h|K_2}^j,b_{h|K_2}^i\right) \quad \forall i\neq j
 $$
 
-<img src="galerkin_assemble_edges.svg" alt="img" style="zoom:70%;" />
+<!-- <img src="galerkin_assemble_edges.svg" alt="img" style="zoom:70%;" /> -->
+![galerkin assemble edges](galerkin_assemble_edges.svg)
 
 - Node
 $$
 \textbf{A}_{ii} = \sum_{K_j,i\in K_j}\text{a}\left(b_{h|K_j}^i,b_{h|K_j}^i\right)
 $$
 
-<img src="galerkin_assemble_nodes.svg" alt="img" style="zoom:70%;" />
+<!-- <img src="galerkin_assemble_nodes.svg" alt="img" style="zoom:70%;" /> -->
+![galerkin assemble nodes](galerkin_assemble_nodes.svg)
+
 
 > **<font color="lightblue">Example</font>** : code for stiffness matrix assemble
 >
@@ -370,7 +378,8 @@ $$
 
 ### Load Vector
 
-<img src="rhs_assemble_nodes.svg" alt="img" style="zoom:80%;" />
+<!-- <img src="rhs_assemble_nodes.svg" alt="img" style="zoom:80%;" /> -->
+![right hand side function assemble nodes](rhs_assemble_nodes.svg)
 
 > **<font color="lightblue">Example</font>** : code for load vector assemble
 >
@@ -400,7 +409,9 @@ $$
 
 ## Transformation
 
-<img src="tranformation.png" alt="img" style="zoom:80%;" />
+<!-- <img src="tranformation.png" alt="img" style="zoom:80%;" /> -->
+![tranformation](tranformation.png)
+
 $$
 K = \Phi_K(\hat K) = \textbf F_k \hat K+\tau \Rightarrow |K| =|\hat K| |\text{det} \textbf F_k|
 $$
@@ -413,8 +424,7 @@ To apply the transformation, following rules are used :
 
 - quadrature : $\omega_\ell^K = \underbrace{\sqrt{\text{det}(\text{D}\Phi(\hat  \zeta_\ell)^\top \text{D}\Phi(\hat \zeta_{\ell}))}}_{\text{\textcolor{yellow}{Gramian determinant}}}\hat\omega_\ell
   \quad
-  \zeta_\ell^K = \Phi_K(\hat \zeta_\ell)
-  $
+  \zeta_\ell^K = \Phi_K(\hat \zeta_\ell)$
 - $f(x)\to f(\Phi(\hat \zeta))$
 - $u(x)\to \hat b (\hat \zeta)$
 - $\nabla u(x)\to \left(\text{D} \Phi(\hat\zeta)\right)^{-\top}\nabla\hat b(\hat \zeta)$ 
@@ -424,14 +434,12 @@ To apply the transformation, following rules are used :
 > - $\text a(u,v) = \int \alpha(x)\nabla u(x)\cdot \nabla v(x)~\text{d}x$
 >   $
 >   {[A_K]}_{ij} 
->   = \sum_{\ell=1}^P\hat\omega_\ell  \alpha\left(\Phi(\hat  \zeta_\ell)\right)\left(\left(\text{D}\Phi(\hat\zeta_\ell)\right)^{-\top}\nabla \hat b^i(\hat \zeta_\ell)\right)\cdot\left(\left(\text{D}\Phi(\hat \zeta_\ell)\right)^{-\top}\nabla \hat b^j(\hat \zeta_\ell)\right)~|\text{det  D}\Phi(\hat \zeta_\ell)|
->   $
+>   = \sum_{\ell=1}^P\hat\omega_\ell  \alpha\left(\Phi(\hat  \zeta_\ell)\right)\left(\left(\text{D}\Phi(\hat\zeta_\ell)\right)^{-\top}\nabla \hat b^i(\hat \zeta_\ell)\right)\cdot\left(\left(\text{D}\Phi(\hat \zeta_\ell)\right)^{-\top}\nabla \hat b^j(\hat \zeta_\ell)\right)~|\text{det  D}\Phi(\hat \zeta_\ell)|$
 >
 > - $\ell(v) = \int f(x)~\text{d}x$
 >   $
 >   {[\vec \phi_K]_i} 
->   = \sum_{\ell=1}^P\hat \omega_\ell f\left(\Phi_K(\hat \zeta_\ell)\right)\hat b^i(\hat \zeta_\ell)~|\text{det D}\Phi_K(\hat\zeta_\ell)|
->   $
+>   = \sum_{\ell=1}^P\hat \omega_\ell f\left(\Phi_K(\hat \zeta_\ell)\right)\hat b^i(\hat \zeta_\ell)~|\text{det D}\Phi_K(\hat\zeta_\ell)|$
 >   
 
 > **<font color="pink">LehrFEM++</font>** 
@@ -467,7 +475,8 @@ $\mathcal S_p^0(\mathcal M)$ : $p$-th Lagrangian finite element space, $C^0$ con
 >
 > - Triangle P2
 >
->   <img src="triangle_p2.svg" alt="img" style="zoom:80%;" />
+<!-- >   <img src="triangle_p2.svg" alt="img" style="zoom:80%;" /> -->
+>   ![triangle p2](triangle_p2.svg)
 >   $$
 >   \begin{matrix}
 >   b_K^1 = (2\lambda_1 - 1)&b_K^2 = (2\lambda_2 - 1)\lambda_2 & b_K^3 = (2\lambda_3-1)\lambda_3 \\
@@ -477,7 +486,8 @@ $\mathcal S_p^0(\mathcal M)$ : $p$-th Lagrangian finite element space, $C^0$ con
 >
 > - Triangle P3
 >
->   <img src="triangle_p3.svg" alt="img" style="zoom:80%;" />
+<!-- >   <img src="triangle_p3.svg" alt="img" style="zoom:80%;" /> -->
+>   ![triangle p3](triangle_p3.svg)
 >
 > - Triangle P$p$
 >   $$
@@ -493,7 +503,8 @@ $\mathcal S_p^0(\mathcal M)$ : $p$-th Lagrangian finite element space, $C^0$ con
 $$
 u = g\quad u\in\partial\Omega\Leftrightarrow \vec \mu_{\partial }=\vec \gamma
 $$
-<img src="essential_boundary.svg" alt="img" style="zoom:80%;" />
+<!-- <img src="essential_boundary.svg" alt="img" style="zoom:80%;" /> -->
+![essential boundary](essential_boundary.svg)
 $$
 \begin{bmatrix}
 \textbf A_0&\textbf A_{0\partial}\\
@@ -547,7 +558,8 @@ $$
 
 ### boundary approximation
 
-<img src="boundary_approximation.svg" alt="img" style="zoom:80%;" />
+<!-- <img src="boundary_approximation.svg" alt="img" style="zoom:80%;" /> -->
+![boundary approximation](boundary_approximation.svg)
 
 ## Convergence and Accuracy
 
@@ -564,7 +576,8 @@ Concept :
 
 - **Shape Regularity** : $\rho_K = \frac{h_K^d}{|K|}\quad \rho_\mathcal M = \underset{K\in M}{\text{max}}~\rho_K\quad h_K = \text{diam}(K)$
 
-  <img src="sharp_regularity.svg" alt="img" style="zoom:80%;" />
+  <!-- <img src="sharp_regularity.svg" alt="img" style="zoom:80%;" /> -->
+  ![sharp regularity](sharp_regularity.svg)
 
   - $\text{diam}(K)$ : the longest distance between two points in element  $K$
   - $\rho_{K/\mathcal M}$ : shape regularity for element $K$ / mesh  $\mathcal M$ 
@@ -718,7 +731,7 @@ $$
 
 **Stability**
 $$
-\mathcal S(z) = 1+z\textbf b^\top(\textbf I - z\mathfrak A)^{-1}\textbf 1 = \frac{\text{det}(\textbf I-z\mathfrak A+z\textbf  1\textbf b^\top)}{\text{det} (\textbf I-z\mathfrak A)}\quad z\in \C
+\mathcal S(z) = 1+z\textbf b^\top(\textbf I - z\mathfrak A)^{-1}\textbf 1 = \frac{\text{det}(\textbf I-z\mathfrak A+z\textbf  1\textbf b^\top)}{\text{det} (\textbf I-z\mathfrak A)}\quad z\in \mathbb C
 $$
 >  **$\text{L}(\pi)$-stability** : 
 >
@@ -789,8 +802,8 @@ $$
 $$
 >  **<font color="lightblue">Example</font>** : Störmer-Verlet timestepping
 >
-> <img src="CFL_example.svg" alt="img" style="zoom:100%;" />
-
+<!-- > <img src="CFL_example.svg" alt="img" style="zoom:100%;" /> -->
+> ![CFL example](CFL_example.svg)
 
 
 ----
@@ -819,7 +832,8 @@ $$
 $$
 **Boundary**
 
-<img src="heat_flow_boundary.svg" alt="img" style="zoom:80%;" />
+<!-- <img src="heat_flow_boundary.svg" alt="img" style="zoom:80%;" /> -->
+![heat flow boundary](heat_flow_boundary.svg)
 
 - inflow boundary : $\Gamma_{\text{in}} = \{x\in\partial\Omega, \textbf v(\boldsymbol x)\cdot \boldsymbol n(\boldsymbol x) < 0\}$
 - outflow boundary : $\Gamma_{\text{out}} = \{x\in\partial\Omega, \textbf v(\boldsymbol x)\cdot \boldsymbol n(\boldsymbol x) > 0\}$
@@ -892,14 +906,15 @@ $$
 2. $\hat{\textbf y} = \textbf  w(t_j)\quad \dot {\textbf w} = \textbf r(t,\textbf w)\quad \textbf w(t_{j-1})=\tilde y$
 3. $\textbf y^{(j)} = \textbf z(t_j)\quad \dot {\textbf z}=\textbf g(t,\textbf z)\quad \textbf z(t_{j-1}+\frac{1}{2}\tau)=\hat{\textbf y}$
 
-<img src="strang_splitting.svg" alt="img" style="zoom:80%;" />
+<!-- <img src="strang_splitting.svg" alt="img" style="zoom:80%;" /> -->
+![strang splitting](strang_splitting.svg)
 
 accuracy order:  second  order
 
 Leap-frog : combine 1 and 3
 
-<img src="leapfrog.svg" alt="img" style="zoom:80%;" />
-
+<!-- <img src="leapfrog.svg" alt="img" style="zoom:80%;" /> -->
+![leapfrog](leapfrog.svg)
 
 
 
@@ -963,7 +978,7 @@ $$
   f'(v)&v=w
   \end{cases}$
 - **Godunov Flux** : $u^{\downarrow} = \begin{cases}
-  w & \begin{cases} &v = w\\ &v > w\and \dot s < 0\\ &v < w \and f'(w) < 0\end{cases}
+  w & \begin{cases} &v = w\\ &v > w\land \dot s < 0\\ &v < w \land f'(w) < 0\end{cases}
   &\begin{aligned}
   &\text{constant solution}\\
   &\text{subsonic shock}\\
@@ -971,15 +986,15 @@ $$
   \end{aligned}
   \\
   v & \begin{cases}
-  &v > w \and \dot s > 0 \\
-  &v < w \and f'(v) > 0 
+  &v > w \land \dot s > 0 \\
+  &v < w \land f'(v) > 0 
   \end{cases}
   &\begin{aligned}
   &\text{supersonic shock}\\
   &\text{supersonic rarefaction}\\
   \end{aligned}
   \\
-  (f')^{-1}(0) & v < w \and f'(v) \le 0\le f'(w) & \text{transonic rarefaction}
+  (f')^{-1}(0) & v < w \land f'(v) \le 0\le f'(w) & \text{transonic rarefaction}
   \end{cases}\quad F(v,w)=f(u^\downarrow(v,w))$
 
 > **<font color="pink">LerhFEM++</font>**

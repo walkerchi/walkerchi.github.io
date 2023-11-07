@@ -110,7 +110,7 @@ In the following illustration, we sample $\mathcal S$
 times for different $\vec \mu/ \textbf a$. Therefore, for each $i$th sample, $\vec \mu^i\in \mathcal D^{d}_{\text{heat},\vec \mu}$ and $\textbf a^j \in \mathcal D^{K\times K}_{\text{wave},\textbf a}$
 
 ### Parameter Approach:Feed Forward Network(FFN):
-The objective of the parameter methodology is to establish a transformative function $g$, which is capable of constructing a bridge between the position vector $\vec x$ and parameter $\vec \mu/\textbf a$ for the equation to the resultant value $u$ of equation~\ref{eq:para-approx}.
+The objective of the parameter methodology is to establish a transformative function $g$, which is capable of constructing a bridge between the position vector $\vec x$ and parameter $\vec \mu/\textbf a$ for the equation to the resultant value $u$ of equation.
 
 $$
     g(\vec x,\{\vec \mu, \textbf a \}) = u(T, \vec x, \{\vec \mu,\textbf a \})

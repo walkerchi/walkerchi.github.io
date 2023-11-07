@@ -147,7 +147,8 @@ a particle approaching the potential barrier $V(x)\begin{cases}
  = 0 & \text{others}
 \end{cases}$ from the left
 
-<img src="1D-scattering-potential.png" alt="img" style="zoom:20%;" />
+<!-- <img src="1D-scattering-potential.png" alt="img" style="zoom:20%;" /> -->
+![1D scattering potential](1D-scattering-potential.png)
 
 - wave function assumptions :
 
@@ -174,7 +175,8 @@ a particle approaching the potential barrier $V(x)\begin{cases}
 
 particles are confined due to potential $V(x)\begin{cases}<0&x\in[0,a]\\= 0&\text{others}\end{cases}$
 
-<img src="1D-bound-state-potential.png" alt="img" style="zoom:20%;" />
+<!-- <img src="1D-bound-state-potential.png" alt="img" style="zoom:20%;" /> -->
+![1D bound state potential](1D-bound-state-potential.png)
 
 - **shooting method for eigen solver**
   
@@ -285,23 +287,23 @@ limitations :
 - **implicit method** : $\left(\mathbb  1+ \frac{i\Delta  t}{2\hbar}H\right)\psi(\vec r, t+\Delta  t) = \left(\mathbb 1 - \frac{i\Delta t}{2\hbar}H\right)\psi(\vec r, t)$
   - $H$ is sparse matrix, using iterative solver  (e.g.  biconjugate gradient)
 
-**Split-operator method** : $\psi(\vec q) \xrightleftharpoons[\mathcal F^{-1}]{\mathcal F}\psi(\vec p)\Rightarrow \hat H =\textcolor{#66A3FF}{\hat T(\vec p)}+\textcolor{#F08784}{\hat V(\vec q)} $
+**Split-operator method** : $\psi(\vec q) \xrightleftharpoons[\mathcal F^{-1}]{\mathcal F}\psi(\vec p)\Rightarrow \hat H =\textcolor{cyan}{\hat T(\vec p)}+\textcolor{magenta}{\hat V(\vec q)}$
 $$
-e^{-i t\hat H /\hbar} = \textcolor{#F08784}{e^{-i\Delta t\hat V/2\hbar}}\left[\textcolor{#66A3FF}{e^{-i\Delta t\hat T/\hbar}}\textcolor{#F08784}{e^{-i\Delta t\hat V/\hbar}} \right]^{N-1}\textcolor{#66A3FF}{e^{-i\Delta t\hat T/\hbar}}\textcolor{#F08784}{e^{-i\Delta t\hat V/2\hbar}}
+e^{-i t\hat H /\hbar} = \textcolor{magenta}{e^{-i\Delta t\hat V/2\hbar}}\left[\textcolor{cyan}{e^{-i\Delta t\hat T/\hbar}}\textcolor{magenta}{e^{-i\Delta t\hat V/\hbar}} \right]^{N-1}\textcolor{cyan}{e^{-i\Delta t\hat T/\hbar}}\textcolor{magenta}{e^{-i\Delta t\hat V/2\hbar}}
 $$
 
 > <font color="orange">Algorithm</font>
 >
-> 1. $\textcolor{#F08784}{\psi(\vec q)\gets e^{-i\Delta tV(\vec q)/2\hbar}\psi_0(\vec q)}$				
+> 1. $\textcolor{magenta}{\psi(\vec q)\gets e^{-i\Delta tV(\vec q)/2\hbar}\psi_0(\vec q)}$				
 > 2. loop N-1 timesteps
->    1. $\textcolor{#66A3FF}{\psi(\vec p)} \overset{ \mathcal F}{\gets} \textcolor{#F08784}{\psi(\vec  q)}$
->    2. $\textcolor{#66A3FF}{\psi(\vec p) \gets e^{-i\Delta t \hbar\Vert\vec p\Vert^2/2m}\psi(\vec p)}$        
->    3. $\textcolor{#F08784}{\psi(\vec q)} \overset{\mathcal  F^{-1}}\gets \textcolor{#66A3FF}{\psi(\vec p)}$
->    4. $\textcolor{#F08784}{\psi(\vec q)\gets e^{-i\Delta t V(\vec q)/\hbar}\psi(\vec q)}$                  
-> 3. $\textcolor{#66A3FF}{\psi(\vec p)} \overset{\mathcal F}{\gets}\textcolor{#F08784}{\psi(\vec  q)}$
-> 4. $\textcolor{#66A3FF}{\psi(\vec p) \gets e^{-i\Delta t \hbar\Vert\vec p\Vert^2/2m}\psi(\vec p)}$              
-> 5. $\textcolor{#F08784}{\psi(\vec q)} \overset{\mathcal F^{-1}}{\gets} \textcolor{#66A3FF}{\psi(\vec p)}$
-> 6. $\textcolor{#F08784}{\psi(\vec q)\gets e^{-i\Delta t V(\vec q)/2\hbar}}$           
+>    1. $\textcolor{cyan}{\psi(\vec p)} \overset{ \mathcal F}{\gets} \textcolor{magenta}{\psi(\vec  q)}$
+>    2. $\textcolor{cyan}{\psi(\vec p) \gets e^{-i\Delta t \hbar\Vert\vec p\Vert^2/2m}\psi(\vec p)}$        
+>    3. $\textcolor{magenta}{\psi(\vec q)} \overset{\mathcal  F^{-1}}\gets \textcolor{cyan}{\psi(\vec p)}$
+>    4. $\textcolor{magenta}{\psi(\vec q)\gets e^{-i\Delta t V(\vec q)/\hbar}\psi(\vec q)}$                  
+> 3. $\textcolor{cyan}{\psi(\vec p)} \overset{\mathcal F}{\gets}\textcolor{magenta}{\psi(\vec  q)}$
+> 4. $\textcolor{cyan}{\psi(\vec p) \gets e^{-i\Delta t \hbar\Vert\vec p\Vert^2/2m}\psi(\vec p)}$              
+> 5. $\textcolor{magenta}{\psi(\vec q)} \overset{\mathcal F^{-1}}{\gets} \textcolor{cyan}{\psi(\vec p)}$
+> 6. $\textcolor{magenta}{\psi(\vec q)\gets e^{-i\Delta t V(\vec q)/2\hbar}}$           
 
 > Notation
 >
@@ -472,7 +474,6 @@ $$
 \hat H = \sum_{<ij>}J_{ij}\left(
 \hat S_i^x\hat S_j^x + \hat S_i^y\hat S_j^y + \Delta\hat S_i^z\hat S_j^z
 \right)
-
 $$
 
 - conserve total magentization $\hat M^z$
@@ -669,11 +670,13 @@ diagonalizing the Hamiltonian matrix
 
 **[MPS] Matrix Product State** : $\ket{\psi}= \sum_s \text{Tr}(A_1^{s_1}\cdots A^{s_N}_N)\ket {s_1\cdots s_N}$
 
-<img src="mps.png" alt="img" style="zoom:67%;" />
+<!-- <img src="mps.png" alt="img" style="zoom:67%;" /> -->
+![mps](mps.png)
 
 - canonical form (normalization) : $A=\Lambda \Gamma$
-
-  <img src="mps_canonical.png" alt="img" style="zoom:67%;" />
+<!-- 
+  <img src="mps_canonical.png" alt="img" style="zoom:67%;" /> -->
+![mps canonical](mps_canonical.png)
 
 > <font  color="lightblue"> Example </font> : GHZ or 'cat' state
 > $$
@@ -716,11 +719,13 @@ diagonalizing the Hamiltonian matrix
 
 **[MPO] Matrix Product  Operator** : $\hat O = \sum_{\sigma_i,\sigma_i'}\left[W_1^{\sigma_1\sigma_1'}\cdots W_N^{\sigma_N\sigma_N'}\right]\ket{\sigma_1\dots\sigma_N}\bra{\sigma_1'\cdots\sigma_N'}$
 
-<img src="mpo.png" alt="img" style="zoom:67%;" />
+<!-- <img src="mpo.png" alt="img" style="zoom:67%;" /> -->
+![mpo](mpo.png)
 
 - computing $\bra \psi \hat O\ket \psi$ : 
 
-  <img src="mps_mpo_computation.png" alt="img" style="zoom:50%;" />
+  <!-- <img src="mps_mpo_computation.png" alt="img" style="zoom:50%;" /> -->
+  ![mps mpo computation](mps_mpo_computation.png)
 
 > <font color="lightblue"> Example </font>: single  site operator
 >
@@ -766,7 +771,7 @@ diagonalizing the Hamiltonian matrix
 >
 >       1. solve eigen value for $M_l$ 
 >
->          <img src="sweep.png" alt="img" style="zoom:50%;" />
+>         ![sweep](sweep.png) 
 >
 >       2. left normalize $M_l$
 >
@@ -781,21 +786,25 @@ diagonalizing the Hamiltonian matrix
 
 ## [TEBD] Time evolving block decimation
 
-<img src="TEBD.png" alt="img" style="zoom:50%;" />
+<!-- <img src="TEBD.png" alt="img" style="zoom:50%;" /> -->
+![TEBD](TEBD.png)
 
 > <font color="orange"> Algorithm </font>
 >
 > 1. two site tensor contraction
 >
->    <img src="TEBD-1.png" alt="img" style="zoom:50%;" />
+<!-- >    <img src="TEBD-1.png" alt="img" style="zoom:50%;" /> -->
+>    ![two site tensor contraction](TEBD-1.png)
 >
 > 2. apply evolution gate
 >
->    <img src="TEBD-2.png" alt="img" style="zoom:50%;" />
+<!-- >    <img src="TEBD-2.png" alt="img" style="zoom:50%;" /> -->
+>    ![apply evolution gate](TEBD-2.png)
 >
 > 3. split into single site tensor
 >
->    <img src="TEBD-3.png" alt="img" style="zoom:50%;" />
+<!-- >    <img src="TEBD-3.png" alt="img" style="zoom:50%;" /> -->
+>    ![split into single site tensor](TEBD-3.png)
 >
 > 4. truncation : keep $\chi_{\text{max}}$ eigen value and renormalize $\sum_i\Lambda_ii^2=1$ 
 
@@ -812,11 +821,13 @@ Computation errors :
 
 - converting two dimension system as chain
 
-  <img src="2D_as_chain.png" alt="img" style="zoom:50%;" />
+  <!-- <img src="2D_as_chain.png" alt="img" style="zoom:50%;" /> -->
+  ![2D as chain](2D_as_chain.png)
 
 - [PEPS] projected entangled pair state
 
-  <img src="pep.png" alt="img" style="zoom:60%;" />
+  <!-- <img src="pep.png" alt="img" style="zoom:60%;" /> -->
+  ![pep](pep.png)
 
   - challenging  computationally 
   - lack a canonical form
@@ -829,7 +840,8 @@ Computation errors :
 
   which can be described by  *Lindblad equation* : $\partial _t \hat \rho =\hat{\mathcal L}\hat \rho = -i[\hat H,\hat \rho] + \sum_i\gamma_i\left(\hat L_i\hat \rho \hat L_i^\dagger - \frac{1}{2}\{\hat L_i^\dagger\hat L_i,\hat \rho\}\right)$
 
-  <img src="lindbladian.png" alt="img" style="zoom:50%;" />
+  <!-- <img src="lindbladian.png" alt="img" style="zoom:50%;" /> -->
+  ![lindbladian](lindbladian.png)
 
   > Notation 
   >
@@ -842,7 +854,8 @@ Computation errors :
 
 schmidt eigenstates belong to a fixed magnetization sector
 
-<img src="symmetry_schmidt.png" alt="img" style="zoom:50%;" />
+<!-- <img src="symmetry_schmidt.png" alt="img" style="zoom:50%;" /> -->
+![symmetry schmidt](symmetry_schmidt.png)
 
 **[TDVP]Time-dependent variational principle** 
 
@@ -958,7 +971,8 @@ $$
 
 spin flip-flops (blue line) proportional to $\beta$ which is a constant not grow bigger as $\Delta \tau \to 0$
 
-<img src="spin_conservation.png" alt="img" style="zoom:50%;" />
+<!-- <img src="spin_conservation.png" alt="img" style="zoom:50%;" /> -->
+![spin conservation](spin_conservation.png)
 
 **negative sign problem** : positive off diagonal lead to negative probabilities
 
@@ -1041,7 +1055,8 @@ $\rho_{\text{Bose}} = \frac{1}{N!}\sum_P \rho(\vec R_1,P\vec R_2, \beta)$
 
 ## [DMC] Diffusion Monte Carlo
 
-<img src="diffusion_monte_carlo.png" alt="img" style="zoom:50%;" />
+<!-- <img src="diffusion_monte_carlo.png" alt="img" style="zoom:50%;" /> -->
+![diffusion monte carlo](diffusion_monte_carlo.png)
 
 > <font color="orange"> Algorithm </font>	
 >
@@ -1101,11 +1116,12 @@ $$
 &\begin{drcases}
 + \sum_{i,j,\sigma,\sigma'}e^2\int \text d^3\vec r~\text d^3\vec r'~\phi_i^{\sigma*}(\vec r)~\phi_j^{\sigma'*}(\vec r')\frac{1}{|\vec r-\vec r'|}\phi_i^\sigma(\vec r)\phi_j^{\sigma'}(\vec r')&\text{Hatree interaction}
 \\
--\sum_{i,j,\sigma}e^2\int \text d^3\vec r~\text d^3\vec r'~\phi_i^{\sigma*}(\vec r)~\phi_j^{\sigma*}(\vec r)\frac{1}{|\vec r-\vec r'|}\phi_j^\sigma(\vec r)\phi_i^\sigma(\vec r')&\text{exchange interaction}
+% -\sum_{i,j,\sigma}e^2\int \text d^3\vec r~\text d^3\vec r'~\phi_i^{\sigma*}(\vec r)~\phi_j^{\sigma*}(\vec r)\frac{1}{|\vec r-\vec r'|}\phi_j^\sigma(\vec r)\phi_i^\sigma(\vec r')&\text{exchange interaction}
 \end{drcases}
 V_{ee}
-\end{aligned}The integration shows that the wave function $\psi$ is defined in the whole space
+\end{aligned}
 $$
+The integration shows that the wave function $\psi$ is defined in the whole space
 
 >Notation
 >
@@ -1150,8 +1166,8 @@ $$
 > Notation
 >
 > - $\mu^{\text{XC}}$ : functional derivative  of the exchange-correlation energy, $\mu^{\text{XC}} = \frac{\text d\text E^{\text{XC}}}{\text d n}$
-> - $E^{\text{XC}}$ : exchange-correlation energy, $E^{\text{XC}}=\bra \Phi \hat T\ket \Phi - E_k +\bra \Phi \hat V_{ee}\ket \Phi -E_c  $ with approximation (local density approximation) $E^{\text{XC}}\approx \int n(\vec r) \varepsilon^{\text{XC}}(n(\vec r))\text d\vec r=\int n(\vec r)[\varepsilon^X(n(\vec  r))+\varepsilon^C(n(\vec r))]\text d\vec r$
->   -  uniform electron gas : $\varepsilon(n(\vec r)) = -\frac{3}{4}\left(\frac{3}{\pi}\right)^{1/3}n(\vec  r)^{1/3} $
+> - $E^{\text{XC}}$ : exchange-correlation energy, $E^{\text{XC}}=\bra \Phi \hat T\ket \Phi - E_k +\bra \Phi \hat V_{ee}\ket \Phi -E_c$ with approximation (local density approximation) $E^{\text{XC}}\approx \int n(\vec r) \varepsilon^{\text{XC}}(n(\vec r))\text d\vec r=\int n(\vec r)[\varepsilon^X(n(\vec  r))+\varepsilon^C(n(\vec r))]\text d\vec r$
+>   -  uniform electron gas : $\varepsilon(n(\vec r)) = -\frac{3}{4}\left(\frac{3}{\pi}\right)^{1/3}n(\vec  r)^{1/3}$
 >   - Monte carlo -> interpolation
 > - $E_C$ : Hartree  energy $E_C= \frac{1}{2}\int e^2 \frac{n(\vec r)n(\vec r')}{|\vec r-\vec r'|}\text d\vec r\text d \vec r'$
 > - $E_K$ : kinetic energy $E_K = -\frac{\hbar^2}{2m}\sum_j \bra {\phi_j}\nabla^2\ket{\phi_j}$

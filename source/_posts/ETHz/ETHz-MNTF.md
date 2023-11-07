@@ -51,15 +51,17 @@ $\Rightarrow$ NN with ReLU is dense in $C(\mathcal X,\R^m)$
 
 **Faber-Schauder basis** : $s_{n,k} = 2^{1+\frac{n}{2}}\int_0^t\psi_{n,k}(u)\text du\quad n,k\in\Z$
 
-<img src="faber_schauder_basis.png" alt="img" style="zoom:67%;" />
+<!-- <img src="faber_schauder_basis.png" alt="img" style="zoom:67%;" /> -->
+![faber schauder basis](faber_schauder_basis.png)
 $$
-v = \sum_{n=0}^\infin \alpha_n b_n\quad \forall v\in  \R,\exists\alpha_n\in\R,\exists b_n\in \{s_{*,*}\}
+v = \sum_{n=0}^\infin \alpha_n b_n\quad \forall v\in  \mathbb R,\exists\alpha_n\in\mathbb R,\exists b_n\in \{s_{*,*}\}
 $$
 - equivalent to the linear combination of ReLU
 
 **Haar function** : $\psi_{n,k}(t) =2^{n/2}\psi(2^nt-k)\quad n,k\in \Z\quad\psi(t) = \begin{cases}1&t\in[0, \frac{1}{2})\\-1&t\in[\frac{1}{2},1)\\ 0&\text{otherwise}\end{cases}$
 
-<img src="haar_function.png" alt="img" style="zoom:50%;" />
+<!-- <img src="haar_function.png" alt="img" style="zoom:50%;" /> -->
+![haar function](haar_function.png)
 
 - $\text{supp}(\psi_{n,k}) = [k2^{-n},(k+1)2^{-n})$
 - $\int_\R \psi_{n,k}(t)\text dt = 0$
@@ -128,7 +130,7 @@ value process : $V_{t+1}-V_t = \sum_i\phi_t^i(S_{t+1}^i-S_t^i)\quad \forall t\in
 
 martingale : $\mathbb E[X_{n+1}|X_1,\dots,X_n] = X_n$
 
-arbitrage : $\underbrace{P(V_t\ge  0 )=1}_{\text{no risk of losing money}}\and \underbrace{P(V_t\neq 0) >0}_{\text{portfolio value > 0}}\quad t\in (0,T),\underbrace{V_0=0}_{\text{requires no initial value}}$
+arbitrage : $\underbrace{P(V_t\ge  0 )=1}_{\text{no risk of losing money}}\land \underbrace{P(V_t\neq 0) >0}_{\text{portfolio value > 0}}\quad t\in (0,T),\underbrace{V_0=0}_{\text{requires no initial value}}$
 
 ## Stochastic Differential Equation
 
@@ -139,7 +141,8 @@ arbitrage : $\underbrace{P(V_t\ge  0 )=1}_{\text{no risk of losing money}}\and \
 - $W_t$ is brownian motion/wiener process
 - $\mu,\sigma$ is the expectation/variance for the GBM
 
-<img src="geometric_brownian_motion.png" alt="img" style="zoom:50%;" />
+<!-- <img src="geometric_brownian_motion.png" alt="img" style="zoom:50%;" /> -->
+![geometric brownian motion](geometric_brownian_motion.png)
 
 ## Utility
 
@@ -304,7 +307,7 @@ $$
 
 **Policy Iteration** : $\begin{aligned}V^{\pi^{(n)}}(s)  &= R(s,\pi(s))+\gamma\sum_{s'}P(s'|s,\pi(s))V^{\pi^{(n)}}(s')\\\pi^{(n+1)}&=\underset{\pi}{\text{argmax}}\left\{R(s,a)+\gamma\sum_{s'} P(s'|s,a)V^{\pi^{(n)}}(s')\right\}\end{aligned}$
 
-**Q learning**_(environment-known/model-based)_ : $Q(s,a)\gets R(s,a)+\sum_{s'} P(s'|s,a)\left[\gamma~\underset{a'}{\text{max}}~Q(s',a')\right] $
+**Q learning**_(environment-known/model-based)_ : $Q(s,a)\gets R(s,a)+\sum_{s'} P(s'|s,a)\left[\gamma~\underset{a'}{\text{max}}~Q(s',a')\right]$
 
 **Q learning**_(environment-unknown/model-free)_ : $Q(s,a)\gets (1-\alpha)Q(s,a)+\alpha\left[r+\gamma~\underset{a'}{\text{max}}~Q(s',a')-Q(s,a)\right]$
 

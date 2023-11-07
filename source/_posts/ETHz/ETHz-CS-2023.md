@@ -8,6 +8,13 @@ category: "Presentation"
 tags: [ETH Zürich,Physics,Energy, Nucler Fusion]
 ---
 
+<style>
+  @media (max-width: 767px) {
+    .video-container{
+        height: 200px !important;
+    }
+}
+</style>
 
 
 # Infinite Energy is closer than you think
@@ -26,7 +33,7 @@ $$
 
 - fire : $10^{-8}\%$ 
 
-   200k years ago
+  $200\text k$ years ago
 
   pick wood burn
 
@@ -34,19 +41,19 @@ $$
 
 - fossil fuel: $10^{-7}\%$ 
 
-  2k years ago
+  $2 \text k$ years ago
 
   dead body from plants, dinosaurs and even our ancestors
 
   greenhouse gases
 
-- electricity: 200 years ago 
+- electricity: $200$ years ago 
 
   currently a energy transmission method
 
 - fission: $0.09\%$ 
 
-  <100 years, 
+  $<100$ years, 
 
   heavy elements are rare in the universe (U, Pu)
 
@@ -56,19 +63,20 @@ $$
 
   still doing research, 
 
-  but sun has already doing fusion for 5 billion years
+  but sun has already doing fusion for $5$ billion years
 
 - blackhole: $33\%$ 
 
 - antimatter: $100\%$ 
 
-If we compress the 13.8 billion years into one day. The solar system formed at noon. Human appear in the last half minute. Modern Human Civilization appear in the last millisecond. --Cixin Liu
+If we compress the $13.8$ billion years into one day. The solar system formed at noon. Human appear in the last half minute. Modern Human Civilization appear in the last millisecond. --Cixin Liu
 
 
 
 ## Fusion
 
-<img src="average binding energy.jpg" alt="img" style="zoom:50%;" />
+<!-- <img src="average binding energy.jpg" alt="img" style="zoom:50%;" /> -->
+![average binding energy](average_binding_energy.jpg)
 
 **Lawson criterion**： 
 
@@ -93,11 +101,11 @@ $$
 | $\ce{p + B_{11}-> 3^4He}$                                    | $4\times10^{24}$       | $8.682$       |
 | $\ce{p + ^6Li -> ^4He + ^3He}$                               | $1.25\times10^{25}$    | $4$           |
 
-> https://www.zhihu.com/question/398163463/answer/2596028611
+> [https://www.zhihu.com/question/398163463/answer/2596028611](https://www.zhihu.com/question/398163463/answer/2596028611)
 
 ## Device
 
-![img](fusion reactor.png)
+![fusion reactor](fusion_reactor.png)
 
 ### Tokamak
 
@@ -105,9 +113,9 @@ A **tokamak** is a device which uses a powerful magnetic field to confine plasma
 
 The electric current in Solenoid coils should rise linearly
 
-![img](tokamak.png)
+![tokamak](tokamak.png)
 
-![img](magenetic_field.png)
+![magenetic field](magenetic_field.png)
 
 lamor procession
 
@@ -115,7 +123,7 @@ lamor procession
 
 Torus shape
 
-![img](Screenshot 2023-04-20 113254.png)
+![Toroidal Coils](Screenshot 2023-04-20 113254.png)
 
 
 
@@ -123,25 +131,29 @@ Torus shape
 
 linear increasing current, super conducting
 
-![img](Screenshot 2023-04-20 113424.png)
+![toroidal coils origin](toroidal_coils_origin.png)
 
-<img src="Screenshot 2023-04-20 113609.png" alt="img" style="zoom:50%;" />
+<!-- <img src="Screenshot 2023-04-20 113609.png" alt="img" style="zoom:50%;" /> -->
+![toroidal coils twist](toroidal_coils_twist.png)
 
 #### Poloidal  Coils
 
 control the section area of the plasma
 
-<img src="微信截图_20230420145537.png" alt="img" style="zoom:33%;" />
+<!-- <img src="微信截图_20230420145537.png" alt="img" style="zoom:33%;" /> -->
+![poloidal coils](poloidal_coils.png)
 
 #### Divertor
 
 remove heavier ions, transfer fusion energy
 
-<img src="微信截图_20230420114050.png" alt="img" style="zoom:33%;" />
+<!-- <img src="微信截图_20230420114050.png" alt="img" style="zoom:33%;" /> -->
+![divertor](divertor.png)
 
-<img src="0_25.jpg" alt="img" style="zoom:50%;" />
+<!-- <img src="0_25.jpg" alt="img" style="zoom:50%;" /> -->
+![divertor from iter](divertor_iter.jpg)
 
-> https://www.iter.org/mach/Divertor
+> [https://www.iter.org/mach/Divertor](https://www.iter.org/mach/Divertor)
 
 #### Fusion Power
 
@@ -151,19 +163,21 @@ $$
 
 JET produce short energy of $Q=65\%$
 
-<img src="微信截图_20230420143858.png" alt="img" style="zoom:33%;" />
+<!-- <img src="微信截图_20230420143858.png" alt="img" style="zoom:33%;" /> -->
+![fusion power](fusion_power.png)
+
 
 #### Development
 
-![img](triple_product_vs_temperature_scatterplot.png)
+![triple product vs temperature scatterplot](triple_product_vs_temperature_scatterplot.png)
 
-> https://www.fusionenergybase.com/article/measuring-progress-in-fusion-energy-the-triple-products
+> [https://www.fusionenergybase.com/article/measuring-progress-in-fusion-energy-the-triple-products](https://www.fusionenergybase.com/article/measuring-progress-in-fusion-energy-the-triple-products)
 
 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/gwOrbr8KWDs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe class="video-container" width="100%" height="500px" src="https://www.youtube.com/embed/gwOrbr8KWDs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-<iframe src="//player.bilibili.com/player.html?aid=634740294&bvid=BV1rb4y1i7cy&cid=457201837&page=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe class="video-container" width="100%" height="500px" src="//player.bilibili.com/player.html?aid=634740294&bvid=BV1rb4y1i7cy&cid=457201837&page=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 ### Stellarators
 
@@ -173,9 +187,9 @@ $$
 
 but complex engineering problem
 
-![img](微信截图_20230420113759.png)
+![Stellarators](stellarators.png)
 
-![img](i__id1765_w960_t1680507455.jpg)
+![Stellarators engineering view](stellarators_engineering.jpg)
 
 ### Z-pinch
 
@@ -198,19 +212,19 @@ $$
 
 unstable
 
-![img](微信截图_20230420115428.png)
+![z-pinch](z-pinch.png)
 
 Sausage Instability
 
-![img](微信截图_20230420115534.png)
+![z-pinch sausage instability](z-pinch-sausage.png)
 
 Kink Instability
 
-![img](微信截图_20230420115743.png)
+![z-pinch kink instability](z-pinch-kink.png)
 
-> https://www.fusionenergybase.com/concept/z-pinch
+> [https://www.fusionenergybase.com/concept/z-pinch](https://www.fusionenergybase.com/concept/z-pinch)
 >
-> https://sites.uw.edu/zpinchlab/z-pinch-attributes/
+> [https://sites.uw.edu/zpinchlab/z-pinch-attributes/](https://sites.uw.edu/zpinchlab/z-pinch-attributes/)
 
 ### $\theta$ pinch
 
@@ -220,27 +234,29 @@ Field Reverse Configuration(FRC)
 
 self stable torus plasma
 
-<img src="微信截图_20230420151817.png" alt="img" style="zoom:50%;" />
+<!-- <img src="微信截图_20230420151817.png" alt="img" style="zoom:50%;" /> -->
+![theta-pinch](theta-pinch.png)
 
 ### General Fusion
 
 
 
-![img](微信截图_20230420121000.png)
+<!-- ![img](微信截图_20230420121000.png) -->
+![general_fusion](general_fusion.png)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/rdOfW6h77ZU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe class="video-container" width="100%" height="500px" src="https://www.youtube.com/embed/rdOfW6h77ZU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-> https://generalfusion.com/
+> [https://generalfusion.com/](https://generalfusion.com/)
 
 ### Helion
 
 $\ce{D + He_3 -> p + He_4}$
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/HlNfP3iywvI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe class="video-container" width="100%" height="500px" src="https://www.youtube.com/embed/HlNfP3iywvI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-> https://www.helionenergy.com
+> [https://www.helionenergy.com](https://www.helionenergy.com)
 >
-> https://indico.cern.ch/event/776181/contributions/3376242/attachments/1856269/3049031/The_Field-Reversed_Configuration_FRC_Plasma_as_v2.pdf
+> [https://indico.cern.ch/event/776181/contributions/3376242/attachments/1856269/3049031/The_Field-Reversed_Configuration_FRC_Plasma_as_v2.pdf](https://indico.cern.ch/event/776181/contributions/3376242/attachments/1856269/3049031/The_Field-Reversed_Configuration_FRC_Plasma_as_v2.pdf)
 
 
 

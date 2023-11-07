@@ -25,7 +25,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://walkerchi.github.io/publication/$%7Bpaper.img%7D">
 <meta property="article:published_time" content="2023-11-02T20:22:44.000Z">
-<meta property="article:modified_time" content="2023-11-02T21:05:24.232Z">
+<meta property="article:modified_time" content="2023-11-03T15:10:26.260Z">
 <meta property="article:author" content="walkerchi">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://walkerchi.github.io/publication/$%7Bpaper.img%7D">
@@ -190,7 +190,7 @@
                   
                   
                   
-                  <a class="dropdown-item" href="/math2pix">
+                  <a class="dropdown-item" href="https://walkerchi.github.io/math2pix">
                     
                     <span>math2pix</span>
                   </a>
@@ -269,10 +269,10 @@
     position: relative;
     transform: translateX(-100%);
     transition: all .3s ease-in-out;
-    display:flex;
-    flex-direction:row;
-    align-items:center;
-    justify-content:flex-start;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
   }
   .paper-item img {
     width: 140px;
@@ -290,6 +290,37 @@
   }
   .paper-content {
     flex-grow: 1;
+  }
+
+  /* Mobile styles */
+  @media (max-width: 767px) {
+    .paper-item {
+      flex-direction: column;
+      padding: 10px;
+    }
+    .paper-item img {
+      width: 100%; /* full width */
+      height: auto; /* maintain aspect ratio */
+      margin-right: 0;
+      margin-bottom: 10px; /* add some space between image and text */
+    }
+    .paper-content h3 {
+      font-size: 1.2rem; /* adjust heading size for mobile */
+    }
+  }
+
+  /* Tablet styles */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .paper-item {
+      padding: 15px;
+    }
+    .paper-item img {
+      width: 200px; /* larger than mobile, but smaller than desktop */
+      height: auto;
+    }
+    .paper-content h3 {
+      font-size: 1.4rem; /* slightly larger heading size for tablet */
+    }
   }
 </style>
 <div class="timeline">

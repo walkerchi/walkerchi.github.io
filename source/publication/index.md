@@ -16,10 +16,10 @@ date: 2023-11-02 21:22:44
     position: relative;
     transform: translateX(-100%);
     transition: all .3s ease-in-out;
-    display:flex;
-    flex-direction:row;
-    align-items:center;
-    justify-content:flex-start;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
   }
   .paper-item img {
     width: 140px;
@@ -38,7 +38,39 @@ date: 2023-11-02 21:22:44
   .paper-content {
     flex-grow: 1;
   }
+
+  /* Mobile styles */
+  @media (max-width: 767px) {
+    .paper-item {
+      flex-direction: column;
+      padding: 10px;
+    }
+    .paper-item img {
+      width: 100%; /* full width */
+      height: auto; /* maintain aspect ratio */
+      margin-right: 0;
+      margin-bottom: 10px; /* add some space between image and text */
+    }
+    .paper-content h3 {
+      font-size: 1.2rem; /* adjust heading size for mobile */
+    }
+  }
+
+  /* Tablet styles */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .paper-item {
+      padding: 15px;
+    }
+    .paper-item img {
+      width: 200px; /* larger than mobile, but smaller than desktop */
+      height: auto;
+    }
+    .paper-content h3 {
+      font-size: 1.4rem; /* slightly larger heading size for tablet */
+    }
+  }
 </style>
+
 
 <div class="timeline">
   <ul class="paper-list" id="paperList"></ul>

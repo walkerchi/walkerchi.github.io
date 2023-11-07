@@ -91,7 +91,9 @@ $d$ : dimension of the points
 
 given uniform distribution $X,Y\sim Unif(0,1)$, get 3d sphere uniform distribution
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/3D_Spherical.svg/1920px-3D_Spherical.svg.png"  style="zoom:15%;"/>
+<!-- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/3D_Spherical.svg/1920px-3D_Spherical.svg.png"  style="zoom:15%;"/> -->
+![sphere coordinate](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/3D_Spherical.svg/1920px-3D_Spherical.svg.png)
+
 $$
 \int_0^X\int_0^Y dxdy = \int_0^\Phi\int_0^\Theta \frac{1}{4\pi} sin\theta d\phi d\theta
 \\
@@ -264,14 +266,16 @@ $R$ : $m$ rules to update the $\psi$
 
 **neighborhoods**
 
-<img src="https://s2.loli.net/2023/02/12/fr1RhESUDdmeB8A.png" style="zoom:40%">
+<!-- <img src="https://s2.loli.net/2023/02/12/fr1RhESUDdmeB8A.png" style="zoom:40%"> -->
+![Von Neumann and Moore neighborhood](https://s2.loli.net/2023/02/12/fr1RhESUDdmeB8A.png)
 
 - left:*Von Neumann neighborhood* : 4 (north-east-south-west) 
 - right:*Moore neighborhood* : 8 (3x3 region)
 
 **boundary conditions**
 
-<img src="https://s2.loli.net/2023/02/12/Ub5eCaY36Xz7n1A.png" style="zoom:30%">
+<!-- <img src="https://s2.loli.net/2023/02/12/Ub5eCaY36Xz7n1A.png" style="zoom:30%"> -->
+![periodic,fixed,adiabtic,reflection boundary](https://s2.loli.net/2023/02/12/Ub5eCaY36Xz7n1A.png)
 
 assume `x[1:]` is the actual space
 
@@ -282,7 +286,8 @@ assume `x[1:]` is the actual space
 
 ### Game of Life
 
-<img src="https://s2.loli.net/2023/01/16/w9oGrZQPjqJNmM3.png" style="zoom:50%;"/>
+<!-- <img src="https://s2.loli.net/2023/01/16/w9oGrZQPjqJNmM3.png" style="zoom:50%;"/> -->
+![Game of Life](https://s2.loli.net/2023/01/16/w9oGrZQPjqJNmM3.png)
 
 moore neighborhood
 
@@ -293,12 +298,14 @@ moore neighborhood
 
 ### Langton Ant
 
-<img src="https://s2.loli.net/2023/01/16/G18I2YSxk7qujaP.png" style="zoom:30%">
+<!-- <img src="https://s2.loli.net/2023/01/16/G18I2YSxk7qujaP.png" style="zoom:30%"> -->
+![Langton Ant strategy](https://s2.loli.net/2023/01/16/G18I2YSxk7qujaP.png)
 
 - enter white cell, turn left and paint cell gray
 - enter gray  cell, turn  right and paint cell white
 
-<img src="https://s2.loli.net/2023/02/12/t3g9BHNb4nsdep7.png" style="zoom:40%">
+<!-- <img src="https://s2.loli.net/2023/02/12/t3g9BHNb4nsdep7.png" style="zoom:40%"> -->
+![Langton Ant](https://s2.loli.net/2023/02/12/t3g9BHNb4nsdep7.png)
 
 observation
 
@@ -308,7 +315,8 @@ observation
 
 ### Traffic Models
 
-<img src="https://s2.loli.net/2023/01/16/gDEGl3oYhVwXQSR.png" style="zoom:30%">
+<!-- <img src="https://s2.loli.net/2023/01/16/gDEGl3oYhVwXQSR.png" style="zoom:30%"> -->
+![Traffic Models](https://s2.loli.net/2023/01/16/gDEGl3oYhVwXQSR.png)
 $$
 (\psi_{i-1},\psi_i,\psi_{i+1})_t \rightarrow  (\psi_i)_{t+1}
 $$
@@ -319,9 +327,11 @@ $$
 
 ###  Gas of Particles ( HPP model )
 
-<img src="https://s2.loli.net/2023/01/16/CuFYk4QiwbxhaLA.png" style="zoom:30%">
+<!-- <img src="https://s2.loli.net/2023/01/16/CuFYk4QiwbxhaLA.png" style="zoom:30%"> -->
+![HPP model](https://s2.loli.net/2023/01/16/CuFYk4QiwbxhaLA.png)
 
-<img src="https://s2.loli.net/2023/01/16/eVlREWMqtD7QTUd.png" style="zoom:35%" >
+<!-- <img src="https://s2.loli.net/2023/01/16/eVlREWMqtD7QTUd.png" style="zoom:35%" > -->
+![HPP model strategy](https://s2.loli.net/2023/01/16/eVlREWMqtD7QTUd.png)
 
 $\psi(r, t) = (1011)$
 
@@ -566,7 +576,8 @@ implicit
 
 ### Stability
 
-<img src="https://s2.loli.net/2023/02/14/CiQwU9KYnSuy3GV.png" style="zoom:40%">
+<!-- <img src="https://s2.loli.net/2023/02/14/CiQwU9KYnSuy3GV.png" style="zoom:40%"> -->
+![Dissipation and Dispersion](https://s2.loli.net/2023/02/14/CiQwU9KYnSuy3GV.png)
 
 - *Dissipation* : smooth out sharp corners, gradients, discontinuities
 - *Dispersion* : dependence of wave speed on wavelength
@@ -737,11 +748,13 @@ round-off error $\mathcal O(\frac{\eta}{\Delta t})$
 
 minimum error is smaller with bigger $\Delta t$ compared to euler 
 
-<img src="https://s2.loli.net/2023/01/17/RGFuZKgtQHzMSTE.png"  style="zoom:40%;"/>
+<!-- <img src="https://s2.loli.net/2023/01/17/RGFuZKgtQHzMSTE.png"  style="zoom:40%;"/> -->
+![truncation and round-off error](https://s2.loli.net/2023/01/17/RGFuZKgtQHzMSTE.png)
 
 ### Conservation
 
-<img src="https://s2.loli.net/2023/01/17/ZBsTerF12XJ98q7.png" style="zoom:40%">
+<!-- <img src="https://s2.loli.net/2023/01/17/ZBsTerF12XJ98q7.png" style="zoom:40%"> -->
+![phase space conservation](https://s2.loli.net/2023/01/17/ZBsTerF12XJ98q7.png)
 
 volume $\leftrightarrow$ energy
 
@@ -797,7 +810,8 @@ $$
 \frac{d\boldsymbol v}{dt} &= \frac{q}{m}(\boldsymbol E(\boldsymbol x,t), \boldsymbol v\times \boldsymbol B(\boldsymbol x, t))
 \end{aligned}
 $$
-<img src="https://s2.loli.net/2023/02/15/AFSthv3Gafew98u.png" style="zoom:40%">
+<!-- <img src="https://s2.loli.net/2023/02/15/AFSthv3Gafew98u.png" style="zoom:40%"> -->
+![PIC method](https://s2.loli.net/2023/02/15/AFSthv3Gafew98u.png)
 
 **Boris algorithm**
 $$
@@ -819,7 +833,8 @@ $$
 
 ### Yee Cell
 
-<img src="https://s2.loli.net/2023/02/15/fSkg52XFK4JIjqO.png" style="zoom:30%">
+<!-- <img src="https://s2.loli.net/2023/02/15/fSkg52XFK4JIjqO.png" style="zoom:30%"> -->
+![Yee-Cell method](https://s2.loli.net/2023/02/15/fSkg52XFK4JIjqO.png)
 $$
 \begin{aligned}
 \frac{\partial \boldsymbol H}{\partial t} & = -\frac{1}{\mu_0} \nabla \times \boldsymbol E\\
@@ -857,7 +872,8 @@ error minimized by $\tilde E_{x} = \sqrt{\frac{\varepsilon_0}{\mu_0}}E_x$
 
 ### Particle in Cell  Method (PIC)
 
-<img src="https://s2.loli.net/2023/02/15/AFSthv3Gafew98u.png" style="zoom:40%">
+<!-- <img src="https://s2.loli.net/2023/02/15/AFSthv3Gafew98u.png" style="zoom:40%"> -->
+![PIC method](https://s2.loli.net/2023/02/15/AFSthv3Gafew98u.png)
 $$
 -\Delta \phi = \rho\\
 F = -\nabla \phi

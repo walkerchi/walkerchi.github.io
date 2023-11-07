@@ -400,9 +400,9 @@ $$
 
 ### Inducing points
 
-**Subset of Regressors(SoR)** : $q_{SOR}(f|u)=\mathcal N(K_{f,u}K_{u,u}u,0) \approx \mathcal N(K_{f,u}K_{u,u}^{-1}u,K_{f,f}-Q_{f,f}) $
+**Subset of Regressors(SoR)** : $q_{SOR}(f|u)=\mathcal N(K_{f,u}K_{u,u}u,0) \approx \mathcal N(K_{f,u}K_{u,u}^{-1}u,K_{f,f}-Q_{f,f})$
 
-**Fully independent training conditional (FITC)** : $q_{FIFC}(f|u)=\mathcal N(K_{f,u}K_{u,u}u,diag(K_{f,f-Q_{f,f}})) \approx \mathcal N(K_{f,u}K_{u,u}^{-1}u,K_{f,f}-Q_{f,f}) $
+**Fully independent training conditional (FITC)** : $q_{FIFC}(f|u)=\mathcal N(K_{f,u}K_{u,u}u,diag(K_{f,f-Q_{f,f}})) \approx \mathcal N(K_{f,u}K_{u,u}^{-1}u,K_{f,f}-Q_{f,f})$
 
 optimize hyperparameters via  maximizing the marginal likelihood
 
@@ -439,8 +439,8 @@ $$
 - one modal 
 - no previous knowlege
 
-<img src="https://s2.loli.net/2023/01/29/F5wAvc7PQ2CK3qB.png" styles="zoom:30%;">
-
+<!-- <img src="https://s2.loli.net/2023/01/29/F5wAvc7PQ2CK3qB.png" styles="zoom:30%;"> -->
+![Laplacian approximation](https://s2.loli.net/2023/01/29/F5wAvc7PQ2CK3qB.png)
 
 
 - left : backward KL $D_{KL}(q\Vert p)$ (blue is $q$, orange is $p$)

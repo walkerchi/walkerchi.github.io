@@ -36,7 +36,7 @@ $$
 
 
 
-<img src="./README.assets/bloch_sphere.png" alt="img" style="zoom:30%;" />
+<img src="bloch_sphere.png" alt="img" style="height:30%;" />
 
 - $z$ axis :  $\ket 0 = \begin{bmatrix}1\\0\end{bmatrix}\quad \ket 1 = \begin{bmatrix}0\\1\end{bmatrix}$
 - $x$ axis : $\ket + = \frac{1}{\sqrt 2}\begin{bmatrix}1\\1\end{bmatrix}\quad \ket - = \frac{1}{\sqrt 2}\begin{bmatrix}1\\-1\end{bmatrix}$
@@ -92,7 +92,7 @@ $$
 |                   | location $A$                                                 | location $B$                                                 |                                                              |
 | ----------------- | :----------------------------------------------------------- | :----------------------------------------------------------- | ------------------------------------------------------------ |
 | CHSH  inequatlity | $Q=\pm 1\quad R=\pm 1$                                       | $S=\pm 1\quad T=\pm 1$                                       | $\langle QS\rangle+\langle RT\rangle+\langle RS\rangle-\langle QT\rangle\le 2$ |
-| Quantum Violation | $\hat Q = \hat\sigma_z\otimes I\\\hat R=\hat \sigma_x\otimes I\\ $ | $\hat S=\frac{-1}{\sqrt 2}\hat I\otimes(\hat \sigma_z+\hat \sigma_x)\\ \hat T = \frac{1}{\sqrt 2}\hat I\otimes (\hat \sigma_z -\hat \sigma_x)$ | $\langle QS\rangle+\langle RT\rangle+\langle RS\rangle-\langle QT\rangle =2\sqrt 2>2$ |
+| Quantum Violation | $\hat Q = \hat\sigma_z\otimes I\\\hat R=\hat \sigma_x\otimes I\\$ | $\hat S=\frac{-1}{\sqrt 2}\hat I\otimes(\hat \sigma_z+\hat \sigma_x)\\ \hat T = \frac{1}{\sqrt 2}\hat I\otimes (\hat \sigma_z -\hat \sigma_x)$ | $\langle QS\rangle+\langle RT\rangle+\langle RS\rangle-\langle QT\rangle =2\sqrt 2>2$ |
 
 
 
@@ -104,13 +104,9 @@ $$
 
 ## Rotation
 
-- $
-  R_x(\theta) = e^{-i\theta X/2}= \text{cos}(\theta/2)I - i~sin(\theta/2)X=\begin{bmatrix}\text{cos}(\theta/2)&-i~\text{sin}(\theta/2)\\-i~\text{sin}(\theta/2)&\text{cos}(\theta/2)\end{bmatrix}
-  $
-- $
-  R_y(\theta) &= e^{-i\theta Y/2}= \text{cos}(\theta/2)I - i~sin(\theta/2)Y=\begin{bmatrix}\text{cos}(\theta/2)&-~\text{sin}(\theta/2)\\\text{sin}(\theta/2)&\text{cos}(\theta/2)\end{bmatrix}
-  $
-- $R_z(\theta) &= e^{-i\theta Z/2}= \text{cos}(\theta/2)I - i~sin(\theta/2)Z=\begin{bmatrix}e^{-i\theta/2}&0\\0&e^{i\theta/2}\end{bmatrix}$
+- $R_x(\theta) = e^{-i\theta X/2}= \text{cos}(\theta/2)I - i~sin(\theta/2)X=\begin{bmatrix}\text{cos}(\theta/2)&-i~\text{sin}(\theta/2)\\-i~\text{sin}(\theta/2)&\text{cos}(\theta/2)\end{bmatrix}$
+- $R_y(\theta) = e^{-i\theta Y/2}= \text{cos}(\theta/2)I - i~sin(\theta/2)Y=\begin{bmatrix}\text{cos}(\theta/2)&-~\text{sin}(\theta/2)\\\text{sin}(\theta/2)&\text{cos}(\theta/2)\end{bmatrix}$
+- $R_z(\theta) = e^{-i\theta Z/2}= \text{cos}(\theta/2)I - i~sin(\theta/2)Z=\begin{bmatrix}e^{-i\theta/2}&0\\0&e^{i\theta/2}\end{bmatrix}$
 
 ## Pauli Gates
 
@@ -129,11 +125,11 @@ $H$ rotation about axis $\frac{1}{\sqrt 2}(\hat x +\hat z)$ by $\pi$
 
 - $\text{CNOT} = \ket 0_c\bra 0_c  \otimes \hat I_t + \ket 1_c \bra 1_c \otimes \hat X_t$
 
-  <img src="./README.assets/cnot.png" alt="img" style="zoom:33%;" />
+  <img src="cnot.png" alt="img" style="height:40%;" />
 
 - $\text{CPAHSE} = \ket 0_c\bra0_c \otimes \hat I_t + \ket 1_c\bra 1_c\otimes \hat Z_t$
 
-  <img src="./README.assets/cz.png" alt="img" style="zoom:33%;" />
+  <img src="cz.png" alt="img" style="height:40%;" />
 
 ## Matrix Table
 
@@ -174,8 +170,7 @@ $H$ rotation about axis $\frac{1}{\sqrt 2}(\hat x +\hat z)$ by $\pi$
 ## Oracle 
 
 - Phase oracle : $U_f\ket x = (-1)^{f(x)}\ket x$
-
-  <img src="./README.assets/phase_oracle.png" alt="img" style="zoom:50%;" />
+  <img src="phase_oracle.png" alt="img" style="height:50%;" />
   $$
   \begin{aligned}
   O_f\ket y\ket x  &= \ket {y\oplus f(x)}\ket x\\
@@ -186,17 +181,13 @@ $H$ rotation about axis $\frac{1}{\sqrt 2}(\hat x +\hat z)$ by $\pi$
   $$
 
 - Bit oracle : $O_f\ket y\ket x = \ket {y\oplus f(x)}\ket x$
+  <img src="bit_oracle.png" alt="img" style="height:40%;" />
 
-  <img src="./README.assets/bit_oracle.png" alt="img" style="zoom:40%;" />
 
-
-$$
-
-$$
 
 ## Deutsch-Josza
 
-<img src="./README.assets\deutsch-josza.png" alt="img" style="zoom:50%;" />
+<img src="deutsch-josza.png" alt="img" style="height:50%;" />
 
 Distinguish $f(x)$ whether is **constant** function or **balanced** function. $\mathcal O(N) \to \mathcal O(1)$
 
@@ -208,8 +199,8 @@ $$
 \begin{aligned}
 \bra 0 ^{\otimes n} H^{\otimes n}U_f H^{\otimes n}\ket 0^{\otimes n}
 &= \bra 0 ^{\otimes n}H^{\otimes n} \textcolor{orange}{U_f}\underbrace{\left(\frac{1}{\sqrt {2^n}}\sum_{x\in\{0,1\}^n}\ket x\right)}_{H^{\otimes n}\ket 0^{\otimes n}}\\
-&= \bra 0 ^{\otimes n}\textcolor{#9FFCFD}{H^{\otimes n}}\left(\frac{1}{\sqrt{2^n}}\sum_{x\in\{0,1\}^n}\textcolor{orange}{(-1)^{f(x)}}\ket x\right)\\
-&= \bra 0 ^{\otimes n}\textcolor{#9FFCFD}{\frac{1}{\sqrt{2^n}}\sum_{x\in\{0,1\}^n}}\textcolor{orange}{(-1)^{f(x)}}\left(\frac{1}{\sqrt {2^n}}\sum_{y\in\{0,1\}^n}\textcolor{#9FFCFD}{(-1)^{x\cdot y}}\ket y\right)\\
+&= \bra 0 ^{\otimes n}\textcolor{cyan}{H^{\otimes n}}\left(\frac{1}{\sqrt{2^n}}\sum_{x\in\{0,1\}^n}\textcolor{orange}{(-1)^{f(x)}}\ket x\right)\\
+&= \bra 0 ^{\otimes n}\textcolor{cyan}{\frac{1}{\sqrt{2^n}}\sum_{x\in\{0,1\}^n}}\textcolor{orange}{(-1)^{f(x)}}\left(\frac{1}{\sqrt {2^n}}\sum_{y\in\{0,1\}^n}\textcolor{cyan}{(-1)^{x\cdot y}}\ket y\right)\\
 &= \frac{1}{2^n}\sum_{x, y \in\{0,1\}^n}\textcolor{orange}{(-1)^{f(x)}} (-1)^{x\cdot y} \bra {0^{\otimes n}} \ket {y}\\
 & = \frac{1}{2^n}\sum_{x\in\{0,1\}^n}\textcolor{orange}{(-1)^{f(x)}}\\
 &=\begin{cases}
@@ -227,7 +218,7 @@ $$
 
 ## Grover
 
-<img src="./README.assets\grover.png" alt="img" style="zoom:40%;" />
+<img src="grover.png" alt="img" style="height:40%;" />
 
 find the unique $x_0$ that $f(x_0)=1\quad f:\{1,\cdots,N\}\to \{0,1\}$, $O(N)\to O(\sqrt N)$
 
@@ -274,7 +265,7 @@ $$
 
 ## [QFT] Quantum  Fourier  transform
 
-<img src="./README.assets\QFT.png" alt="img" style="zoom:40%;" />
+<img src="QFT.png" alt="img" style="height:40%;" />
 
 $Q_N \ket x = \frac{1}{\sqrt N}\overset{N-1}{\underset{y=0}{\sum}}e^{2\pi ixy /N}\ket y$ : $\mathcal O(N\text{log}N)\to  \mathcal  O(n^2)$
 $$
@@ -314,12 +305,12 @@ Number of gates in QFT of $n$ bit string
 > 1&1\\
 > 1&-1
 > \end{bmatrix} = H
-> & Q_3 = \frac{1}{\sqrt 3}\begin{bmatrix}
+> \quad Q_3 = \frac{1}{\sqrt 3}\begin{bmatrix}
 > 1 & 1 & 1\\
 > 1 & e^{2\pi i/3} & e^{-2\pi i/3}\\
 > 1 & e^{-2\pi i /3} & e^{2\pi i /3}
 > \end{bmatrix}
-> & Q_4 = \frac{1}{2}\begin{bmatrix}
+> \quad Q_4 = \frac{1}{2}\begin{bmatrix}
 > 1&1&1&1\\
 > 1&i&-1&-i\\
 > 1&-1&1&-1\\
@@ -331,7 +322,7 @@ Number of gates in QFT of $n$ bit string
 
 ## Shor  factoring
 
-<img src="./README.assets/shor_factoring.png" alt="img" style="zoom:40%;" />
+<img src="shor_factoring.png" alt="img" style="height:40%;" />
 
 given a non-prime integer $N$ represented as a bit string, find a non-trivial factor $a^x\text{mod} ~N$, $a^r\text{mod} N = 1\to(a^{r/2}+1)(a^{r/2}-1) \text{mod} N = 0$
 $$
@@ -442,13 +433,13 @@ def shor_factoring(N):
   0 & \sqrt \gamma  \\
   0 & 0
   \end{bmatrix}
-  &
+  \quad
   \hat E_0 = \begin{bmatrix}
   1 & 0 \\
   0 & \sqrt{1-\gamma}
   \end{bmatrix}$
 
-  <img src="./README.assets/amplitude_dampling.png" alt="img" style="zoom:33%;" />
+  <img src="amplitude_dampling.png" alt="img" style="height:40%;" />
 
   - excited state $\ket 1$ damping to $\ket 0$ due to loss of energy
 
@@ -457,13 +448,13 @@ def shor_factoring(N):
 - **Phase Damping** : $\hat E_1 = \begin{bmatrix}
   0 & 0 \\
   0 & \sqrt r 
-  \end{bmatrix} &
+  \end{bmatrix} \quad
   \hat E_0  = \begin{bmatrix}
   1 & 0\\
   0 & \sqrt{ 1- r}
   \end{bmatrix}$
 
-  <img src="./README.assets/phase_damping.png" alt="img" style="zoom:33%;" />
+  <img src="phase_damping.png" alt="img" style="height:40%;" />
 
   - lossing phase information, energy conserved
 
@@ -512,11 +503,11 @@ def shor_factoring(N):
 
 **3-qubit bit-flip code** : $(\alpha\ket 0 + \beta  \ket 1)\otimes \ket 0 \otimes \ket 0 \to \alpha\ket {000}+\beta \ket{111}$
 
-<img src="./README.assets/3-qubit-bit-flip-code.png" alt="img" style="zoom:40%;" />
+<img src="3-qubit-bit-flip-code.png" alt="img" style="height:40%;" />
 
 syndrome extraction
 
-<img src="./README.assets/3-qubit-bit-flip-syndrome.png" alt="img" style="zoom:40%;" />
+<img src="3-qubit-bit-flip-syndrome.png" alt="img" style="height:40%;" />
 
 - no error
   $$
@@ -545,11 +536,11 @@ syndrome extraction
 
  **3-qubit phase-flip code** : $(\alpha\ket 0 + \beta\ket 1)\otimes \ket 0 \otimes \ket 0 \to  \alpha\ket{+++}+\beta\ket{---}$
 
-<img src="./README.assets/3-qubit-phase-flip-code.png" alt="img" style="zoom:45%;" />
+<img src="3-qubit-phase-flip-code.png" alt="img" style="height:45%;" />
 
 syndrome extraction
 
-<img src="./README.assets/3-qubit-phase-flip-syndrome.png" alt="img" style="zoom:40%;" />
+<img src="3-qubit-phase-flip-syndrome.png" alt="img" style="height:40%;" />
 $$
 \ket +\ket +\overset{\text{CNOT}}{\to}\ket +\ket+
 \\
@@ -580,7 +571,7 @@ $$
 
 **Shor 9-qubit concatenated code** : $\alpha\ket 0_L+\beta\ket 1_L= \alpha(\ket{111}+\ket{000})^{\otimes 3}+\beta(\ket{111}-\ket{000})^{\otimes 3}$
 
-<img src="./README.assets/9-qubit-concatenated-code.png" alt="img" style="zoom:40%;" />
+<img src="9-qubit-concatenated-code.png" alt="img" style="height:40%;" />
 
 syndrome
 
@@ -721,11 +712,11 @@ can be simulated efficiently on a classical computer
 
 ## surface code
 
-<img src="./README.assets/surface_code.png" alt="img" style="zoom:50%;" />
+<img src="surface_code.png" alt="img" style="height:50%;" />
 
 syndrome
 
-<img src="README.assets/surface_code_syndrome.png" alt="img" style="zoom:40%;" />
+<img src="surface_code_syndrome.png" alt="img" style="height:40%;" />
 
 # Hamiltonian Simulation
 

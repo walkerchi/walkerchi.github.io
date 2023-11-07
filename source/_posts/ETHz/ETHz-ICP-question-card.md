@@ -218,7 +218,8 @@ tags: [ETH Zürich, Mathematic, Physics, Computational Physics, Julia, Distribut
 
 2. What phenomenon will you find for cluster size distribution with different $p$?
 
-   <img src="https://s2.loli.net/2023/08/09/NCZyfYtGk3qziHE.png" >
+   <!-- <img src="https://s2.loli.net/2023/08/09/NCZyfYtGk3qziHE.png" > -->
+   ![cluster size distribution for different $p$](https://s2.loli.net/2023/08/09/NCZyfYtGk3qziHE.png)
 
    $p<p_c$, as $p\uparrow$ , $s-ln(n_s)$ are higher
 
@@ -228,7 +229,8 @@ tags: [ETH Zürich, Mathematic, Physics, Computational Physics, Julia, Distribut
 
 3. What do you observe in the $\chi^2$ test for the cluster size? ($\chi=\sum_s s^2\frac{N_s}{N_{clusters}}$)
 
-   <img src="https://s2.loli.net/2023/08/09/KgDxVJ1sZjPUt76.png" style="zoom:60%">
+   <!-- <img src="https://s2.loli.net/2023/08/09/KgDxVJ1sZjPUt76.png" style="zoom:60%"> -->
+   ![$p-\chi$ relationship](https://s2.loli.net/2023/08/09/KgDxVJ1sZjPUt76.png)
 
    There is a spike near $p_c$
 
@@ -244,7 +246,8 @@ tags: [ETH Zürich, Mathematic, Physics, Computational Physics, Julia, Distribut
 
 2. Write a short code for burning method
 
-   <img src="https://s2.loli.net/2023/08/09/QPNmFrwLCi5kTKb.png" style="zoom:60%">
+   <!-- <img src="https://s2.loli.net/2023/08/09/QPNmFrwLCi5kTKb.png" style="zoom:60%"> -->
+   ![burning method](https://s2.loli.net/2023/08/09/QPNmFrwLCi5kTKb.png)
 
    ```python
    def burning_method(L=16):
@@ -266,7 +269,8 @@ tags: [ETH Zürich, Mathematic, Physics, Computational Physics, Julia, Distribut
 
 3. How to count the largest cluster size of a random generated lattice?
 
-   <img src="https://s2.loli.net/2023/08/09/1pSdoTFUfvgk6A4.png" style="zoom:60%">
+   <!-- <img src="https://s2.loli.net/2023/08/09/1pSdoTFUfvgk6A4.png" style="zoom:60%"> -->
+   ![largest cluter](https://s2.loli.net/2023/08/09/1pSdoTFUfvgk6A4.png)
 
    similar to the burning algorithm but from another side.
 
@@ -276,7 +280,8 @@ tags: [ETH Zürich, Mathematic, Physics, Computational Physics, Julia, Distribut
 
 1. What is the Hoshen-Kopelman used for?
 
-   <img src="https://s2.loli.net/2023/08/09/gb7RDfCacdTOHjn.png" style="zoom:60%">
+   <!-- <img src="https://s2.loli.net/2023/08/09/gb7RDfCacdTOHjn.png" style="zoom:60%"> -->
+   ![Hoshen-Kopelmann Algorithm](https://s2.loli.net/2023/08/09/gb7RDfCacdTOHjn.png)
 
    know how the different clusters are distributed
 
@@ -400,13 +405,15 @@ tags: [ETH Zürich, Mathematic, Physics, Computational Physics, Julia, Distribut
 
    Von Neumann: 4, Moore: 8
 
-   <img src="https://s2.loli.net/2023/02/12/fr1RhESUDdmeB8A.png" style="zoom:40%">
+   <!-- <img src="https://s2.loli.net/2023/02/12/fr1RhESUDdmeB8A.png" style="zoom:40%"> -->
+   ![Von Neumann neighborhood and Moore neighborhood](https://s2.loli.net/2023/02/12/fr1RhESUDdmeB8A.png)
 
 4. What's the four types of boundaries?
 
    periodic, fixed, adiabatic, reflection
 
-   <img src="https://s2.loli.net/2023/02/12/Ub5eCaY36Xz7n1A.png" style="zoom:30%">
+   <!-- <img src="https://s2.loli.net/2023/02/12/Ub5eCaY36Xz7n1A.png" style="zoom:30%"> -->
+   ![periodic, fixed, adiabatic, reflection boundary](https://s2.loli.net/2023/02/12/Ub5eCaY36Xz7n1A.png)
 
 ### Game of Life
 
@@ -463,9 +470,11 @@ tags: [ETH Zürich, Mathematic, Physics, Computational Physics, Julia, Distribut
 
 3. What phenomenon will you observe for number of moving cars when $c=184$
 
-   <img src="https://s2.loli.net/2023/08/09/ZokghTPsHVKSWG2.png" style="zoom:70%">
+   <!-- <img src="https://s2.loli.net/2023/08/09/ZokghTPsHVKSWG2.png" style="zoom:70%"> -->
+   ![occupacy probabilities and number of moving cards relationship](https://s2.loli.net/2023/08/09/ZokghTPsHVKSWG2.png)
 
-   <img src="https://s2.loli.net/2023/08/09/42uBOCWcQkXfigP.png" style="zoom:50%">
+   <!-- <img src="https://s2.loli.net/2023/08/09/42uBOCWcQkXfigP.png" style="zoom:50%"> -->
+   ![moving cards with different $p$](https://s2.loli.net/2023/08/09/42uBOCWcQkXfigP.png)
 
    when $p>0.5$, traffic  jam will happen
 
@@ -479,12 +488,14 @@ tags: [ETH Zürich, Mathematic, Physics, Computational Physics, Julia, Distribut
 
 2. Describe the steps of HPP model.
 
-   <img src="https://s2.loli.net/2023/08/09/oeZfv4brdMScGBT.gif" style="zoom:50%">
+   <!-- <img src="https://s2.loli.net/2023/08/09/oeZfv4brdMScGBT.gif" style="zoom:50%"> -->
+   ![HPP model](https://s2.loli.net/2023/08/09/oeZfv4brdMScGBT.gif)
 
    - collision
    - propagation/streaming
 
-   <img src="https://s2.loli.net/2023/01/16/eVlREWMqtD7QTUd.png" style="zoom:35%" >
+   <!-- <img src="https://s2.loli.net/2023/01/16/eVlREWMqtD7QTUd.png" style="zoom:35%" > -->
+   ![collision](https://s2.loli.net/2023/01/16/eVlREWMqtD7QTUd.png)
 
 3. How many bits of information at each site are enough for HPP model ? 
 
@@ -646,10 +657,13 @@ tags: [ETH Zürich, Mathematic, Physics, Computational Physics, Julia, Distribut
 
 1. Describe the *Ising Model* 
 
-   <img src="https://s2.loli.net/2023/08/10/yVHvKLpWA6iEYgO.png" style="zoom:70%">
+   <!-- <img src="https://s2.loli.net/2023/08/10/yVHvKLpWA6iEYgO.png" style="zoom:70%"> -->
+   ![Ising Model](https://s2.loli.net/2023/08/10/yVHvKLpWA6iEYgO.png)
+
    $$
    \mathcal H = -J\sum_{\braket{\sigma_i,\sigma_j}}\sigma_i \sigma_j - H\sum_{\sigma_i}\sigma_i
    $$
+
    $M$ : magnetization, a particle spin up $1$ else $-1$
 
    $\chi$ : susceptibility, $\chi=\frac{\partial M}{\partial H}= \text{Var}(M)\beta$
@@ -800,7 +814,8 @@ tags: [ETH Zürich, Mathematic, Physics, Computational Physics, Julia, Distribut
 
    *Numerical dispersion*: Fourier components travel at different speeds
 
-   <img src="https://s2.loli.net/2023/02/14/CiQwU9KYnSuy3GV.png" style="zoom:40%">
+   <!-- <img src="https://s2.loli.net/2023/02/14/CiQwU9KYnSuy3GV.png" style="zoom:40%"> -->
+   ![Numerical diffusion and dispersion](https://s2.loli.net/2023/02/14/CiQwU9KYnSuy3GV.png)
 
 2. What is *Lax-Equivalence Theorem*?
 
@@ -818,15 +833,18 @@ tags: [ETH Zürich, Mathematic, Physics, Computational Physics, Julia, Distribut
    $C_{max}=1$ for explicit method, $C_{max}>1$ for implicit method
 
 5. What is *Von-Neumann Stability Analysis*?
+
    $$
-   \phi^{n+1}=A\phi^n\quad A\in \C
+   \phi^{n+1}=A\phi^n\quad A\in \mathbb C
    $$
+
 
    | condition   | behavior                |
    | ----------- | ----------------------- |
-   | $|A|^2<1$   | stable and damping      |
-   | $|A|^2=1$   | neutral stable          |
-   | $|A|^2 > 1$ | unstable and amplyfying |
+   | $\|A\|^2<1$   | stable and damping      |
+   | $\|A\|^2=1$   | neutral stable          |
+   | $\|A\|^2 > 1$ | unstable and amplyfying |
+
 
 ### Phase velocity
 
@@ -849,7 +867,8 @@ tags: [ETH Zürich, Mathematic, Physics, Computational Physics, Julia, Distribut
 
 5. What is the phase speed $u_n$ in linear advection when using *CTCS* method? What phenomenon do you observe?
 
-   <img src="https://s2.loli.net/2023/08/08/gvbXC1YSwpqQrts.png" style="zoom:50%">
+   <!-- <img src="https://s2.loli.net/2023/08/08/gvbXC1YSwpqQrts.png" style="zoom:50%"> -->
+   ![CTCS](https://s2.loli.net/2023/08/08/gvbXC1YSwpqQrts.png)
    $$
    u_n = \frac{1}{k\Delta t}\text{tan}^{-1}\frac{c\text{sin}k\Delta x}{\pm\sqrt{1-c^2\text{sin}^2k\Delta x}} =\pm\frac{\text{sin}k\Delta x}{k\Delta x}u
    $$
@@ -890,7 +909,8 @@ tags: [ETH Zürich, Mathematic, Physics, Computational Physics, Julia, Distribut
 
 3. In 1 D wave condition, assume $u= \int_{-H^0}^{H'}v_x dz$ and $\eta=H'$, give  the unstaggered(A-grid) and staggered(C-grid) formular of centered in space. Assume $c = \sqrt{gH_0}\frac{\Delta t}{\Delta x}$, what are the stable conditions for them?
 
-   <img src="https://s2.loli.net/2023/08/08/cGrlTdby8zM46jU.png" style="zoom:40%">
+   <!-- <img src="https://s2.loli.net/2023/08/08/cGrlTdby8zM46jU.png" style="zoom:40%"> -->
+   ![unstaggered(A-grid) and staggered(C-grid) method](https://s2.loli.net/2023/08/08/cGrlTdby8zM46jU.png)
 
    A-grid
 
@@ -939,7 +959,8 @@ tags: [ETH Zürich, Mathematic, Physics, Computational Physics, Julia, Distribut
 
 5. Describe the picture below.
 
-   <img src="https://s2.loli.net/2023/01/17/RGFuZKgtQHzMSTE.png"  style="zoom:40%;"/>
+   <!-- <img src="https://s2.loli.net/2023/01/17/RGFuZKgtQHzMSTE.png"  style="zoom:40%;"/> -->
+   ![numerical error and truncation error](https://s2.loli.net/2023/01/17/RGFuZKgtQHzMSTE.png)
 
 ### Conservation
 
@@ -953,9 +974,9 @@ tags: [ETH Zürich, Mathematic, Physics, Computational Physics, Julia, Distribut
 
 3. Describe the picture below from the conservation view.
 
-   <img src="https://s2.loli.net/2023/01/17/ZBsTerF12XJ98q7.png" style="zoom:40%">
+   <!-- <img src="https://s2.loli.net/2023/01/17/ZBsTerF12XJ98q7.png" style="zoom:40%"> -->
+   ![phase conservation](https://s2.loli.net/2023/01/17/ZBsTerF12XJ98q7.png)
 
-   
 
 ## 8. Maxwell Equation
 
@@ -988,7 +1009,8 @@ tags: [ETH Zürich, Mathematic, Physics, Computational Physics, Julia, Distribut
    \end{aligned}
    $$
    
-   <img src="https://s2.loli.net/2023/02/15/AFSthv3Gafew98u.png" style="zoom:40%">
+   <!-- <img src="https://s2.loli.net/2023/02/15/AFSthv3Gafew98u.png" style="zoom:40%"> -->
+   ![PIC method](https://s2.loli.net/2023/02/15/AFSthv3Gafew98u.png)
 
 ### Boris Algorithm
 
@@ -1016,13 +1038,15 @@ tags: [ETH Zürich, Mathematic, Physics, Computational Physics, Julia, Distribut
 
 1. Describe the Yee-Cell method. 
 
-   <img src="https://s2.loli.net/2023/02/15/fSkg52XFK4JIjqO.png" style="zoom:30%">
+   <!-- <img src="https://s2.loli.net/2023/02/15/fSkg52XFK4JIjqO.png" style="zoom:30%"> -->
+   ![Yee-Cell method](https://s2.loli.net/2023/02/15/fSkg52XFK4JIjqO.png)
    $$
    \frac{E_{x_k}^{n+\frac{1}{2}}-E_{x_k}^{n-\frac{1}{2}}}{\Delta t} = -\frac{1}{\varepsilon_0}\frac{H_{y_{k+\frac{1}{2}}}^n - H_{y_{k-\frac{1}{2}}}^n}{\Delta z}
    \\
    \frac{H_{y_{k+\frac{1}{2}}}^{n+1}-H_{y_{k+\frac{1}{2}}}^n}{\Delta t} = -\frac{1}{\mu_0}\frac{E_{x_{k+1}}^{n+\frac{1}{2}}-E_{x_k}^{n+\frac{1}{2}}}{\Delta z}
    $$
-   <img src="https://s2.loli.net/2023/08/08/ouDa4bRQsNYFvli.png" style="zoom:40%">
+   <!-- <img src="https://s2.loli.net/2023/08/08/ouDa4bRQsNYFvli.png" style="zoom:40%"> -->
+   ![half stepping](https://s2.loli.net/2023/08/08/ouDa4bRQsNYFvli.png)
 
 2. How to determine the time step $\Delta t$?
 
@@ -1048,7 +1072,8 @@ tags: [ETH Zürich, Mathematic, Physics, Computational Physics, Julia, Distribut
 
 ### PIC(Particle In Cell)
 
-<img src="https://s2.loli.net/2023/02/15/AFSthv3Gafew98u.png" style="zoom:40%">
+<!-- <img src="https://s2.loli.net/2023/02/15/AFSthv3Gafew98u.png" style="zoom:40%"> -->
+![PIC method](https://s2.loli.net/2023/02/15/AFSthv3Gafew98u.png)
 
 ### P3M(Particle-Particle Particle-Mesh)
 
