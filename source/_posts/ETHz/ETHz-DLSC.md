@@ -1,7 +1,7 @@
 
 ---
 title: "Neural Operators and Operator Networks vs Parametric Approach: A General Comparison"
-index_img: img/wave_K=4.gif
+index_img: img/wave_K=4.webp
 banner_img: img/banner-china.jpg
 date: 2023-07-14 02:39:00
 category: "Project"
@@ -51,7 +51,7 @@ u(t,x_1,x_2,\mu) = -\frac{1}{d}\sum_{m=1}^d \frac{\mu_m}{\sqrt{m}} e^{-2m^2\pi^2
 $$
 
 
-![Heat Equation d=4](heat_d=4.gif)
+![Heat Equation d=4](heat_d=4.webp)
 
 ### Wave Equation:
 The wave equation is another important PDE that describes the propagation of waves, such as sound waves or electromagnetic waves. It can be represented as follows:
@@ -76,7 +76,7 @@ $$ u(t, \pm 1, \pm 1) = 0$$
 $$u(t, x, y, a) = \frac{\pi}{K^2} \sum_{i,j=1}^{K} a_{ij} \cdot (i^2 + j^2)^{-r} sin(\pi ix) sin(\pi jy) cos(c\pi t \sqrt{i^2 + j^2}), \forall x,y \in [0, 1]$$
 
 
-![Wave Equation K=4](wave_K=4.gif)
+![Wave Equation K=4](wave_K=4.webp)
 
 ### Poisson Equation
 The Poisson equation is a static PDE that describes the distribution of scalar fields in various physical phenomena, such as electrostatics or fluid flow. It can be defined as follows:
