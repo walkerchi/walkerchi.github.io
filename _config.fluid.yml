@@ -350,6 +350,7 @@ navbar:
     - { key: "tools", icon: "iconfont icon-tools-fill",
       submenu: [
         { key: 'math2pix', link: 'https://walkerchi.github.io/math2pix' },
+        { key: 'old home page', link: 'https://walkerchi.vercel.app/en'},
       ]}
 
 # 搜索功能，基于 hexo-generator-search 插件，若已安装其他搜索插件请关闭此功能，以避免生成多余的索引文件
@@ -538,7 +539,7 @@ post:
 
   # 文章在首页的默认封面图，当没有指定 index_img 时会使用该图片，若两者都为空则不显示任何图片
   # Path of the default post cover when `index_img` is not set. If both are empty, no image will be displayed
-  default_index_img:
+  default_index_img: /img/default.png
 
   # 文章标题下方的元信息
   # Meta information below title
@@ -1006,21 +1007,9 @@ links:
   # Member item of page
   items:
     - {
-      title: "Fluid Blog",
-      intro: "主题博客",
-      link: "https://hexo.fluid-dev.com/",
-      avatar: "/img/favicon.png"
-    }
-    - {
-      title: "Fluid Docs",
-      intro: "主题使用指南",
-      link: "https://hexo.fluid-dev.com/docs/",
-      avatar: "/img/favicon.png"
-    }
-    - {
-      title: "Fluid Repo",
-      intro: "主题 GitHub 仓库",
-      link: "https://github.com/fluid-dev/hexo-theme-fluid",
+      title: "HomePage Old",
+      intro: "Previous Homepage",
+      link: "https://walkerchi.vercel.app/en/",
       avatar: "/img/favicon.png"
     }
 

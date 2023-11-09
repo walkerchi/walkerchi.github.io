@@ -82,7 +82,7 @@ date: 2023-11-02 21:22:44
       img: '/img/paper-1.jpg',
       title: 'Mining World Indicators for Analyzing and Modeling the Development of Countries',
       journal: 'ACM/IMS Transactions on Data Science 2022',
-      authors: 'Hong Huang, Mingyuan Chi, Yu Song, Hai Jin',
+      authors: 'Mingyuan Chi, Hong Huang, Yu Song, Hai Jin',
       abstract: 'The world indicators released by the World Bank or other organizations usually give the basic public knowledge about the world. However, separate and static index lacks the complex interplay among different indicators and thus cannot help us have an overall understanding of the world. To this end, we study the world indicators from a different angle. ',
       link:"https://dl.acm.org/doi/full/10.1145/3488059"
     },
@@ -90,7 +90,7 @@ date: 2023-11-02 21:22:44
       img: '/img/architecture.png',
       title: 'Bi-Encoder Cascades for Efficient Image Search ',
       journal: 'Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV) Workshops, 2023, pp. 1358-1363',
-      authors: 'Hönig Robert, Ackermann Jan, Chi Mingyuan',
+      authors: 'Chi Mingyuan, Hönig Robert, Ackermann Jan, ',
       abstract: 'Modern neural encoders offer unprecedented text-image retrieval (TIR) accuracy, but their high computational cost impedes an adoption to large-scale image searches. To lower this cost, model cascades use an expensive encoder to refine the ranking of a cheap encoder. ',
       link:'https://openaccess.thecvf.com/content/ICCV2023W/RCV/html/Honig_Bi-Encoder_Cascades_for_Efficient_Image_Search_ICCVW_2023_paper.html'
     },

@@ -7,7 +7,7 @@ category: "Note"
 tags: [ETH Zürich, Physics, Quantum Physics, Quantum Computing]
 ---
 
-<div align="center"><font color="#732BF5" size=8>CQP</font><font size=6> Computational Quantum Physics</font></div>
+<!-- <div align="center"><font color="#732BF5" size=8>CQP</font><font size=6> Computational Quantum Physics</font></div>
 
 
 
@@ -17,7 +17,7 @@ professor : Mark H Fischer
 
 author : walkerchi  
 
----
+--- -->
 
 # Quantum Basics
 
@@ -25,7 +25,7 @@ author : walkerchi
 
 **wave function** : $\ket \phi\in \mathcal H$
 
-- a spin-$\frac{1}{2}$ system, $\mathcal H=\mathbb C^2$, $\phi = \alpha\ket\uparrow+\beta \ket  \downarrow\quad |\alpha|^2+|\beta|^2=1\quad $
+- a spin-$\frac{1}{2}$ system, $\mathcal H=\mathbb C^2$, $\phi = \alpha\ket\uparrow+\beta \ket  \downarrow\quad |\alpha|^2+|\beta|^2=1$
 - basic state : $\ket\uparrow =\begin{bmatrix}1\\0\end{bmatrix}\quad \ket \downarrow =\begin{bmatrix}0\\1\end{bmatrix}\quad \ket \rightarrow=\frac{1}{\sqrt 2}\begin{bmatrix}1\\1\end{bmatrix}$
 
 **pauli matrices** : $\sigma_x=\begin{bmatrix}0&1\\1&0\end{bmatrix}~\sigma_y=\begin{bmatrix}0&-i\\i&0\end{bmatrix}~\sigma_z =  \begin{bmatrix}1&0\\0&-1\end{bmatrix}$
@@ -69,7 +69,7 @@ author : walkerchi
 > <font color="lightblue">Example</font>
 >
 > - harmonic oscillator : $\frac{1}{2}(\hat p^2+\hat q^2)\ket \psi = E \ket \psi$
->   - $V(\hat q) = \frac{1}{2}\hat  q^2\quad $ 
+>   - $V(\hat q) = \frac{1}{2}\hat  q^2$ 
 >   - $\psi(q)=\frac{1}{\sqrt{2^nn!\sqrt{\hbar\pi}}}e^{-q^2/2}H_n\left(\frac{1}{\sqrt \hbar}q\right)$
 >   - $E = \hbar (n+\frac{1}{2})$
 
@@ -200,7 +200,7 @@ particles are confined due to potential $V(x)\begin{cases}<0&x\in[0,a]\\= 0&\tex
 
 **Factorization techniques** : 
 
-- **along coordinate axes ** : $\psi(\vec r) =\psi_x(x)\psi_y(y)\psi_z(z)$
+- **along coordinate axes** : $\psi(\vec r) =\psi_x(x)\psi_y(y)\psi_z(z)$
 
 - **spherical symmetry** : $\psi(\vec r) = \frac{u(r)}{r}Y_{lm}(\theta,\phi)\quad l\in\N_0,m\in\Z,|m|\le l$
 
@@ -276,8 +276,8 @@ limitations :
 
 >  Notation
 >
-> - $\ket {\phi_n}$ : eigenvector of $H |ϕ⟩ = E |ϕ⟩ $, $\ket {\psi_0} = \sum c_n\ket{\phi_n}$
-> - $\varepsilon_n$ : eigenvalue of $H |ϕ⟩ = E |ϕ⟩ $
+> - $\ket {\phi_n}$ : eigenvector of $H |ϕ⟩ = E |ϕ⟩$, $\ket {\psi_0} = \sum c_n\ket{\phi_n}$
+> - $\varepsilon_n$ : eigenvalue of $H |ϕ⟩ = E |ϕ⟩$
 
 **Direct numerical integration** : $\left(\mathbb  1+ \frac{i\Delta  t}{2\hbar}H\right)\psi(\vec r, t+\Delta  t) = \left(\mathbb 1 - \frac{i\Delta t}{2\hbar}H\right)\psi(\vec r, t)$
 
@@ -337,7 +337,7 @@ $$
     > - $\mathcal N_A$ : normalization factor
     > - $p$ : permutation
     
-    - *Pauli exclusion principle* : $\Psi^A(\vec r_1,\vec r_2) = \psi(\vec r_1,\vec r_2)-\psi(\vec r_2,\vec r_1) \neq 0 $
+    - *Pauli exclusion principle* : $\Psi^A(\vec r_1,\vec r_2) = \psi(\vec r_1,\vec r_2)-\psi(\vec r_2,\vec r_1) \neq 0$
     - spinful, generalized coordinate $r=(\vec r, \sigma)$
     
 - **bosons** : $\psi(\vec r_1, \vec r_2) = \psi(\vec r_2, \vec r_1)$
@@ -457,7 +457,7 @@ $$
 
 > Notation
 >
-> - $\hat S^\pm$ : raising/lowering operator , $\hat S^\pm = \hbar \sigma^\pm =\hbar(\sigma_x\pm i \sigma_y) $
+> - $\hat S^\pm$ : raising/lowering operator , $\hat S^\pm = \hbar \sigma^\pm =\hbar(\sigma_x\pm i \sigma_y)$
 >   - $\hat S^+ \hat S^+ \ket \downarrow = \hat S^+\ket \uparrow = \ket {\text{null}} \quad \ket{\uparrow} = \begin{bmatrix}1\\0\end{bmatrix}\qquad \ket{\downarrow} = \begin{bmatrix}0\\1\end{bmatrix}\qquad\ket{\text{null}} = \begin{bmatrix}0\\0\end{bmatrix}$
 >   - $(\sigma^\pm)^2= 0$ : a spin can be flipped only only once
 > - $\hat M^z$ : total magnetization , $\hat M^z=\sum_i \hat S_i^z$
@@ -568,7 +568,7 @@ diagonalizing the Hamiltonian matrix
 
 > Notation
 >
-> - $\hat S^\pm$ : $\hat S^\pm = \hbar \sigma^\pm =\hbar(\sigma_x\pm i \sigma_y) $ 
+> - $\hat S^\pm$ : $\hat S^\pm = \hbar \sigma^\pm =\hbar(\sigma_x\pm i \sigma_y)$ 
 
 **symmetries**
 
@@ -583,7 +583,7 @@ diagonalizing the Hamiltonian matrix
 
 ## Time evolution
 
-**Trotter-Suzuki  decomposition **: $\hat H = \sum_{k=1}^K \hat h_k\to e^{-i\hat H\Delta t/\hbar}= \prod_{k=1}^K e^{-i\hat h_k\Delta t/\hbar}+\mathcal O(\Delta t^2)$
+**Trotter-Suzuki  decomposition**: $\hat H = \sum_{k=1}^K \hat h_k\to e^{-i\hat H\Delta t/\hbar}= \prod_{k=1}^K e^{-i\hat h_k\Delta t/\hbar}+\mathcal O(\Delta t^2)$
 
 - time-indepedent assumption : $\ket{\psi(t+\Delta t)}= e^{-i\hat H\Delta t/\hbar}\ket{\psi(t)}$
 - non-commuting decomposition : $\hat H = \sum_{k=1}^K\hat h_k\quad [\hat h_i,\hat h_j]\neq 0\quad i\neq j$
@@ -601,7 +601,7 @@ diagonalizing the Hamiltonian matrix
 >
 > $e^{-i\hat h_2\Delta t/\hbar} = \begin{bmatrix}\text{cos}(\Delta th_i/\hbar)&i\text{sin}(\Delta t h_i/\hbar)\\ i\text{sin}(\Delta th_i/\hbar)&\text{cos}(\Delta t h_i/\hbar)\end{bmatrix}$
 >
-> (since $e^A = 1 + A + \frac{A^2}{2!}+\cdots $ )
+> (since $e^A = 1 + A + \frac{A^2}{2!}+\cdots$ )
 
 > Notation
 >
@@ -618,9 +618,9 @@ diagonalizing the Hamiltonian matrix
 - converges to the ground state by suppressing the amplitudes of excited states
   exponentially fast in the product $\Delta E_k\tau$ .
 
-**Magnus expansian ** : $\hat U(\Delta t) = e^{-i\bar  H_t\Delta t/\hbar}+\mathcal O(\Delta t^2)\quad H_t = \bar H_t^1 +\bar H_t^2+\cdots$
+**Magnus expansian** : $\hat U(\Delta t) = e^{-i\bar  H_t\Delta t/\hbar}+\mathcal O(\Delta t^2)\quad H_t = \bar H_t^1 +\bar H_t^2+\cdots$
 
-- time-depdent assumption : $\ket{\psi(t')}=U(t',t)\ket{\psi(t)}\quad $
+- time-depdent assumption : $\ket{\psi(t')}=U(t',t)\ket{\psi(t)}$
 - $\bar H^1_t = \frac{1}{\Delta t}\int_{t}^{t+\Delta t} \hat H(s)ds$  and $H^2_t = -\frac{i}{\Delta t}\int_{t}^{t+\Delta t}ds\int_{t}^sdl\left[\hat H(s),\hat H(l)\right]$
 
 > Notation
@@ -691,7 +691,7 @@ diagonalizing the Hamiltonian matrix
 >
 > with matrices : $A^+_i = A^+=\sqrt{\frac{2}{3}}\sigma^+ = \begin{bmatrix}0&\sqrt{\frac{2}{3}}\\0&0\end{bmatrix}\quad A^0_i = A^0 =\frac{-1}{\sqrt 3}\sigma^z = \begin{bmatrix}-\frac{1}{\sqrt{3}} & 0 \\0 & \frac{1}{\sqrt 3}\end{bmatrix}\quad A^-_i = A^- = - \sqrt{\frac{2}{3}}\sigma^- \begin{bmatrix}0&0\\-\sqrt{\frac{2}{3}}&0\end{bmatrix}$
 >
-> the corresponding $\ket + $, $\ket  -$ , $\ket 0$ are three states for <font color="orange">spin-1</font> particle not for spin-$\frac{1}{2}$ particle
+> the corresponding $\ket +$, $\ket  -$ , $\ket 0$ are three states for <font color="orange">spin-1</font> particle not for spin-$\frac{1}{2}$ particle
 
 > Notation
 >
@@ -739,7 +739,7 @@ diagonalizing the Hamiltonian matrix
 >
 > $W_1 = \begin{bmatrix}-hS^z&I\end{bmatrix}\quad W_i=\begin{bmatrix}I&0\\-hS^z&I\end{bmatrix}\quad W_N=\begin{bmatrix}I\\-hS^z\end{bmatrix}$
 
-> <font color="lightblue"> Example</font>  : Transverse field Ising model $\hat H =-\sum_i \hat S_i^z\hat S_{i+1}^z + h\sum_i\hat S_i^x $
+> <font color="lightblue"> Example</font>  : Transverse field Ising model $\hat H =-\sum_i \hat S_i^z\hat S_{i+1}^z + h\sum_i\hat S_i^x$
 >
 > $W_1 = \begin{bmatrix}hS^x&-S^z&I\end{bmatrix}\quad W_i =\begin{bmatrix}I&0&0\\S^z&0&0\\hS^x&-S^z&I\end{bmatrix}\quad W_N = \begin{bmatrix}I\\S^z\\hS^x\end{bmatrix}$
 
@@ -927,7 +927,7 @@ $$
 
 > Notation
 >
-> - $\hat m $ : magnetization 
+> - $\hat m$ : magnetization 
 > - $\beta$ : reverse of temperature $\beta = \frac{1}{\kappa_B T}$
 > - $Z$ : partition sum
 > - $m(C)$ : magnetization of a configuration $C$
@@ -953,21 +953,21 @@ $$
 
 > <font color="lightblue">  Example</font> : 1D classical Ising model (0D transverse field Ising model)
 >
-> $H = -J\sum_i^M\sigma_i\sigma_{i+1}-h\sum_i \sigma_i $ with periodic boundary condition $\sigma_{M+1}=\sigma_1$
+> $H = -J\sum_i^M\sigma_i\sigma_{i+1}-h\sum_i \sigma_i$ with periodic boundary condition $\sigma_{M+1}=\sigma_1$
 >
 > - $\beta J = -\frac{1}{2}\text{log}(\Delta \tau \Gamma/2)$ : off diagonal
 > - $\beta h = \text{log}(1+\Delta \tau h/2)$ : diagonal
 > - $\beta E_0 = M\beta J$
 
-**Continous-time path integral **: $\Delta\tau \to 0$ ???
+**Continous-time path integral**: $\Delta\tau \to 0$ ???
 
-   $d$ -dimensional quantum spin model $\Leftrightarrow $ $d+1$- dimensional classical Ising model
+   $d$ -dimensional quantum spin model $\Leftrightarrow$ $d+1$- dimensional classical Ising model
 
 > <font color="lightblue">Example </font>:  1D classical Ising model (0D transverse field Ising model)
 >
 > 
 
-**quantum $XY$ model ** : $\hat H = -\sum_{<i,j>}\frac{J_{xy}}{2}(\hat S_i^+\hat S_j^- + \hat S_i^-\hat S_j^+)$
+**quantum $XY$ model** : $\hat H = -\sum_{<i,j>}\frac{J_{xy}}{2}(\hat S_i^+\hat S_j^- + \hat S_i^-\hat S_j^+)$
 
 spin flip-flops (blue line) proportional to $\beta$ which is a constant not grow bigger as $\Delta \tau \to 0$
 
@@ -1006,7 +1006,7 @@ energy expectation(MCMC) : $E_\theta = \frac{\sum_n |\psi_n(\theta)|^2E_1(n)}{\s
 
 ​	wave function form for spin system
 
-**[NQS]Neural Quantum  States ** : $\psi_n(\theta)=\text{MLP}(\{\sigma_1,\cdots,\sigma_N\})$
+**[NQS]Neural Quantum  States** : $\psi_n(\theta)=\text{MLP}(\{\sigma_1,\cdots,\sigma_N\})$
 
 **[MFPWF]Mean-field projected wave function** : $\ket {\psi(\theta)} = \mathcal P_G \left[\sum_{i,j}\sum_{s,s'}F_{ij}^{ss'}\hat c_{i,s}^\dagger\hat c_{j,s'}^\dagger\right]^{N/2}\ket 0\quad \theta = F_{ij}^{ss'}\in\R^{2N\times 2N}$
 
@@ -1066,7 +1066,7 @@ $\rho_{\text{Bose}} = \frac{1}{N!}\sum_P \rho(\vec R_1,P\vec R_2, \beta)$
 >    2. $w_k^\alpha\gets w_{k-1}^\alpha e^{-\frac{\Delta \tau}{2}[V(\vec R_k^\alpha)+V(\vec R^\alpha_{k-1})]}$
 >    3. clone $\lfloor \frac{w_k^\alpha}{\mathbb E_\alpha [w_k^\alpha]} + r\rfloor$ times for walker $\alpha$
 
-- maximum clones $\Leftrightarrow $ $\Delta \tau$ too large
+- maximum clones $\Leftrightarrow$ $\Delta \tau$ too large
 - scale $w^\alpha\to\text{exp}(E_t\Delta \tau)w^\alpha$ where $E_t$ is trial energy $V(\vec R)\gets V(\vec R)-E_t$, when $E_t=E_0$ stability will achieve. 
 
 **Importance sampling** : $\vec R_{k-1} \gets \vec R_{k-1}+\frac{\hbar^2\Delta\tau}{2m}\frac{2\nabla\phi_t(\vec R_{k-1})}{\phi(\vec R_{k-1})}$
@@ -1219,7 +1219,7 @@ $$
 
 **errors**
 
-- coupling to  environment $\Rightarrow $ mixed density matrix
+- coupling to  environment $\Rightarrow$ mixed density matrix
 - gate error 
 - read out measurement error
 
