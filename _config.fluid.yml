@@ -349,6 +349,7 @@ navbar:
     - { key: "Publication", link: "/publication/", icon: "iconfont icon-books"}
     - { key: "tools", icon: "iconfont icon-tools-fill",
       submenu: [
+        { key: 'torch-fem', link: 'https://walkerchi.github.io/torch-fem-docs-preview/'},
         { key: 'math2pix', link: 'https://walkerchi.github.io/math2pix' },
         { key: 'old home page', link: 'https://walkerchi.vercel.app/en'},
       ]}
