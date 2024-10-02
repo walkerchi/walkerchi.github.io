@@ -1,6 +1,6 @@
 {
-  "name": "hexo-site",
-  "version": "0.0.0",
+  "name": "walkerchi-site",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "build": "hexo generate",
@@ -14,6 +14,7 @@
   "dependencies": {
     "@traptitech/markdown-it-katex": "^3.6.0",
     "hexo": "^7.0.0",
+    "hexo-filter-github-emojis": "^3.0.5",
     "hexo-generator-archive": "^2.0.0",
     "hexo-generator-category": "^2.0.0",
     "hexo-generator-index": "^3.0.0",

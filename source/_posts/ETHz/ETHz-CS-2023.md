@@ -5,7 +5,7 @@ index_img: img/tokamak.png
 banner_img: img/banner-think.jpg
 date: 2023-04-26 23:21:00
 category: "Presentation"
-tags: [ETH Zürich,Physics,Energy, Nucler Fusion]
+tags: [ETH Zürich,Physics,Energy, Nucler Fusion, Seminar for Applied Mathematics(SAM)]
 ---
 
 <style>

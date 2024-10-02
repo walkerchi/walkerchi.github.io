@@ -5,7 +5,7 @@ index_img: img/spaceelevator-obayashi.jpg
 banner_img: img/banner-think.jpg
 date: 2022-12-1 20:12:00
 category: "Presentation"
-tags: [ETH Zürich,Physics,Space Exploration, Space Elevator]
+tags: [ETH Zürich,Physics,Space Exploration, Space Elevator, Seminar for Applied Mathematics(SAM)]
 ---
 
 

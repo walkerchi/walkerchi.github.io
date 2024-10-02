@@ -1,0 +1,852 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/web.png">
+  <link rel="icon" href="/img/idea.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="walkerchi">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Sensor Modeling in Sim2Real  Advisor : Dr Philip Arm, Dr Filip Bjelonic  slides report Introduction Training robots in real-world environments poses potential dangers and incurs significant expenses.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Robotic Seminar:Sensor Modeling in Sim2Real">
+<meta property="og:url" content="https://walkerchi.github.io/2023/12/19/ETHz/ETHz-RS/index.html">
+<meta property="og:site_name" content="Walker Chi&#39;s Home">
+<meta property="og:description" content="Sensor Modeling in Sim2Real  Advisor : Dr Philip Arm, Dr Filip Bjelonic  slides report Introduction Training robots in real-world environments poses potential dangers and incurs significant expenses.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://walkerchi.github.io/img/sensor_modeling.png">
+<meta property="article:published_time" content="2023-12-19T13:44:00.000Z">
+<meta property="article:modified_time" content="2024-09-28T15:45:59.769Z">
+<meta property="article:author" content="walkerchi">
+<meta property="article:tag" content="ETH Zürich">
+<meta property="article:tag" content="Robotics">
+<meta property="article:tag" content="Sim2Real">
+<meta property="article:tag" content="Sensor Modeling">
+<meta property="article:tag" content="Advance System Lab(ASL)">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://walkerchi.github.io/img/sensor_modeling.png">
+  
+  
+  
+  <title>Robotic Seminar:Sensor Modeling in Sim2Real - Walker Chi&#39;s Home</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/KaTeX/0.16.2/katex.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"walkerchi.github.io","root":"/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.0.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Walker Chi</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/publication/">
+                <i class="iconfont icon-books"></i>
+                <span>Publication</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-tools-fill"></i>
+                <span>tools</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="https://walkerchi.github.io/torch-fem-docs-preview/">
+                    
+                    <span>torch-fem</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="https://walkerchi.github.io/math2pix">
+                    
+                    <span>math2pix</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://walkerchi.vercel.app/en">
+                    
+                    <span>old home page</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/banner-purple.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Robotic Seminar:Sensor Modeling in Sim2Real"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-12-19 21:44" pubdate>
+          December 19, 2023 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          5.2k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          44 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Robotic Seminar:Sensor Modeling in Sim2Real</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1>Sensor Modeling in Sim2Real</h1>
+<hr>
+<p>Advisor : Dr Philip Arm, Dr Filip Bjelonic</p>
+<hr>
+<p><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/walkerchi/ETHz-RS/main/meeting/2023-12-19/Sensor_Modeling_in_Sim2Real.pptx">slides</a></p>
+<p><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/walkerchi/ETHz-RS/main/ETHz_Robotic_Seminar_Report.pdf">report</a></p>
+<h1>Introduction</h1>
+<p>Training robots in real-world environments poses potential dangers and<br>
+incurs significant expenses. Simulations offer a safer and more<br>
+cost-effective alternative, mitigating risks commonly associated with<br>
+real-world experiments. In scenarios where real-world data is limited or<br>
+challenging to collect, simulations provide a viable mean to generate<br>
+the necessary data, thereby facilitating comprehensive training and<br>
+testing. Sim2Real refers to the process of transferring knowledge,<br>
+skills, or models developed in a simulated environment (Sim) to<br>
+real-world applications (Real). This approach bridges the gap between<br>
+theoretical models and practical, real-world utility. A primary<br>
+challenge in Sim2Real is the "reality gap," characterized by<br>
+discrepancies between simulated and real-world conditions. These<br>
+discrepancies may arise from differences in physics, sensor data,<br>
+lighting, and other environmental factors. To address the reality gap,<br>
+techniques such as Domain Randomization are employed. This method<br>
+introduces variability into simulations to better approximate the<br>
+unpredictability of the real world, thereby enhancing the robustness of<br>
+Sim2Real transfers&nbsp;[@gao2020domain_random]. Another approach involves<br>
+the use of high-fidelity simulations, which strive to enhance the<br>
+realism of simulated environments. Improvements in physics modeling,<br>
+material properties, lighting, and sensor behavior aim to more closely<br>
+replicate real-world<br>
+conditions&nbsp;[@tan2018sim; @du2021sim_param; @akella2023measure_discrepency; @byravan2023nerf2real; @singh2023acutors_feedback; @kadian2020sim_tune].</p>
+<p>Developing models that exhibit generalizability and robustness is also<br>
+crucial. This includes implementing continuous learning strategies and<br>
+improving model architectures to ensure effective Sim2Real<br>
+applications&nbsp;[@abey2023human].</p>
+<p>In shifting our focus from general Sim2Real challenges to a pivotal<br>
+aspect, sensor modeling, this paper delves into how sensors, such as RGB<br>
+and depth cameras, serve as vital tools for perceiving the environment<br>
+and the robot’s state, rather than for physical interaction. The precise<br>
+replication of sensor data in simulations is crucial for successful<br>
+Sim2Real applications. This paper not only explores the complexities of<br>
+accurately modeling these sensors within the Sim2Real framework but also<br>
+reviews recent research efforts in this domain. We aim to elucidate the<br>
+impact of sensor precision on the efficacy of Sim2Real transfer and<br>
+discuss contemporary strategies developed by researchers to enhance<br>
+sensor model fidelity for real-world applications</p>
+<p>The structure of this article is as follows:</p>
+<ul>
+<li>
+<p><strong>Sensor Modeling in Sim2Real</strong>: The second section provides an<br>
+extensive review of various sensor models used in Sim2Real. It<br>
+encompasses a range of sensor types, including RGB cameras, depth<br>
+sensors, Inertial Measurement Units (IMUs), force sensors, and<br>
+encoders. This section aims to dissect the methodologies,<br>
+advantages, and limitations associated with each sensor type,<br>
+offering insights into their practical applications in Sim2Real<br>
+scenarios.</p>
+</li>
+<li>
+<p><strong>Challenges and Future Directions</strong>: The third section is dedicated<br>
+to summarizing the prevailing challenges in sensor modeling within<br>
+the Sim2Real context. It also outlines potential future research<br>
+directions, aiming to address these challenges and enhance the<br>
+efficacy of sensor models. This section aims to stimulate further<br>
+research and development in the field, paving the way for more<br>
+sophisticated and reliable Sim2Real transitions.</p>
+</li>
+</ul>
+<h1>Review of Literature</h1>
+<h2 id="RGB-camera">RGB camera</h2>
+<p>RGB cameras, notable for their accessibility and affordability, offer a<br>
+high-density information format through pixels. The standard approach,<br>
+as Zhu et al&nbsp;[@zhu2018reinforcement] illustrate, employs a<br>
+<strong>C</strong>onvolutional <strong>N</strong>eural <strong>N</strong>etwork (CNN) to encode the RGB stream<br>
+from the camera, followed by a <strong>L</strong>ong <strong>S</strong>hort-<strong>T</strong>erm <strong>M</strong>emory<br>
+(LSTM) network to model the signal sequence.</p>
+<p>Inspired by the impressive capabilities of <strong>Ne</strong>ural <strong>R</strong>adiance<br>
+<strong>F</strong>ields (Nerf), Byravan&nbsp;[@byravan2023nerf2real] utilized NeRF to<br>
+construct simulation environments from short mobile phone videos.<br>
+Although it’s easy to take a video of 4-5 mintes, this process,<br>
+involving lengthy preprocessing with COLMAP<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="COLMAP is a general-purpose Structure-from-Motion (SfM) and
+    Multi-View Stereo (MVS) pipeline">[1]</span></a></sup> (3-4 hours) and NeRF<br>
+training (20 minutes on 8 V100 GPUs), is resource-intensive.<br>
+Additionally, it demands manual calibration of the NeRF mesh with the<br>
+real world and struggles with dynamic objects, which are instead<br>
+incorporated using the MuJoCo simulation environment.<br>
+Figure&nbsp;<a href="#fig:nerf">[fig:nerf]</a>{reference-type=“ref”<br>
+reference=“fig:nerf”} detailed illustrates the whole pipeline of this<br>
+approach.</p>
+<p>::: figure*<br>
+<img src="images/image-20231114005030330.png" srcset="/img/loading.gif" lazyload alt="image">{width=“\linewidth”}<br>
+:::</p>
+<p>Expanding upon the Neural Radiance Fields (NeRF) concept,<br>
+Yang&nbsp;[@yang2023unisim] introduced an innovative approach using voxel<br>
+rendering, as opposed to traditional mesh rendering, to enhance memory<br>
+efficiency and facilitate the handling of dynamic objects. In this<br>
+methodology, a hypernetwork is employed to generate voxel-based<br>
+representations for each dynamic actor within the simulated environment.<br>
+This technique effectively manages the complexities of dynamic scene<br>
+rendering, balancing detail and computational load.</p>
+<p>To provide a clearer depiction of this technique,<br>
+Figure&nbsp;<a href="#fig:voxel">1</a>{reference-type=“ref” reference=“fig:voxel”}<br>
+illustrates the voxel rendering process. As shown, the 3D scene is<br>
+bifurcated into a static background (grey) and a set of dynamic actors<br>
+(red). The static scene is represented through a sparse feature-grid,<br>
+while the hypernetwork dynamically generates the voxel representation<br>
+for each actor. This representation leverages a learnable latent space,<br>
+and the scene is subsequently brought to life via neural rendering. This<br>
+innovative approach, as visualized in the figure, underscores the<br>
+efficiency and adaptability of voxel rendering in complex, dynamic<br>
+environments.</p>
+<p><img src="images/image-202311270141059262.png" srcset="/img/loading.gif" lazyload alt="Overview of the approach in Paper&nbsp;[@yang2023unisim]. The 3D scene is
+divided into a static background (grey) and a set of dynamic actors
+(red). The static scene is modeled with a sparse feature-grid, and a
+hypernetwork is utilized to generate the representation of each actor
+from a learnable latent. The neural feature description is then produced
+through neural
+rendering."></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Presentation/" class="category-chain-item">Presentation</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/ETH-Zurich/" class="print-no-link">#ETH Zürich</a>
+      
+        <a href="/tags/Robotics/" class="print-no-link">#Robotics</a>
+      
+        <a href="/tags/Sim2Real/" class="print-no-link">#Sim2Real</a>
+      
+        <a href="/tags/Sensor-Modeling/" class="print-no-link">#Sensor Modeling</a>
+      
+        <a href="/tags/Advance-System-Lab-ASL/" class="print-no-link">#Advance System Lab(ASL)</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Robotic Seminar:Sensor Modeling in Sim2Real</div>
+      <div>https://walkerchi.github.io/2023/12/19/ETHz/ETHz-RS/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>walkerchi</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>December 19, 2023</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/01/14/ETHz/ETHz-SP/" title="Semester Project:Learning Structural Dynamics with Graph Neural Networks">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Semester Project:Learning Structural Dynamics with Graph Neural Networks</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/11/02/poems/%E6%A2%A6%E6%B8%B8%E5%A4%A9%E5%A7%A5%E5%90%9F%E7%95%99%E5%88%AB/" title="梦游天姥吟留别">
+                        <span class="hidden-mobile">梦游天姥吟留别</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+  <script>
+  Fluid.utils.createScript('https://lib.baomitu.com/mermaid/8.14.0/mermaid.min.js', function() {
+    mermaid.initialize({"theme":"default"});
+
+    Fluid.utils.listenDOMLoaded(function() {
+      Fluid.events.registerRefreshCallback(function() {
+        if ('mermaid' in window) {
+          mermaid.init();
+        }
+      });
+    });
+  });
+</script>
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://walkerchi.github.io" class="iconfont icon-github-fill" style="font-size:40px;padding:20px;"></a> <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/walkerchi/" class="iconfont icon-linkedin-fill" style="font-size:40px;padding:20px;"></a> <a href="walker.chi.000@gmail.com" class="iconfont icon-mail" style="font-size:40px;padding:20px;"></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>

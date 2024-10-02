@@ -24,7 +24,7 @@
 <meta property="og:description" content="HoloScanner: In-Hand Scanning with HoloLens 2 for Irregular Geometries An end-to-end system for in-hand scanning and near-real-time reconstruction of irregular geometries based on Microsoft HoloLens 2">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://walkerchi.github.io/img/mr.gif">
-<meta property="article:published_time" content="2022-10-22T11:00:00.000Z">
+<meta property="article:published_time" content="2022-10-22T05:00:00.000Z">
 <meta property="article:modified_time" content="2023-11-02T21:14:08.214Z">
 <meta property="article:author" content="walkerchi">
 <meta property="article:tag" content="ETH Zürich">
@@ -89,7 +89,9 @@
 
 
   
-<meta name="generator" content="Hexo 7.0.0"></head>
+<meta name="generator" content="Hexo 7.0.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
 
 
 <body>
@@ -418,7 +420,7 @@ the AHAT extrinsic matrix and depth look-up table (LUT).</p>
 </ul>
 <h2 id="The-Server-App-Running-on-PC">The Server App Running on PC</h2>
 <p>The repo contains Git submodules. To check out the submodules:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git submodule update --init<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git submodule update --init<br></code></pre></td></tr></tbody></table></figure>
 <p>Build requirements:</p>
 <ul>
 <li>CMake</li>
@@ -434,17 +436,17 @@ source: <a target="_blank" rel="noopener" href="http://www.open3d.org/docs/relea
 <p>The current branch is tested on macOS Apple Silicon with Clang. For Windows with MSVC, some more modifications might be<br>
 needed. For example:</p>
 <ul>
-<li><code>target_compile_options(DepthToPCD PRIVATE &quot;/MT$&lt;$&lt;CONFIG:Release&gt;:&gt;&quot;)</code> to correctly link the Open3D library.</li>
+<li><code>target_compile_options(DepthToPCD PRIVATE "/MT$&lt;$&lt;CONFIG:Release&gt;:&gt;")</code> to correctly link the Open3D library.</li>
 <li>Directory to Boost and Open3D may need to be specified in order to be found.</li>
 <li><a target="_blank" rel="noopener" href="https://github.com/walkerchi/ETHz-MR/blob/main/CPP/DirectXMath/Inc/sal.h">CPP/DirectXMath/Inc/sal.h</a> and <a href="CPP/DirectXMath/Inc/sal.h">unsal.h</a> (as well<br>
-as <code>#include &quot;unsal.h&quot;</code> at the end of <a target="_blank" rel="noopener" href="https://github.com/walkerchi/ETHz-MR/blob/main/CPP/DirectXMath/Inc/DirectXMath.h">DirectXMath.h</a>) needs to be removed<br>
+as <code>#include "unsal.h"</code> at the end of <a target="_blank" rel="noopener" href="https://github.com/walkerchi/ETHz-MR/blob/main/CPP/DirectXMath/Inc/DirectXMath.h">DirectXMath.h</a>) needs to be removed<br>
 for Windows. According to <a target="_blank" rel="noopener" href="https://github.com/microsoft/DirectXMath">Microsoft/DirectXMath</a>, sal.h is needed for Linux<br>
 and macOS. However, for Ubuntu, macros defined inside pollutes the standard library. Therefore, we add an unsal.h to<br>
 undef them. For Windows, such changes should be undone.</li>
 </ul>
 <p>See the other branches for reference.</p>
 <p>To build the program:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">mkdir build<br>cd build<br>cmake -DCMAKE_BUILD_TYPE=Release ..<br>make DepthToPCD<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">mkdir build<br>cd build<br>cmake -DCMAKE_BUILD_TYPE=Release ..<br>make DepthToPCD<br></code></pre></td></tr></tbody></table></figure>
 <p>Ninja also works.</p>
 <p>Optionally to specify a data directory to store scanning results other than the default “…/data”,<br>
 add <code>-DDATA_FOLDER=...</code> to CMake command line argument.</p>

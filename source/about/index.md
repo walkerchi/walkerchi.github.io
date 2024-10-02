@@ -58,16 +58,16 @@ banner_img: /img/spaceship.gif
   <div class="content">
     <h1>Hello &#x1F917</h1>
     <p>My name is Mingyuan Chi, but you can also call me Walker.</p>
-    <p>I specialize as an interdisciplinary researcher and engineer, with a strong background in computer science, machine learning, computational physics, robotics, and finance. My technical skills include proficiency in Python, C++, and JavaScript, as well as fluency in Julia, Rust, and Matlab.</p>
+    <p>I specialize as an interdisciplinary researcher and engineer, with a strong background in computer science, machine learning, computational physics, robotics, and finance. My technical skills include proficiency in Python, C++, and JavaScript, as well as fluency in Julia and Rust.</p>
     <p>I am passionate about leveraging my diverse skill set and knowledge base to solve complex problems and make meaningful contributions to my field. I look forward to exploring new opportunities and collaborating with other professionals who share my interests and passion.</p>
   </div>
   <div class="timeline">
     <div class="timeline-item" id="item1">
-      <div class="date">September 2022 - present</div>
+      <div class="date">September 2022 - September 2024</div>
       <div class="content">
         <div class="where"><h2>ETH-Zürich</h2><em>Eidgenössische Technische Hochschule Zürich</em></div>
         <div class="role">Msc of Computational Science Engineering</div>
-        <p>During my time at ETH Zurich, I had the opportunity to broaden my academic horizons and gain a wealth of knowledge in interdisciplinary fields, including physics, robotics, mathematics, and finance.</p>
+        <p>During my time at ETH Zurich, I had the opportunity to broaden my academic horizons and gain a wealth of knowledge in interdisciplinary fields, including computer science, physics, robotics, mathematics, and finance.</p>
       </div>
     </div>
     <div class="timeline-item right" id="item2">

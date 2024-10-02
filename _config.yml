@@ -99,6 +99,9 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: fluid
 
+plugins:
+  - hexo-reference
+
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
@@ -107,3 +110,10 @@ deploy:
 markdown:
   plugins:
     - "@traptitech/markdown-it-katex"
+    
+githubEmojis:
+  enable: true
+  className: github-emoji
+  inject: true
+  styles:
+  customEmojis:
