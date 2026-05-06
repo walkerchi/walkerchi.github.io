@@ -1,0 +1,2 @@
+{{- /* 简化版 link render: 不调 url.Parse, 避免对含括号 URL 报错 */ -}}
+<a href="{{ .Destination | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if strings.HasPrefix .Destination "http" }} target="_blank" rel="noopener"{{ end }}>{{ .Text | safeHTML }}</a>

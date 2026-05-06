@@ -1,0 +1,16 @@
+# 顶部导航菜单（按 walker vercel 站风格用文言短词）
+
+[[main]]
+  name = "所思"
+  pageRef = "posts"
+  weight = 10
+
+[[main]]
+  name = "吾"
+  pageRef = "about"
+  weight = 20
+
+[[main]]
+  name = "论文"
+  pageRef = "publication"
+  weight = 30

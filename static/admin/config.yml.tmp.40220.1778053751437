@@ -1,0 +1,35 @@
+# Sveltia CMS 配置
+# 文档: https://sveltiacms.app/
+
+# DEMO 模式：编辑保存只在内存，刷新会丢
+# 等仓库进 git 后改成 backend.name = github
+backend:
+  name: test-repo
+
+site_url: http://localhost:1313/
+display_url: http://localhost:1313/
+logo_url: /images/logo.png
+
+media_folder: "static/images"
+public_folder: "/images"
+
+collections:
+  - name: posts
+    label: "所思 (Posts)"
+    label_singular: "文章"
+    folder: "content/posts"
+    create: true
+    path: "{{slug}}/index"
+    media_folder: ""
+    public_folder: ""
+    editor:
+      preview: false  # rich text 模式自带预览
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "日期", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Draft", name: "draft", widget: "boolean", default: false, required: false }
+      - { label: "标签", name: "tags", widget: "list", required: false }
+      - { label: "摘要", name: "summary", widget: "string", required: false }
+      - { label: "启用 Mermaid", name: "mermaid", widget: "boolean", default: false, required: false }
+      - { label: "启用数学公式", name: "math", widget: "boolean", default: false, required: false }
+      - { label: "正文", name: "body", widget: "markdown" }

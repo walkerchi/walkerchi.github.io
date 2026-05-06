@@ -1,0 +1,10 @@
+{{- /* 简化版 image render: 不调 .Resize, 避免 webp/大图 OOM */ -}}
+{{- $src := .Destination | safeURL -}}
+{{- $alt := .Text -}}
+{{- $title := .Title -}}
+<figure class="my-4">
+  <img src="{{ $src }}" alt="{{ $alt }}" title="{{ $title }}" loading="lazy" class="mx-auto rounded">
+  {{- with $title -}}
+    <figcaption class="text-center text-sm text-neutral-500 mt-2">{{ . }}</figcaption>
+  {{- end -}}
+</figure>

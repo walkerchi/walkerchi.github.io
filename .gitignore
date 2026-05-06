@@ -1,0 +1,23 @@
+# Hugo build artifacts
+public/
+resources/
+.hugo_build.lock
+
+# Hugo cache
+.cache/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local secrets
+*.env.local
+*.env
+
+# Temp
+*.tmp
