@@ -342,18 +342,9 @@ navbar:
   # Navigation bar menu. `key` is used to associate languages/*.yml. If there is no association, the value of `key` itself will be displayed; if `icon` is a css class, it can be omitted; adding `name` can force the display of the specified name
   menu:
     - { key: "home", link: "/", icon: "iconfont icon-home-fill" }
-    - { key: "archive", link: "/archives/", icon: "iconfont icon-archive-fill" }
-    - { key: "category", link: "/categories/", icon: "iconfont icon-category-fill" }
-    - { key: "tag", link: "/tags/", icon: "iconfont icon-tags-fill" }
+    - { key: "Articles", link: "/articles/", icon: "iconfont icon-archive-fill" }
+    - { key: "Publications", link: "/publication/", icon: "iconfont icon-books" }
     - { key: "about", link: "/about/", icon: "iconfont icon-user-fill" }
-    - { key: "Publication", link: "/publication/", icon: "iconfont icon-books"}
-    - { key: "tools", icon: "iconfont icon-tools-fill",
-      submenu: [
-        { key: 'torch-fem', link: 'https://walkerchi.github.io/torch-fem-docs-preview/'},
-        { key: 'math2pix', link: 'https://walkerchi.github.io/math2pix' },
-        { key: 'tikz2pix', link: 'https://walkerchi.github.io/tikz2pix'},
-        { key: 'old home page', link: 'https://walkerchi.vercel.app/en'},
-      ]}
 
 # 搜索功能，基于 hexo-generator-search 插件，若已安装其他搜索插件请关闭此功能，以避免生成多余的索引文件
 # Search feature, based on hexo-generator-search. If you have installed other search plugins, please disable this feature to avoid generating redundant index files

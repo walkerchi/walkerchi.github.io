@@ -4,6 +4,11 @@
   const root = document.documentElement;
   const body = document.body;
   const directory = Boolean(document.querySelector('.article-directory'));
+  const kind = body.dataset.pageKind || (directory ? 'articles' : 'home');
+  const originalTitle = document.title;
+  if (kind === 'legacy') document.querySelectorAll('.markdown-body').forEach(el => {
+    el.lang = location.pathname.includes('/poems/') ? 'zh-CN' : (root.lang || 'en');
+  });
   const languageButtons = document.querySelectorAll('[data-set-language]');
   const themeButton = document.getElementById('theme-toggle');
   const validLanguage = value => value === 'en' || value === 'zh';
@@ -17,7 +22,8 @@
     themeButton.setAttribute('aria-label', language === 'zh'
       ? (dark ? '切换到浅色模式' : '切换到深色模式')
       : (dark ? 'Switch to light theme' : 'Switch to dark theme'));
-    document.querySelector('meta[name="theme-color"]').content = dark ? '#12171e' : '#fcfcfd';
+    document.querySelectorAll('meta[name="theme-color"]').forEach(el => el.content = dark ? '#12171e' : '#fcfcfd');
+    root.dataset.userColorScheme = dark ? 'dark' : 'light';
   }
 
   function setLanguage(next, updateUrl = false) {
@@ -34,15 +40,24 @@
       url.searchParams.set('lang', next);
       el.href = url.href;
     });
-    document.title = next === 'zh'
-      ? (directory ? '文章与笔记 — 迟明远 Walker Chi' : '迟明远 Walker Chi — 经历、项目与文章')
-      : (directory ? 'Articles & Notes — Walker Chi' : 'Walker Chi — Experience, Projects & Writing');
-    const description = next === 'zh'
-      ? (directory ? '迟明远的 20 篇原始博客文章：太空电梯、聚变能源、机器人、数学与物理。' : '迟明远：在 Moonshot AI 与 MiniMax 的大模型工程经历、教育背景、项目与科学写作。')
-      : (directory ? 'All 20 original blog articles by Walker Chi: space elevators, fusion energy, robotics, mathematics and physics.' : 'Walker Chi: LLM and multimodal engineering experience at Moonshot AI and MiniMax, education, projects, and writing about science.');
-    document.querySelector('meta[name="description"]').content = description;
-    document.querySelector('meta[property="og:title"]').content = document.title;
-    document.querySelector('meta[property="og:description"]').content = description;
+    const titles = {
+      home: ['Walker Chi — Experience, Projects & Writing', '迟明远 Walker Chi — 经历、项目与文章'],
+      articles: ['Articles & Notes — Walker Chi', '文章与笔记 — 迟明远 Walker Chi'],
+      publication: ['Projects & Publications — Walker Chi', '项目与论文 — 迟明远 Walker Chi'],
+      about: ['About — Walker Chi', '关于我 — 迟明远 Walker Chi']
+    };
+    document.title = titles[kind] ? titles[kind][next === 'zh' ? 1 : 0] : originalTitle;
+    const descriptions = {
+      home: ['Walker Chi: LLM and multimodal engineering, experience, projects and writing.', '迟明远：大模型工程经历、教育背景、项目与科学写作。'],
+      articles: ['All 20 original articles by Walker Chi, with their original cover images.', '迟明远的全部 20 篇原始博客文章与原封面。'],
+      publication: ['Projects, publications and thesis by Walker Chi, from sparse linear algebra to language models.', '迟明远的项目、论文与硕士研究：稀疏线性代数、可微仿真与语言模型。'],
+      about: ['Work, education and background of Walker Chi (Mingyuan Chi).', '迟明远的工作经历、教育背景与个人介绍。']
+    };
+    if (descriptions[kind]) {
+      const description = descriptions[kind][next === 'zh' ? 1 : 0];
+      document.querySelectorAll('meta[name="description"],meta[property="og:description"]').forEach(el => el.content = description);
+      document.querySelectorAll('meta[property="og:title"]').forEach(el => el.content = document.title);
+    }
     themeLabel();
     if (updateUrl) {
       const url = new URL(location.href);

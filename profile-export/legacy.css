@@ -1,0 +1,26 @@
+/* Shared chrome on original Hexo pages; original article DOM and math stay intact. */
+body[data-page-kind="legacy"] {
+  --body-bg-color: var(--p-bg); --board-bg-color: var(--p-bg); --text-color: var(--p-ink);
+  --sec-text-color: var(--p-muted); --post-text-color: var(--p-ink); --post-heading-color: var(--p-ink);
+  --post-link-color: var(--p-accent); --link-hover-color: var(--p-accent);
+  --line-color: var(--p-line); --inline-code-bg-color: var(--p-tint);
+  background: var(--p-bg); color: var(--p-ink); font-size: 15px;
+}
+body[data-page-kind="legacy"] #navbar { display: none !important; }
+body[data-page-kind="legacy"] .header-inner { height: auto !important; max-height: none; }
+body[data-page-kind="legacy"] #banner { height: 210px !important; min-height: 0; }
+body[data-page-kind="legacy"] #banner .h2 { font-size: clamp(22px, 3vw, 34px); font-weight: 650; }
+body[data-page-kind="legacy"] #board { margin-top: 0 !important; border-radius: 0; box-shadow: none; background: var(--p-bg); }
+body[data-page-kind="legacy"] main > .container { max-width: 1180px; }
+body[data-page-kind="legacy"] .markdown-body { font-size: 15px; line-height: 1.8; color: var(--p-ink); }
+body[data-page-kind="legacy"] .markdown-body img { max-width: 100%; }
+body[data-page-kind="legacy"] .markdown-body table { display: block; overflow-x: auto; }
+body[data-page-kind="legacy"] .site-header a { color: var(--p-ink); }
+body[data-page-kind="legacy"] .site-header a:hover { color: var(--p-accent); }
+body[data-page-kind="legacy"] .site-header { background: var(--p-bg); }
+body[data-page-kind="legacy"] .site-header button { background: none; }
+body[data-page-kind="legacy"] footer { color: var(--p-muted); }
+@media (max-width: 620px) {
+  body[data-page-kind="legacy"] #banner { height: 170px !important; }
+  body[data-page-kind="legacy"] .markdown-body { font-size: 14px; }
+}

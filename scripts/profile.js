@@ -10,14 +10,22 @@ hexo.extend.filter.register('after_generate', async function () {
     const blog = Buffer.concat(chunks);
     if (!blog.includes(Buffer.from('id="profile-name"'))) hexo.route.set('blog.html', blog);
   }
+  const decorate = require('./legacy-theme.cjs').decorator(bundle);
+  for (const route of hexo.route.list().filter(name => name.endsWith('.html'))) {
+    const stream = hexo.route.get(route);
+    const chunks = [];
+    for await (const chunk of stream) chunks.push(Buffer.from(chunk));
+    hexo.route.set(route, decorate(Buffer.concat(chunks).toString('utf8')));
+  }
   function register(directory, prefix = '') {
     for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
       const name = prefix + entry.name;
       const source = path.join(directory, entry.name);
       if (entry.isDirectory()) register(source, name + '/');
       else {
-        const route = name === 'index.html' ? 'index.html'
-          : name === 'articles.html' ? 'articles/index.html' : 'profile/' + name;
+        if (name === 'legacy-header.html') continue;
+        const pages = { 'index.html': 'index.html', 'articles.html': 'articles/index.html', 'publication.html': 'publication/index.html', 'about.html': 'about/index.html' };
+        const route = pages[name] || 'profile/' + name;
         hexo.route.set(route, fs.readFileSync(source));
       }
     }
