@@ -16,3 +16,6 @@ The PDF is the user-approved research CV. Source content and the download must b
 Review and commit generated `docs/`, `profile-export/`, and source changes together, then push `chi-s-page-3` to publish. No DNS or GitHub Pages configuration changes are necessary.
 
 The top navigation links to `/articles/`, the complete directory of all 20 original posts. Its maintained source is `walker-cms/data/articles.json`; original article URLs and `/blog.html` remain valid. The homepage now leads with experience and education. Official transparent logo provenance is recorded in `walker-cms/data/logo-sources.json`; assets are exported locally under `profile/logos/` and reapplied on Hexo rebuilds.
+
+
+The homepage and archive now use the shared bilingual magazine shell. `?lang=en` and `?lang=zh` override saved language preferences; EN / 中文 controls update the page language, accessibility labels and metadata. Original articles keep their original languages and URLs. English HTML remains readable without JavaScript. Edit translations in the shared Jinja partials and behavior in `walker-cms/docs/assets/javascripts/profile.js`, then export; `profile-export/profile.js` is the generated browser script, distinct from Hexo's `scripts/profile.js` build hook.
