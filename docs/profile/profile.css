@@ -105,7 +105,7 @@ button { font: inherit; cursor: pointer; color: inherit; }
 .reading-action { color: var(--p-accent); font-size: 11px; }
 .writing-more, .profile-library { display: flex; flex-wrap: wrap; gap: 12px 25px; margin-top: 20px; font-size: 12px; }
 .writing-more a:last-child { margin-left: auto; color: var(--p-accent); }
-.project-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; }
+.project-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px; }
 .project-list article { border-top: 1px solid var(--p-line); padding-top: 18px; }
 .project-visual { display: block; margin-bottom: 16px; }
 .project-visual img { display: block; width: 100%; height: 175px; padding: 8px; object-fit: contain; background: #fff; border: 1px solid var(--p-line); }
@@ -206,3 +206,7 @@ button { font: inherit; cursor: pointer; color: inherit; }
   .publication-list li { grid-template-columns: 1fr; gap: 8px; }
   .publication-list h3 { font-size: 19px; }
 }
+
+.project-stage { font-size: 10px; font-weight: 500; vertical-align: middle; letter-spacing: .04em; color: var(--p-muted); border: 1px solid var(--p-line); padding: 3px 6px; margin-left: 7px; }
+
+.publications-page #reports h3 { margin-bottom: 10px; }

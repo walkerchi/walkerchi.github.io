@@ -4,7 +4,7 @@
   const root = document.documentElement;
   const body = document.body;
   const directory = Boolean(document.querySelector('.article-directory'));
-  const kind = body.dataset.pageKind || (directory ? 'articles' : 'home');
+  const kind = body.dataset.pageKind || (directory ? 'blog' : 'home');
   const originalTitle = document.title;
   if (kind === 'legacy') document.querySelectorAll('.markdown-body').forEach(el => {
     el.lang = location.pathname.includes('/poems/') ? 'zh-CN' : (root.lang || 'en');
@@ -42,14 +42,16 @@
     });
     const titles = {
       home: ['Walker Chi — Experience, Projects & Writing', '迟明远 Walker Chi — 经历、项目与文章'],
-      articles: ['Articles & Notes — Walker Chi', '文章与笔记 — 迟明远 Walker Chi'],
+      blog: ['Blog — Walker Chi', '博客 — 迟明远 Walker Chi'],
+      articles: ['Blog — Walker Chi', '博客 — 迟明远 Walker Chi'],
       publication: ['Projects & Publications — Walker Chi', '项目与论文 — 迟明远 Walker Chi'],
       about: ['About — Walker Chi', '关于我 — 迟明远 Walker Chi']
     };
     document.title = titles[kind] ? titles[kind][next === 'zh' ? 1 : 0] : originalTitle;
     const descriptions = {
       home: ['Walker Chi: LLM and multimodal engineering, experience, projects and writing.', '迟明远：大模型工程经历、教育背景、项目与科学写作。'],
-      articles: ['All 20 original articles by Walker Chi, with their original cover images.', '迟明远的全部 20 篇原始博客文章与原封面。'],
+      blog: ['Walker Chi’s blog: 20 original posts on science, engineering and poetry.', '迟明远的博客：20 篇科学、工程与诗歌文章。'],
+      articles: ['Walker Chi’s blog: 20 original posts on science, engineering and poetry.', '迟明远的博客：20 篇科学、工程与诗歌文章。'],
       publication: ['Projects, publications and thesis by Walker Chi, from sparse linear algebra to language models.', '迟明远的项目、论文与硕士研究：稀疏线性代数、可微仿真与语言模型。'],
       about: ['Work, education and background of Walker Chi (Mingyuan Chi).', '迟明远的工作经历、教育背景与个人介绍。']
     };

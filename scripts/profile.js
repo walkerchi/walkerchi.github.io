@@ -24,7 +24,7 @@ hexo.extend.filter.register('after_generate', async function () {
       if (entry.isDirectory()) register(source, name + '/');
       else {
         if (name === 'legacy-header.html') continue;
-        const pages = { 'index.html': 'index.html', 'articles.html': 'articles/index.html', 'publication.html': 'publication/index.html', 'about.html': 'about/index.html' };
+        const pages = { 'index.html': 'index.html', 'articles.html': 'articles/index.html', 'blog.html': 'blog/index.html', 'publication.html': 'publication/index.html', 'about.html': 'about/index.html' };
         const route = pages[name] || 'profile/' + name;
         hexo.route.set(route, fs.readFileSync(source));
       }

@@ -7,7 +7,7 @@ function decorator(bundle) {
   const version = name => crypto.createHash('sha256').update(fs.readFileSync(path.join(bundle, name))).digest('hex').slice(0, 12);
   const assets = `<!-- walker-assets:start --><link rel="stylesheet" href="/profile/profile.css?v=${version('profile.css')}"><link rel="stylesheet" href="/profile/legacy.css?v=${version('legacy.css')}"><script src="/profile/profile.js?v=${version('profile.js')}" defer></script><!-- walker-assets:end -->`;
   return html => {
-    if (!/<body\b/i.test(html) || /data-page-kind="(?:home|articles|publication|about)"/.test(html)) return html;
+    if (!/<body\b/i.test(html) || /data-page-kind="(?:home|blog|articles|publication|about)"/.test(html)) return html;
     html = html.replace(/<!-- walker-assets:start -->[\s\S]*?<!-- walker-assets:end -->/g, '')
       .replace(/<!-- walker-chrome:start -->[\s\S]*?<!-- walker-chrome:end -->/g, '');
     html = html.replace('</head>', assets + '</head>');
