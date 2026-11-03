@@ -44,6 +44,10 @@ button { font: inherit; cursor: pointer; color: inherit; }
 .profile-nav a:last-child { margin-left: auto; color: var(--p-accent); }
 .profile-intro { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 44px; align-items: center; padding: 36px 0 34px; }
 .profile-name-zh { display: inline-block; font-size: 19px; font-weight: 450; margin-left: 10px; letter-spacing: .04em; color: var(--p-muted); white-space: nowrap; }
+.profile-identity { display: flex; align-items: center; gap: 20px; }
+.profile-portrait { display: block; width: 96px; height: 96px; flex: 0 0 96px; object-fit: cover; border: 1px solid var(--p-line); }
+.profile .profile-identity h1 { min-width: 0; font-size: clamp(32px, 3.6vw, 50px); }
+.profile-identity .profile-name-zh { display: block; margin: 8px 0 0; font-size: 17px; }
 .profile-lead { font-size: 26px; font-weight: 500; line-height: 1.3; letter-spacing: -.025em; margin: 17px 0 !important; }
 .profile-bio { max-width: 640px; color: var(--p-muted); font-size: 13px; }
 .profile-bio strong { color: var(--p-ink); font-weight: 600; }
@@ -142,6 +146,9 @@ button { font: inherit; cursor: pointer; color: inherit; }
   .profile-intro { grid-template-columns: 1fr; padding: 28px 0; gap: 24px; }
   .profile h1 { font-size: 43px; }
   .profile-name-zh { display: inline-block; font-size: 17px; margin: 0 0 0 8px; }
+  .profile-identity { gap: 15px; }
+  .profile-portrait { width: 72px; height: 72px; flex-basis: 72px; }
+  .profile-identity .profile-name-zh { display: block; margin: 7px 0 0; font-size: 15px; }
   .profile-lead { font-size: 24px; }
   .profile-cover > a { min-height: 235px; }
   .cover-caption h2 { font-size: 30px; }
