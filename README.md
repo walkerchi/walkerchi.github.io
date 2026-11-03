@@ -14,3 +14,5 @@ The export updates `profile-export/` and `docs/`, preserving the original blog h
 The PDF is the user-approved research CV. Source content and the download must be updated together. The latest employer dates are Apr–Sep 2026; do not describe that role as current.
 
 Review and commit generated `docs/`, `profile-export/`, and source changes together, then push `chi-s-page-3` to publish. No DNS or GitHub Pages configuration changes are necessary.
+
+The top navigation links to `/articles/`, the complete directory of all 20 original posts. Its maintained source is `walker-cms/data/articles.json`; original article URLs and `/blog.html` remain valid. The homepage now leads with experience and education. Official transparent logo provenance is recorded in `walker-cms/data/logo-sources.json`; assets are exported locally under `profile/logos/` and reapplied on Hexo rebuilds.
