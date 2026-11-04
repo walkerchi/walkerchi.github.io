@@ -10,7 +10,7 @@
   const pause = host.querySelector('.field-pause');
   const tabs = [...host.querySelectorAll('[data-scene]')];
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-  let scene = 'graph', stopped = reduced.matches, visible = false;
+  let scene = 'models', stopped = reduced.matches, visible = false;
   let width = 1, height = 1, frame = 0, last = 0, elapsed = 0;
   let pointer = {x: 0, y: 0}, blue, red, surface;
   const TAU = Math.PI * 2;
@@ -90,21 +90,39 @@
     path(band,red,.9,1.5);label(point(5,m,depth),'u(x, t)');
     for(let i=2;i<9;i+=2){const a=point(i,m,2),b=[a[0],a[1]-24];line(b,a,red,.65);line(a,[a[0]-3,a[1]-6],red,.65);line(a,[a[0]+3,a[1]-6],red,.65);}
   }
-  function orbit(t) {
-    const spin=t*.10;
-    const globe=(lat,lon)=>[Math.cos(lat)*Math.cos(lon),Math.sin(lat),Math.cos(lat)*Math.sin(lon)];
-    for(let lat=-Math.PI/2+.22;lat<Math.PI/2;lat+=Math.PI/9){const ring=[];for(let i=0;i<=100;i++)ring.push(project(globe(lat,i/100*TAU+spin),.25));path(ring,blue,.28);}
-    for(let lon=0;lon<Math.PI;lon+=Math.PI/12){const ring=[];for(let i=0;i<=100;i++){const a=i/100*TAU;ring.push(project([Math.cos(a)*Math.cos(lon+spin),Math.sin(a),Math.cos(a)*Math.sin(lon+spin)],.25));}path(ring,blue,.26);}
-    const ring=[];for(let i=0;i<=150;i++){const a=i/150*TAU;ring.push(project([2.05*Math.cos(a),0,2.05*Math.sin(a)],.25));}path(ring,blue,.6);
-    const a=spin+.7,anchor=[Math.cos(a),0,Math.sin(a)],end=[2.35*Math.cos(a),0,2.35*Math.sin(a)];
-    const start=project(anchor,.25),stop=project(end,.25);line(start,stop,red,1,1.7);dot(start,3,red);dot(stop,3,red);
-    const f=(t*.14)%1,climber=project(anchor.map((v,i)=>v+(end[i]-v)*f),.25);dot(climber,4,red);
-    label(stop,'tether ↗');
-    const sat=project([2.05*Math.cos(-t*.22),0,2.05*Math.sin(-t*.22)],.25);dot(sat,3.3,blue);
+  function models(t) {
+    const active = Math.floor(t * .8) % 6;
+    const pulse = (t * .8) % 1;
+    const token = i => project([-1.95, (2.5-i)*.36, 0]);
+    const output = i => project([1.85, (2.5-i)*.36, 0]);
+    const cell = (r,c) => project([(c-2.5)*.34, (2.5-r)*.34, 0]);
+    for(let r=0;r<6;r++) for(let c=0;c<6;c++) {
+      const x=(c-2.5)*.34,y=(2.5-r)*.34;
+      const corners=[[-.145,.145],[.145,.145],[.145,-.145],[-.145,-.145]].map(([dx,dy])=>project([x+dx,y+dy,0]));
+      const weight=.14+.5*(.5+.5*Math.sin(r*2+c*1.8));
+      ctx.beginPath();corners.forEach((p,i)=>i?ctx.lineTo(...p):ctx.moveTo(...p));ctx.closePath();
+      ctx.fillStyle=r===active?red:blue;ctx.globalAlpha=c>r?.035:(r===active?.45+weight*.4:weight*.5);ctx.fill();
+      ctx.strokeStyle=blue;ctx.globalAlpha=.18;ctx.lineWidth=.7;ctx.stroke();
+    }
+    for(let i=0;i<6;i++) {
+      const a=token(i),b=output(i),hot=i===active;
+      line(a,cell(i,0),blue,hot?.65:.16);
+      line(cell(i,5),b,blue,hot?.65:.16);
+      dot(a,hot?4:3,i%2?red:blue,.85);dot(b,3,blue,hot?1:.35);
+      ctx.globalAlpha=.75;ctx.fillStyle=blue;ctx.font='10px ui-monospace, monospace';
+      ctx.fillText((i%2?'V':'T')+Math.floor(i/2+1),a[0]-25,a[1]+3);
+    }
+    for(let c=0;c<=active;c++) {
+      const a=token(c),b=cell(active,c),end=output(active);
+      const lerp=(x,y,f)=>[x[0]+(y[0]-x[0])*f,x[1]+(y[1]-x[1])*f];
+      line(a,b,blue,.2);line(b,end,blue,.2);
+      dot(pulse<.5?lerp(a,b,pulse*2):lerp(b,end,pulse*2-1),2.5,red);
+    }
+    label(project([.7,1.12,0]), 'attention');
   }
   function draw() {
     ctx.clearRect(0,0,width,height);
-    ({graph,mesh,orbit})[scene](elapsed);
+    ({models,mesh,graph})[scene](elapsed);
     ctx.globalAlpha=1;
   }
   function tick(now) {

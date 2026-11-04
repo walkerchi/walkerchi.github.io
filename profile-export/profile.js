@@ -41,7 +41,7 @@
       el.href = url.href;
     });
     const titles = {
-      home: ['Walker Chi — Experience, Projects & Writing', '迟明远 Walker Chi — 经历、项目与文章'],
+      home: ['Walker Chi — LLM Research & Physics Simulation', '迟明远 Walker Chi — 大模型研究与物理仿真'],
       blog: ['Blog — Walker Chi', '博客 — 迟明远 Walker Chi'],
       articles: ['Blog — Walker Chi', '博客 — 迟明远 Walker Chi'],
       publication: ['Projects & Publications — Walker Chi', '项目与论文 — 迟明远 Walker Chi'],
@@ -49,7 +49,7 @@
     };
     document.title = titles[kind] ? titles[kind][next === 'zh' ? 1 : 0] : originalTitle;
     const descriptions = {
-      home: ['Walker Chi: LLM and multimodal engineering, experience, projects and writing.', '迟明远：大模型工程经历、教育背景、项目与科学写作。'],
+      home: ['Walker Chi: large language and multimodal model research, differentiable physics simulation, and scientific computing.', '迟明远：大语言模型与多模态研究、可微物理仿真与科学计算。'],
       blog: ['Walker Chi’s blog: 20 original posts on science, engineering and poetry.', '迟明远的博客：20 篇科学、工程与诗歌文章。'],
       articles: ['Walker Chi’s blog: 20 original posts on science, engineering and poetry.', '迟明远的博客：20 篇科学、工程与诗歌文章。'],
       publication: ['Projects, publications and thesis by Walker Chi, from sparse linear algebra to language models.', '迟明远的项目、论文与硕士研究：稀疏线性代数、可微仿真与语言模型。'],
