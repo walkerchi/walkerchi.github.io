@@ -22,7 +22,7 @@
     themeButton.setAttribute('aria-label', language === 'zh'
       ? (dark ? '切换到浅色模式' : '切换到深色模式')
       : (dark ? 'Switch to light theme' : 'Switch to dark theme'));
-    document.querySelectorAll('meta[name="theme-color"]').forEach(el => el.content = dark ? '#12171e' : '#fcfcfd');
+    document.querySelectorAll('meta[name="theme-color"]').forEach(el => el.content = dark ? '#12171e' : '#f8fafd');
     root.dataset.userColorScheme = dark ? 'dark' : 'light';
   }
 
