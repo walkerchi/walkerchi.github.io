@@ -265,3 +265,10 @@ body[data-page-kind="home"] .profile-lead { font-size: clamp(26px, 2.7vw, 36px);
   .field-captions h2 { font-size: 22px; }
 }
 @media print { .field { display: none; } body[data-page-kind="home"] .profile-intro { display: block; } }
+
+.graph-process { border-top: 1px solid var(--p-line); padding: 10px 12px 12px; }
+.graph-steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; }
+.graph-steps button { border: 0; border-bottom: 2px solid transparent; background: transparent; padding: 7px 2px; font-size: 10px; color: var(--p-muted); }
+.graph-steps button[aria-current="step"] { color: var(--p-accent); border-bottom-color: var(--p-accent); background: var(--p-tint); }
+.profile .graph-process p { font-size: 11px; color: var(--p-muted); margin: 9px 4px 0; min-height: 36px; }
+.graph-process code { display: block; font: 11px ui-monospace, monospace; color: var(--p-ink); margin-top: 3px; }

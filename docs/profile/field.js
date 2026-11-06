@@ -9,6 +9,9 @@
   const stage = host.querySelector('.field-stage');
   const pause = host.querySelector('.field-pause');
   const tabs = [...host.querySelectorAll('[data-scene]')];
+  const graphProcess = host.querySelector('.graph-process');
+  const graphSteps = [...host.querySelectorAll('[data-graph-step]')];
+  let graphPhase = -1;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   let scene = 'models', stopped = reduced.matches, visible = false;
   let width = 1, height = 1, frame = 0, last = 0, elapsed = 0;
@@ -50,25 +53,57 @@
     ctx.fillStyle = surface; ctx.fillRect(x - 3, y - 14, ctx.measureText(title).width + 8, 20);
     ctx.fillStyle = red; ctx.fillText(title, x, y);
   }
+  // One neighborhood, one synchronous update. Sum is an illustrative reducer.
   function graph(t) {
-    const nodes = [], edges = [];
-    const turn = .12 * Math.sin(t * .22);
-    for (let l = 0; l < 4; l++) for (let row = 0; row < 3; row++) for (let col = 0; col < 3; col++) {
-      nodes.push(project([(l - 1.5) * 1.1, (row - 1) * .85, (col - 1) * .85], turn));
-      const id = l * 9 + row * 3 + col;
-      if (row) edges.push([id - 3, id]);
-      if (col) edges.push([id - 1, id]);
-      if (l) { edges.push([id - 9, id]); if (row < 2 && col < 2) edges.push([id - 5, id]); }
+    const phase = Math.floor(t / 2.4) % 4;
+    const progress = (t % 2.4) / 2.4;
+    if (phase !== graphPhase) {
+      graphPhase = phase;
+      graphSteps.forEach((button,i) => {
+        if(i === phase) button.setAttribute('aria-current','step');
+        else button.removeAttribute('aria-current');
+      });
+      host.querySelectorAll('[data-graph-detail]').forEach(el => el.hidden = Number(el.dataset.graphDetail) !== phase);
     }
-    edges.forEach(([a,b]) => line(nodes[a],nodes[b],blue,.23));
-    nodes.forEach((p,i) => { dot(p,3.7,surface); dot(p,2.2,blue,i%9===4?1:.58); });
-    for (let j=0;j<9;j++) {
-      const step = (t*.65+j*.17)%3, layer=Math.floor(step), f=step-layer;
-      const a=nodes[layer*9+j],b=nodes[(layer+1)*9+j];
-      line(a,b,blue,.7,1.15);
-      dot([a[0]+(b[0]-a[0])*f,a[1]+(b[1]-a[1])*f],3,red);
+    const positions = [[.16,.23],[.15,.64],[.42,.79],[.44,.15],[.61,.46],[.85,.22],[.86,.73]];
+    const points = positions.map(([x,y]) => [width*x, 10+(height-35)*y]);
+    const radius = width < 400 ? 12 : 15;
+    const target = points[4];
+    const arrow = (a,b,color,opacity) => {
+      const angle = Math.atan2(b[1]-a[1],b[0]-a[0]);
+      const start = [a[0]+Math.cos(angle)*radius,a[1]+Math.sin(angle)*radius];
+      const end = [b[0]-Math.cos(angle)*(radius+3),b[1]-Math.sin(angle)*(radius+3)];
+      line(start,end,color,opacity,1.1);
+      line(end,[end[0]-7*Math.cos(angle-.4),end[1]-7*Math.sin(angle-.4)],color,opacity,1.1);
+      line(end,[end[0]-7*Math.cos(angle+.4),end[1]-7*Math.sin(angle+.4)],color,opacity,1.1);
+      return [start,end];
+    };
+    [[0,1],[0,3],[1,2],[3,5],[5,6],[4,5],[4,6]].forEach(([a,b])=>arrow(points[a],points[b],blue,.18));
+    for(let i=0;i<4;i++) {
+      const [a,b] = arrow(points[i],target,phase===3?blue:red,phase===3?.32:.65);
+      if(phase < 3) {
+        const f = phase===0 ? .08 : phase===1 ? .08+.82*progress : .9+.1*Math.min(progress*3,1);
+        const p = [a[0]+(b[0]-a[0])*f,a[1]+(b[1]-a[1])*f];
+        if(phase!==2 || progress<.35) {
+          dot(p,4,red);
+          if(phase===0){ctx.globalAlpha=.9;ctx.fillStyle=red;ctx.font='10px ui-monospace, monospace';ctx.fillText('m'+(i+1),p[0]+6,p[1]-7);}
+        }
+      }
     }
-    label(nodes[22], 'aggregate →');
+    points.forEach((p,i)=>{
+      const active=i===4, updated=active&&phase===3;
+      dot(p,radius+1,surface);dot(p,radius,updated?red:blue,updated?.18:.06);
+      ctx.globalAlpha=active?1:.6;ctx.strokeStyle=active?red:blue;ctx.lineWidth=active?1.7:1;
+      ctx.beginPath();ctx.arc(p[0],p[1],radius,0,TAU);ctx.stroke();
+      ctx.font='11px ui-monospace, monospace';ctx.fillStyle=active?red:blue;ctx.textAlign='center';
+      ctx.fillText(i<4?'u'+(i+1):i===4?'v':'x'+(i-4),p[0],p[1]+4);ctx.textAlign='start';
+      for(let j=0;j<3;j++)line([p[0]-10+j*7,p[1]+radius+9],[p[0]-6+j*7,p[1]+radius+9],updated?red:blue,updated?[.95,.5,.8][j]:[.3,.7,.45][j],3);
+    });
+    if(phase>=2) {
+      ctx.strokeStyle=red;ctx.globalAlpha=phase===2?.7:.5*(1-progress);ctx.lineWidth=1.3;
+      ctx.beginPath();ctx.arc(target[0],target[1],radius+6+(phase===3?progress*18:3*Math.sin(progress*Math.PI)),0,TAU);ctx.stroke();
+    }
+    label([target[0]+radius,target[1]-radius],phase===2?'Σ m → aᵥ':phase===3?'hᵥ → h′ᵥ':'u → v');
   }
   function mesh(t) {
     const n=9, m=5, depth=4;
@@ -148,11 +183,16 @@
     schedule();draw();
   }
   tabs.forEach(button=>button.addEventListener('click',()=>{
-    scene=button.dataset.scene;elapsed=0;
+    scene=button.dataset.scene;elapsed=0;graphPhase=-1;
+    graphProcess.hidden=scene!=='graph';
     tabs.forEach(tab=>tab.setAttribute('aria-pressed',String(tab===button)));
     host.querySelectorAll('[data-scene-caption]').forEach(el=>el.hidden=el.dataset.sceneCaption!==scene);
     draw();
   }));
+  graphSteps.forEach(button=>button.addEventListener('click',()=>{
+    elapsed=Number(button.dataset.graphStep)*2.4+.5;stopped=true;pauseState();
+  }));
+  new MutationObserver(()=>{if(scene==='graph')draw();}).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
   pause.addEventListener('click',()=>{stopped=!stopped;pauseState();});
   reduced.addEventListener('change',()=>{stopped=reduced.matches;pauseState();});
   stage.addEventListener('pointermove',e=>{
