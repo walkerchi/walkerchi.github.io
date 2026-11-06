@@ -25,3 +25,5 @@ The shared export now also owns `/publication/` and `/about/`. It restores all 2
 Blog is now the primary directory at `/blog/`; `/articles/` is a compatibility alias with the same canonical URL. Preserve `/blog.html` as the original paginated blog view. The bundle's `blog.html` maps to `/blog/index.html`. The shared project list leads with `tiga-lang` (Alpha), linking its code, localized docs and technical-report manuscript; the report is separate from published papers.
 
 The home page's interactive LLM-attention/physics-mesh/compiler-graph sketches come from the CMS `field.html` partial and `field.js`. Regenerate with the shared exporter; the Hexo bundle publishes the script under `/profile/field.js`. Other pages do not load the animation. Preserve its SVG fallback, bilingual scene descriptions and reduced-motion behavior.
+
+The compiler scene now follows one node through message creation, directed-edge delivery, sum aggregation and state update. Its four step buttons pause at a chosen stage; Play resumes the loop. These controls also work when reduced motion is enabled.
